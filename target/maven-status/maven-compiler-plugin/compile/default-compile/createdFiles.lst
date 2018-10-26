@@ -1,0 +1,6 @@
+co\analicom\ws\Conexion.class
+co\analicom\ws\ExamenDao.class
+co\analicom\ws\SincronizacionController.class
+co\analicom\ws\SyncService.class
+co\analicom\ws\Examen.class
+co\analicom\ws\ExamenInterface.class
