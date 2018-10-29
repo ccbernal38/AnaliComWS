@@ -3,7 +3,7 @@ package co.analicom.ws.dao.interfaces;
 import java.sql.SQLException;
 import java.util.List;
 
-import co.analicom.ws.modelo.Examen;
+import co.analicom.ws.modelo.lis.Examen;
 
 
 public interface ExamenInterface {

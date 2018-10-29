@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import co.analicom.ws.dao.implement.ExamenDao;
-import co.analicom.ws.modelo.Examen;
+import co.analicom.ws.modelo.lis.Examen;
 
 
 

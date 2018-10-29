@@ -1,4 +1,4 @@
-package co.analicom.ws.modelo;
+package co.analicom.ws.modelo.lis;
 
 import java.util.List;
 

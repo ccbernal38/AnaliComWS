@@ -8,7 +8,7 @@ import java.util.List;
 
 import co.analicom.ws.dao.interfaces.ExamenInterface;
 import co.analicom.ws.database.Conexion;
-import co.analicom.ws.modelo.Examen;
+import co.analicom.ws.modelo.lis.Examen;
 
 
 public class ExamenDao implements ExamenInterface {
