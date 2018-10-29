@@ -2,7 +2,7 @@ package co.analicom.ws.modelo.hc;
 
 import java.util.Date;
 
-public class DatosOcupacionales {
+public class DatoOcupacional {
 
 	private String Biologicos, Ergonomicos, Fisicos, Otros, Psicosociales, Quimicos, Seguridad;
 
@@ -10,7 +10,7 @@ public class DatosOcupacionales {
 	
 	private Date FechaDeDiligenciamiento,  FechaDeModificacion;
 	
-	public DatosOcupacionales() {
+	public DatoOcupacional() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -28,7 +28,7 @@ public class DatosOcupacionales {
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
-	public DatosOcupacionales(String biologicos, String ergonomicos, String fisicos, String otros, String psicosociales,
+	public DatoOcupacional(String biologicos, String ergonomicos, String fisicos, String otros, String psicosociales,
 			String quimicos, String seguridad, int fk_IDT_DocumentoID, int fk_NIT, int tiempoExposicion,
 			Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();

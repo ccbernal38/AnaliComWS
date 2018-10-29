@@ -8,12 +8,12 @@ import java.util.Date;
 /**
  * @author Christian Bernal
  */
-public class Antecedentes {
+public class Antecedente {
 
 	/**
 	 * 
 	 */
-	public Antecedentes() {
+	public Antecedente() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -187,7 +187,7 @@ public class Antecedentes {
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
-	public Antecedentes(String aF_Patologia_Alergias, String aF_Patologia_Alergias_Parentesco,
+	public Antecedente(String aF_Patologia_Alergias, String aF_Patologia_Alergias_Parentesco,
 			String aF_Patologia_Artitis, String aF_Patologia_Artitis_Parentesco, String aF_Patologia_Asma,
 			String aF_Patologia_Asma_Parentesco, String aF_Patologia_Cancer, String aF_Patologia_Cancer_Parentesco,
 			String aF_Patologia_cardiaco, String aF_Patologia_Diabetes, String aF_Patologia_Diabetes_Parentesco,
