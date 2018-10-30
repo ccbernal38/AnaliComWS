@@ -1,4 +1,4 @@
-package co.analicom.ws.modelo.hc;
+package co.analicom.ws.hc.modelo;
 
 /**
  * 

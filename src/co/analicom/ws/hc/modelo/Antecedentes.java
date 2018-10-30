@@ -1,19 +1,19 @@
 /**
  * 
  */
-package co.analicom.ws.modelo.hc;
+package co.analicom.ws.hc.modelo;
 
 import java.util.Date;
 
 /**
  * @author Christian Bernal
  */
-public class Antecedente {
+public class Antecedentes {
 
 	/**
 	 * 
 	 */
-	public Antecedente() {
+	public Antecedentes() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -187,7 +187,7 @@ public class Antecedente {
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
-	public Antecedente(String aF_Patologia_Alergias, String aF_Patologia_Alergias_Parentesco,
+	public Antecedentes(String aF_Patologia_Alergias, String aF_Patologia_Alergias_Parentesco,
 			String aF_Patologia_Artitis, String aF_Patologia_Artitis_Parentesco, String aF_Patologia_Asma,
 			String aF_Patologia_Asma_Parentesco, String aF_Patologia_Cancer, String aF_Patologia_Cancer_Parentesco,
 			String aF_Patologia_cardiaco, String aF_Patologia_Diabetes, String aF_Patologia_Diabetes_Parentesco,
