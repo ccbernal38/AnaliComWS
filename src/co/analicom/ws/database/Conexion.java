@@ -30,7 +30,7 @@ public class Conexion {
 		// registrar el controlador de cliente JDBC
 		try {
 			Class.forName("com.filemaker.jdbc.Driver").newInstance();
-			conn = DriverManager.getConnection("jdbc:filemaker://192.168.1.31/AnaliSOHCV10", "jdbc", "Alca2010!");			
+			conn = DriverManager.getConnection("jdbc:filemaker://192.168.1.31/AnaliSO_Pruebas", "jdbc", "Alca2010!");			
 		} catch (Exception e) {
 			System.out.println(e);
 		}

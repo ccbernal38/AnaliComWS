@@ -22,6 +22,77 @@ public class Paciente {
 	private Date fechaDeDiligenciamiento, fechaDeModificacion;
 
 	
+	/**
+	 * @param documento
+	 * @param tipodocumento
+	 * @param iDT_Nombres
+	 * @param iDT_Apellidos
+	 * @param iDT_sexo
+	 * @param iDT_fechaNacimiento
+	 * @param iDT_LugarNacimiento
+	 * @param iDT_DireccionDomicilio
+	 * @param iDT_DomicilioCiudad
+	 * @param iDT_CorreoElectronico
+	 * @param iDT_Escolaridad
+	 * @param iDT_EPS
+	 * @param iDT_ARL
+	 * @param iDT_AFP
+	 * @param iDT_AvisoEmergenciaNombres
+	 * @param iDT_AvisoEmergenciaApellidos
+	 * @param iDT_AvisoEmergenciaParentesco
+	 * @param grupoSanguineo
+	 * @param rH
+	 * @param cargo
+	 * @param antiguedad
+	 * @param iDT_telefonoDomicilio
+	 * @param iDT_TelefonoCelular
+	 * @param iDT_AvisoEmergenciaTelefono
+	 * @param iDT_AvisoEmergenciaTelefonoCelular
+	 * @param foto
+	 * @param firma
+	 * @param fechaDeDiligenciamiento
+	 * @param fechaDeModificacion
+	 */
+	public Paciente(String documento, String tipodocumento, String iDT_Nombres, String iDT_Apellidos, String iDT_sexo,
+			String iDT_fechaNacimiento, String iDT_LugarNacimiento, String iDT_DireccionDomicilio,
+			String iDT_DomicilioCiudad, String iDT_CorreoElectronico, String iDT_Escolaridad, String iDT_EPS,
+			String iDT_ARL, String iDT_AFP, String iDT_AvisoEmergenciaNombres, String iDT_AvisoEmergenciaApellidos,
+			String iDT_AvisoEmergenciaParentesco, String grupoSanguineo, String rH, String cargo, String antiguedad,
+			int iDT_telefonoDomicilio, int iDT_TelefonoCelular, int iDT_AvisoEmergenciaTelefono,
+			int iDT_AvisoEmergenciaTelefonoCelular, Blob foto, Blob firma, Date fechaDeDiligenciamiento,
+			Date fechaDeModificacion) {
+		super();
+		this.documento = documento;
+		this.tipodocumento = tipodocumento;
+		IDT_Nombres = iDT_Nombres;
+		IDT_Apellidos = iDT_Apellidos;
+		IDT_sexo = iDT_sexo;
+		IDT_fechaNacimiento = iDT_fechaNacimiento;
+		IDT_LugarNacimiento = iDT_LugarNacimiento;
+		IDT_DireccionDomicilio = iDT_DireccionDomicilio;
+		IDT_DomicilioCiudad = iDT_DomicilioCiudad;
+		IDT_CorreoElectronico = iDT_CorreoElectronico;
+		IDT_Escolaridad = iDT_Escolaridad;
+		IDT_EPS = iDT_EPS;
+		IDT_ARL = iDT_ARL;
+		IDT_AFP = iDT_AFP;
+		IDT_AvisoEmergenciaNombres = iDT_AvisoEmergenciaNombres;
+		IDT_AvisoEmergenciaApellidos = iDT_AvisoEmergenciaApellidos;
+		IDT_AvisoEmergenciaParentesco = iDT_AvisoEmergenciaParentesco;
+		GrupoSanguineo = grupoSanguineo;
+		RH = rH;
+		this.cargo = cargo;
+		this.antiguedad = antiguedad;
+		IDT_telefonoDomicilio = iDT_telefonoDomicilio;
+		IDT_TelefonoCelular = iDT_TelefonoCelular;
+		IDT_AvisoEmergenciaTelefono = iDT_AvisoEmergenciaTelefono;
+		IDT_AvisoEmergenciaTelefonoCelular = iDT_AvisoEmergenciaTelefonoCelular;
+		this.foto = foto;
+		this.firma = firma;
+		this.fechaDeDiligenciamiento = fechaDeDiligenciamiento;
+		this.fechaDeModificacion = fechaDeModificacion;
+	}
+
 	public String getDocumento() {
 		return documento;
 	}
