@@ -2,26 +2,22 @@ package co.analicom.ws.hc.modelo;
 
 import java.util.Date;
 
-import com.mysql.jdbc.Blob;
-
 public class Paciente {
-	
+
 	private String documento;
 	private String tipodocumento;
-	private String IDT_Nombres, IDT_Apellidos, IDT_sexo, IDT_fechaNacimiento, 
-				IDT_LugarNacimiento, IDT_DireccionDomicilio, IDT_DomicilioCiudad, 
-				IDT_CorreoElectronico, IDT_Escolaridad, IDT_EPS, IDT_ARL, IDT_AFP,
-				IDT_AvisoEmergenciaNombres, IDT_AvisoEmergenciaApellidos, IDT_AvisoEmergenciaParentesco, 
-				GrupoSanguineo, RH, cargo, antiguedad;
-	
-	private int IDT_telefonoDomicilio, IDT_TelefonoCelular, IDT_AvisoEmergenciaTelefono, 
-	IDT_AvisoEmergenciaTelefonoCelular;
-	
-	private Blob foto, firma;
-	
+	private String IDT_Nombres, IDT_Apellidos, IDT_sexo, IDT_fechaNacimiento, IDT_LugarNacimiento,
+			IDT_DireccionDomicilio, IDT_DomicilioCiudad, IDT_CorreoElectronico, IDT_Escolaridad, IDT_EPS, IDT_ARL,
+			IDT_AFP, IDT_AvisoEmergenciaNombres, IDT_AvisoEmergenciaApellidos, IDT_AvisoEmergenciaParentesco,
+			GrupoSanguineo, RH, cargo, antiguedad;
+
+	private int IDT_telefonoDomicilio, IDT_TelefonoCelular, IDT_AvisoEmergenciaTelefono,
+			IDT_AvisoEmergenciaTelefonoCelular;
+
+	private byte[] foto, firma;
+
 	private Date fechaDeDiligenciamiento, fechaDeModificacion;
 
-	
 	/**
 	 * @param documento
 	 * @param tipodocumento
@@ -59,7 +55,7 @@ public class Paciente {
 			String iDT_ARL, String iDT_AFP, String iDT_AvisoEmergenciaNombres, String iDT_AvisoEmergenciaApellidos,
 			String iDT_AvisoEmergenciaParentesco, String grupoSanguineo, String rH, String cargo, String antiguedad,
 			int iDT_telefonoDomicilio, int iDT_TelefonoCelular, int iDT_AvisoEmergenciaTelefono,
-			int iDT_AvisoEmergenciaTelefonoCelular, Blob foto, Blob firma, Date fechaDeDiligenciamiento,
+			int iDT_AvisoEmergenciaTelefonoCelular, byte[] foto, byte[] firma, Date fechaDeDiligenciamiento,
 			Date fechaDeModificacion) {
 		super();
 		this.documento = documento;
@@ -293,19 +289,19 @@ public class Paciente {
 		IDT_AvisoEmergenciaTelefonoCelular = iDT_AvisoEmergenciaTelefonoCelular;
 	}
 
-	public Blob getFoto() {
+	public byte[] getFoto() {
 		return foto;
 	}
 
-	public void setFoto(Blob foto) {
+	public void setFoto(byte[] foto) {
 		this.foto = foto;
 	}
 
-	public Blob getFirma() {
+	public byte[] getFirma() {
 		return firma;
 	}
 
-	public void setFirma(Blob firma) {
+	public void setFirma(byte[] firma) {
 		this.firma = firma;
 	}
 
@@ -324,7 +320,5 @@ public class Paciente {
 	public void setFechaDeModificacion(Date fechaDeModificacion) {
 		this.fechaDeModificacion = fechaDeModificacion;
 	}
-	
-	
-	
+
 }

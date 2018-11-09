@@ -2,7 +2,6 @@ package co.analicom.ws.hc.modelo;
 
 import java.util.Date;
 
-import com.mysql.jdbc.Blob;
 
 public class HistoriaClinica {
 
@@ -13,8 +12,8 @@ public class HistoriaClinica {
 			String fk_DocumentoMD, String fk_IDT_DocumentoID, String impreso, String lugar, String medico_cierre,
 			String quienModifico, String revisionPorSistema, String tipoDeExamen, String tipoDeExamenExtra,
 			String userCierre, String userModifico, int cantImpresiones, int id_empresa, int pk_DocumentoHC,
-			Date fechaDeDiligenciamiento, Date fechaCDeDiligenciamiento, Date fechaDeModificacion, Blob firmaMedico,
-			Blob firmaPaciente) {
+			Date fechaDeDiligenciamiento, Date fechaCDeDiligenciamiento, Date fechaDeModificacion, byte[] firmaMedico,
+			byte[] firmaPaciente) {
 		super();
 		AccidenteTrabajo = accidenteTrabajo;
 		this.anular = anular;
@@ -49,7 +48,7 @@ public class HistoriaClinica {
 
 	private Date FechaDeDiligenciamiento, FechaCDeDiligenciamiento, FechaDeModificacion;
 
-	private Blob firmaMedico, firmaPaciente;
+	private byte[] firmaMedico, firmaPaciente;
 
 	public String getAccidenteTrabajo() {
 		return AccidenteTrabajo;
@@ -219,19 +218,19 @@ public class HistoriaClinica {
 		FechaDeModificacion = fechaDeModificacion;
 	}
 
-	public Blob getFirmaMedico() {
+	public byte[] getFirmaMedico() {
 		return firmaMedico;
 	}
 
-	public void setFirmaMedico(Blob firmaMedico) {
+	public void setFirmaMedico(byte[] firmaMedico) {
 		this.firmaMedico = firmaMedico;
 	}
 
-	public Blob getFirmaPaciente() {
+	public byte[] getFirmaPaciente() {
 		return firmaPaciente;
 	}
 
-	public void setFirmaPaciente(Blob firmaPaciente) {
+	public void setFirmaPaciente(byte[] firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
 	}
 

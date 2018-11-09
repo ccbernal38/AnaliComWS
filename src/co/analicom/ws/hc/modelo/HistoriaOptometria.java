@@ -5,7 +5,6 @@ package co.analicom.ws.hc.modelo;
 
 import java.util.Date;
 
-import com.mysql.jdbc.Blob;
 
 /**
  * @author Christian Bernal
@@ -27,7 +26,7 @@ public class HistoriaOptometria {
 			VisionColorEscribir, VisionProfundidad;
 	private int __pk_DocumentoHO, _fk_DocumentoMD, _fk_Empresa, _fk_IDT_DocumentoID, CantImpresiones;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
-	private Blob firmaMedico, firmaPaciente;
+	private byte[] firmaMedico, firmaPaciente;
 
 	/**
 	 * @param aDDLENSOMETRIA
@@ -102,7 +101,7 @@ public class HistoriaOptometria {
 			String tipoDeExamenExtra, String tipoLente, String userModifica, String visionColor,
 			String visionColorEscribir, String visionProfundidad, int __pk_DocumentoHO, int _fk_DocumentoMD,
 			int _fk_Empresa, int _fk_IDT_DocumentoID, int cantImpresiones, Date fechaDeDiligenciamiento,
-			Date fechaDeModificacion, Blob firmaMedico, Blob firmaPaciente) {
+			Date fechaDeModificacion, byte[] firmaMedico, byte[] firmaPaciente) {
 		super();
 		ADDLENSOMETRIA = aDDLENSOMETRIA;
 		this.estado = estado;
@@ -991,7 +990,7 @@ public class HistoriaOptometria {
 	/**
 	 * @return the firmaMedico
 	 */
-	public Blob getFirmaMedico() {
+	public byte[] getFirmaMedico() {
 		return firmaMedico;
 	}
 
@@ -999,14 +998,14 @@ public class HistoriaOptometria {
 	 * @param firmaMedico
 	 *            the firmaMedico to set
 	 */
-	public void setFirmaMedico(Blob firmaMedico) {
+	public void setFirmaMedico(byte[] firmaMedico) {
 		this.firmaMedico = firmaMedico;
 	}
 
 	/**
 	 * @return the firmaPaciente
 	 */
-	public Blob getFirmaPaciente() {
+	public byte[] getFirmaPaciente() {
 		return firmaPaciente;
 	}
 
@@ -1014,7 +1013,7 @@ public class HistoriaOptometria {
 	 * @param firmaPaciente
 	 *            the firmaPaciente to set
 	 */
-	public void setFirmaPaciente(Blob firmaPaciente) {
+	public void setFirmaPaciente(byte[] firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
 	}
 
