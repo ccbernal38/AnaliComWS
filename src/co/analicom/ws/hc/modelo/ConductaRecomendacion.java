@@ -3,46 +3,18 @@ package co.analicom.ws.hc.modelo;
 public class ConductaRecomendacion {
 	
 	private int fk_IDT_DocumentoID;
-	private String PausasActivas;
-	private String ErgonomiaVisual;
-	private String PautasHigieneVisual;
-	private String proteccionPersonal;
-	private String proteccionPersonalCorreccionOptica;
-	private String gafasUV;
-	private String HigieneVisual;
-	private String ControlOptometria;
-	private String ControlOftalmologia;
-	private String OtrasConductas;
-	private String PausasActivasObservacion;
-	private String ErgonomiaVisualObservacion;
-	private String higieneVisualObservacion;
-	private String proteccionPersonalObservacion;
-	private String proteccionCorreccionOpticaObservacion;
-	private String gafasUVObservacion;
-	private String HigieneVisualObservacionn;
-	private String ControlOptometriaObservacion;
-	private String ControlOftalmologiaObservacion;
-	private String otrasConductasObservacion;
-	private String correccionOpticaPermanente;
-	private String correccionOpticaObservacion;
-	private String correccionOpticaVisionProlongada;
-	private String contCorreccionOpticaActual;
-	private String contCorreccionOpticaActualobs;
-	private String correccionOpticaVisualCercanaObs;
-	private String correccionOpticaVisualCercana;
-	private String correccionOpticaActual;
-	private String correccionOpticaActualObs;
-	private String elementosProteccionVisual;
-	private String elementosProteccionVisualObs;
-	private String proteccionVisualCorreccionOptObservacion;
-	private String proteccionVisualCorreccionOpt;
-	private String controlAnual;
-	private String controlAnualObservacion;
-	private String NoUsoCorreccionOptica;
-	private String NoUsoCorreccionOpticaObs;
-	private String correcionOptica;
-	private String correcionOpticaObse;
-	private String RecomendacionesAdicionales;
+	private String PausasActivas, ErgonomiaVisual, PautasHigieneVisual, proteccionPersonal,
+			proteccionPersonalCorreccionOptica, gafasUV, HigieneVisual, ControlOptometria, ControlOftalmologia,
+			OtrasConductas, PausasActivasObservacion, ErgonomiaVisualObservacion, higieneVisualObservacion,
+			proteccionPersonalObservacion, proteccionCorreccionOpticaObservacion, gafasUVObservacion,
+			HigieneVisualObservacionn, ControlOptometriaObservacion, ControlOftalmologiaObservacion,
+			otrasConductasObservacion, correccionOpticaPermanente, correccionOpticaObservacion, correccionOpticaProlongadaObs,
+			correccionOpticaVisionProlongada, contCorreccionOpticaActual, contCorreccionOpticaActualobs,
+			correccionOpticaVisualCercanaObs, correccionOpticaVisualCercana, correccionOpticaActual,
+			correccionOpticaActualObs, elementosProteccionVisual, elementosProteccionVisualObs,
+			proteccionVisualCorreccionOptObservacion, proteccionVisualCorreccionOpt, controlAnual,
+			controlAnualObservacion, NoUsoCorreccionOptica, NoUsoCorreccionOpticaObs, correcionOptica,
+			correcionOpticaObse, RecomendacionesAdicionales;
 	
 	public ConductaRecomendacion() {
 		// TODO Auto-generated constructor stub
@@ -72,6 +44,7 @@ public class ConductaRecomendacion {
 	 * @param otrasConductasObservacion
 	 * @param correccionOpticaPermanente
 	 * @param correccionOpticaObservacion
+	 * @param correccionOpticaProlongadaObs
 	 * @param correccionOpticaVisionProlongada
 	 * @param contCorreccionOpticaActual
 	 * @param contCorreccionOpticaActualobs
@@ -99,7 +72,7 @@ public class ConductaRecomendacion {
 			String proteccionCorreccionOpticaObservacion, String gafasUVObservacion, String higieneVisualObservacionn,
 			String controlOptometriaObservacion, String controlOftalmologiaObservacion,
 			String otrasConductasObservacion, String correccionOpticaPermanente, String correccionOpticaObservacion,
-			String correccionOpticaVisionProlongada, String contCorreccionOpticaActual,
+			String correccionOpticaProlongadaObs, String correccionOpticaVisionProlongada, String contCorreccionOpticaActual,
 			String contCorreccionOpticaActualobs, String correccionOpticaVisualCercanaObs,
 			String correccionOpticaVisualCercana, String correccionOpticaActual, String correccionOpticaActualObs,
 			String elementosProteccionVisual, String elementosProteccionVisualObs,
@@ -130,6 +103,7 @@ public class ConductaRecomendacion {
 		this.otrasConductasObservacion = otrasConductasObservacion;
 		this.correccionOpticaPermanente = correccionOpticaPermanente;
 		this.correccionOpticaObservacion = correccionOpticaObservacion;
+		this.correccionOpticaProlongadaObs = correccionOpticaProlongadaObs;
 		this.correccionOpticaVisionProlongada = correccionOpticaVisionProlongada;
 		this.contCorreccionOpticaActual = contCorreccionOpticaActual;
 		this.contCorreccionOpticaActualobs = contCorreccionOpticaActualobs;
@@ -471,6 +445,20 @@ public class ConductaRecomendacion {
 	 */
 	public void setCorreccionOpticaObservacion(String correccionOpticaObservacion) {
 		this.correccionOpticaObservacion = correccionOpticaObservacion;
+	}
+	
+	/**
+	 * @return the correccionOpticaProlongadaObs
+	 */
+	public String getCorreccionOpticaProlongadaObs() {
+		return correccionOpticaProlongadaObs;
+	}
+
+	/**
+	 * @param correccionOpticaProlongadaObs the correccionOpticaProlongadaObs to set
+	 */
+	public void setCorreccionOpticaProlongadaObs(String correccionOpticaProlongadaObs) {
+		this.correccionOpticaProlongadaObs = correccionOpticaProlongadaObs;
 	}
 
 	/**

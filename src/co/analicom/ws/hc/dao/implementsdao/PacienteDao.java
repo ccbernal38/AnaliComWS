@@ -7,9 +7,10 @@ import java.sql.Timestamp;
 import java.util.Calendar;
 
 import co.analicom.ws.database.Conexion;
+import co.analicom.ws.hc.dao.interfacedao.PacienteDaoInterface;
 import co.analicom.ws.hc.modelo.Paciente;
 
-public class PacienteDao implements co.analicom.ws.hc.dao.interfacedao.PacienteDao {
+public class PacienteDao implements PacienteDaoInterface {
 
 	Conexion conexion;
 
@@ -68,7 +69,7 @@ public class PacienteDao implements co.analicom.ws.hc.dao.interfacedao.PacienteD
 			}
 		} catch (Exception e) {
 			System.out.println("Error en orden: " + e.getLocalizedMessage());
-e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 

@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package co.analicom.ws.hc.dao.interfacedao;
+
+import co.analicom.ws.hc.modelo.HistoriaVisiometria;
+
+/**
+ * @author Christian Bernal
+ */
+public interface HistoriaVisiometriaDaoInterface {
+	
+	public void insertarHistoriaVisiometria(HistoriaVisiometria historiaVisiometria);
+	public boolean verificarHistoriaVisioExiste(String fecha, String documento);
+
+}

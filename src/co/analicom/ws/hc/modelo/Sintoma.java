@@ -20,7 +20,7 @@ public class Sintoma {
 	private String visionBorrosaCercana;
 	private String Fotofobia;
 	private String DolorOcular;
-	private String StringVisionDoble;
+	private String VisionDoble;
 	private String Cefalea;
 	private String SaltoRenglon;
 	private String Epifora;
@@ -36,7 +36,7 @@ public class Sintoma {
 	 * @param visionBorrosaCercana
 	 * @param fotofobia
 	 * @param dolorOcular
-	 * @param stringVisionDoble
+	 * @param VisionDoble
 	 * @param cefalea
 	 * @param saltoRenglon
 	 * @param epifora
@@ -46,22 +46,22 @@ public class Sintoma {
 	 * @param noRefiere
 	 */
 	public Sintoma(int fk_IDT_DocumentoID, String visionBorrosaLejana, String visionBorrosaCercana, String fotofobia,
-			String dolorOcular, String stringVisionDoble, String cefalea, String saltoRenglon, String epifora,
+			String dolorOcular, String VisionDoble, String cefalea, String saltoRenglon, String epifora,
 			String enrojecimiento, String suenioAlLeer, String ardor, String noRefiere) {
 		super();
 		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		this.visionBorrosaLejana = visionBorrosaLejana;
 		this.visionBorrosaCercana = visionBorrosaCercana;
-		Fotofobia = fotofobia;
-		DolorOcular = dolorOcular;
-		StringVisionDoble = stringVisionDoble;
-		Cefalea = cefalea;
-		SaltoRenglon = saltoRenglon;
-		Epifora = epifora;
-		Enrojecimiento = enrojecimiento;
-		SuenioAlLeer = suenioAlLeer;
-		Ardor = ardor;
-		NoRefiere = noRefiere;
+		this.Fotofobia = fotofobia;
+		this.DolorOcular = dolorOcular;
+		this.VisionDoble = VisionDoble;
+		this.Cefalea = cefalea;
+		this.SaltoRenglon = saltoRenglon;
+		this.Epifora = epifora;
+		this.Enrojecimiento = enrojecimiento;
+		this.SuenioAlLeer = suenioAlLeer;
+		this.Ardor = ardor;
+		this.NoRefiere = noRefiere;
 	}
 
 
@@ -115,13 +115,13 @@ public class Sintoma {
 	}
 
 
-	public String getStringVisionDoble() {
-		return StringVisionDoble;
+	public String getVisionDoble() {
+		return VisionDoble;
 	}
 
 
-	public void setStringVisionDoble(String stringVisionDoble) {
-		StringVisionDoble = stringVisionDoble;
+	public void setVisionDoble(String stringVisionDoble) {
+		VisionDoble = stringVisionDoble;
 	}
 
 

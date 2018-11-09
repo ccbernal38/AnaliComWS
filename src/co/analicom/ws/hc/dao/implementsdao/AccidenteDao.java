@@ -5,9 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.Timestamp;
 
 import co.analicom.ws.database.Conexion;
+import co.analicom.ws.hc.dao.interfacedao.AccidenteDaoInterface;
 import co.analicom.ws.hc.modelo.Accidente;
 
-public class AccidenteDao implements co.analicom.ws.hc.dao.interfacedao.AccidenteDao {
+public class AccidenteDao implements AccidenteDaoInterface {
 
 	Conexion conexion;
 

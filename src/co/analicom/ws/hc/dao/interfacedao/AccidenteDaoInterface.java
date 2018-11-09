@@ -9,7 +9,7 @@ import co.analicom.ws.hc.modelo.Paciente;
 /**
  * @author Christian Bernal
  */
-public interface AccidenteDao {
+public interface AccidenteDaoInterface {
 
 	public void insertAccidente(Accidente accidente);
 
