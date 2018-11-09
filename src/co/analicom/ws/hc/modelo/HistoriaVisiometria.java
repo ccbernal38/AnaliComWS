@@ -3,7 +3,6 @@
  */
 package co.analicom.ws.hc.modelo;
 
-import java.sql.Blob;
 import java.util.Date;
 
 /**
@@ -11,7 +10,7 @@ import java.util.Date;
  *
  */
 public class HistoriaVisiometria {
-	
+
 	private int fk_IDT_Documento;
 	private int fk_empresa;
 	private int fk_medico;
@@ -34,15 +33,15 @@ public class HistoriaVisiometria {
 	private String RequiereRemisionEspecialista_Observacion;
 	private String firmaPaciente;
 	private String firmaMedico;
-	
+
 	/**
-	 * Super constructor 
+	 * Super constructor
 	 */
 	public HistoriaVisiometria() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	/**
 	 * @param fk_IDT_Documento
 	 * @param fk_empresa
@@ -67,7 +66,7 @@ public class HistoriaVisiometria {
 	 * @param firmaPaciente
 	 * @param firmaMedico
 	 */
-	
+
 	public HistoriaVisiometria(int fk_IDT_Documento, int fk_empresa, int fk_medico, int fk_paciente, String tipoExamen,
 			String tipoExamenOtro, Date fechaDiligenciamiento, Date fechaModificacion, String impresionDiagnostica,
 			String impresionDiagnosticaObservacion, String userModifica, String impreso, int cantImpresiones,
@@ -108,7 +107,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param fk_IDT_Documento the fk_IDT_Documento to set
+	 * @param fk_IDT_Documento
+	 *            the fk_IDT_Documento to set
 	 */
 	public void setFk_IDT_Documento(int fk_IDT_Documento) {
 		this.fk_IDT_Documento = fk_IDT_Documento;
@@ -122,7 +122,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param fk_empresa the fk_empresa to set
+	 * @param fk_empresa
+	 *            the fk_empresa to set
 	 */
 	public void setFk_empresa(int fk_empresa) {
 		this.fk_empresa = fk_empresa;
@@ -136,7 +137,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param fk_medico the fk_medico to set
+	 * @param fk_medico
+	 *            the fk_medico to set
 	 */
 	public void setFk_medico(int fk_medico) {
 		this.fk_medico = fk_medico;
@@ -150,7 +152,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param fk_paciente the fk_paciente to set
+	 * @param fk_paciente
+	 *            the fk_paciente to set
 	 */
 	public void setFk_paciente(int fk_paciente) {
 		this.fk_paciente = fk_paciente;
@@ -164,7 +167,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param tipoExamen the tipoExamen to set
+	 * @param tipoExamen
+	 *            the tipoExamen to set
 	 */
 	public void setTipoExamen(String tipoExamen) {
 		this.tipoExamen = tipoExamen;
@@ -178,7 +182,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param tipoExamenOtro the tipoExamenOtro to set
+	 * @param tipoExamenOtro
+	 *            the tipoExamenOtro to set
 	 */
 	public void setTipoExamenOtro(String tipoExamenOtro) {
 		this.tipoExamenOtro = tipoExamenOtro;
@@ -192,7 +197,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param fechaDiligenciamiento the fechaDiligenciamiento to set
+	 * @param fechaDiligenciamiento
+	 *            the fechaDiligenciamiento to set
 	 */
 	public void setFechaDiligenciamiento(Date fechaDiligenciamiento) {
 		this.fechaDiligenciamiento = fechaDiligenciamiento;
@@ -206,7 +212,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param fechaModificacion the fechaModificacion to set
+	 * @param fechaModificacion
+	 *            the fechaModificacion to set
 	 */
 	public void setFechaModificacion(Date fechaModificacion) {
 		this.fechaModificacion = fechaModificacion;
@@ -220,7 +227,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param impresionDiagnostica the impresionDiagnostica to set
+	 * @param impresionDiagnostica
+	 *            the impresionDiagnostica to set
 	 */
 	public void setImpresionDiagnostica(String impresionDiagnostica) {
 		this.impresionDiagnostica = impresionDiagnostica;
@@ -234,7 +242,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param impresionDiagnosticaObservacion the impresionDiagnosticaObservacion to set
+	 * @param impresionDiagnosticaObservacion
+	 *            the impresionDiagnosticaObservacion to set
 	 */
 	public void setImpresionDiagnosticaObservacion(String impresionDiagnosticaObservacion) {
 		this.impresionDiagnosticaObservacion = impresionDiagnosticaObservacion;
@@ -248,7 +257,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param userModifica the userModifica to set
+	 * @param userModifica
+	 *            the userModifica to set
 	 */
 	public void setUserModifica(String userModifica) {
 		this.userModifica = userModifica;
@@ -262,7 +272,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param impreso the impreso to set
+	 * @param impreso
+	 *            the impreso to set
 	 */
 	public void setImpreso(String impreso) {
 		this.impreso = impreso;
@@ -276,7 +287,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param cantImpresiones the cantImpresiones to set
+	 * @param cantImpresiones
+	 *            the cantImpresiones to set
 	 */
 	public void setCantImpresiones(int cantImpresiones) {
 		this.cantImpresiones = cantImpresiones;
@@ -290,7 +302,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param estado the estado to set
+	 * @param estado
+	 *            the estado to set
 	 */
 	public void setEstado(String estado) {
 		this.estado = estado;
@@ -304,7 +317,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param pacienteCompatibleLabor the pacienteCompatibleLabor to set
+	 * @param pacienteCompatibleLabor
+	 *            the pacienteCompatibleLabor to set
 	 */
 	public void setPacienteCompatibleLabor(String pacienteCompatibleLabor) {
 		PacienteCompatibleLabor = pacienteCompatibleLabor;
@@ -318,7 +332,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param pacienteCompatibleLabor_Observacion the pacienteCompatibleLabor_Observacion to set
+	 * @param pacienteCompatibleLabor_Observacion
+	 *            the pacienteCompatibleLabor_Observacion to set
 	 */
 	public void setPacienteCompatibleLabor_Observacion(String pacienteCompatibleLabor_Observacion) {
 		PacienteCompatibleLabor_Observacion = pacienteCompatibleLabor_Observacion;
@@ -332,7 +347,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param requiereNuevaValoracion the requiereNuevaValoracion to set
+	 * @param requiereNuevaValoracion
+	 *            the requiereNuevaValoracion to set
 	 */
 	public void setRequiereNuevaValoracion(String requiereNuevaValoracion) {
 		RequiereNuevaValoracion = requiereNuevaValoracion;
@@ -346,7 +362,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param requiereNuevaValoracion_Observacion the requiereNuevaValoracion_Observacion to set
+	 * @param requiereNuevaValoracion_Observacion
+	 *            the requiereNuevaValoracion_Observacion to set
 	 */
 	public void setRequiereNuevaValoracion_Observacion(String requiereNuevaValoracion_Observacion) {
 		RequiereNuevaValoracion_Observacion = requiereNuevaValoracion_Observacion;
@@ -360,7 +377,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param requiereRemisionEspecialista the requiereRemisionEspecialista to set
+	 * @param requiereRemisionEspecialista
+	 *            the requiereRemisionEspecialista to set
 	 */
 	public void setRequiereRemisionEspecialista(String requiereRemisionEspecialista) {
 		RequiereRemisionEspecialista = requiereRemisionEspecialista;
@@ -374,7 +392,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param requiereRemisionEspecialista_Observacion the requiereRemisionEspecialista_Observacion to set
+	 * @param requiereRemisionEspecialista_Observacion
+	 *            the requiereRemisionEspecialista_Observacion to set
 	 */
 	public void setRequiereRemisionEspecialista_Observacion(String requiereRemisionEspecialista_Observacion) {
 		RequiereRemisionEspecialista_Observacion = requiereRemisionEspecialista_Observacion;
@@ -388,7 +407,8 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param firmaPaciente the firmaPaciente to set
+	 * @param firmaPaciente
+	 *            the firmaPaciente to set
 	 */
 	public void setFirmaPaciente(String firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
@@ -402,12 +422,11 @@ public class HistoriaVisiometria {
 	}
 
 	/**
-	 * @param firmaMedico the firmaMedico to set
+	 * @param firmaMedico
+	 *            the firmaMedico to set
 	 */
 	public void setFirmaMedico(String firmaMedico) {
 		this.firmaMedico = firmaMedico;
 	}
-	
-	
 
 }
