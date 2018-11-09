@@ -12,7 +12,6 @@ import java.util.Date;
  */
 public class HistoriaVisiometria {
 	
-	private int fk_IDT_Documento;
 	private int fk_empresa;
 	private int fk_medico;
 	private int fk_paciente;
@@ -68,7 +67,7 @@ public class HistoriaVisiometria {
 	 * @param firmaMedico
 	 */
 	
-	public HistoriaVisiometria(int fk_IDT_Documento, int fk_empresa, int fk_medico, int fk_paciente, String tipoExamen,
+	public HistoriaVisiometria(int fk_empresa, int fk_medico, int fk_paciente, String tipoExamen,
 			String tipoExamenOtro, Date fechaDiligenciamiento, Date fechaModificacion, String impresionDiagnostica,
 			String impresionDiagnosticaObservacion, String userModifica, String impreso, int cantImpresiones,
 			String estado, String pacienteCompatibleLabor, String pacienteCompatibleLabor_Observacion,
@@ -76,7 +75,6 @@ public class HistoriaVisiometria {
 			String requiereRemisionEspecialista, String requiereRemisionEspecialista_Observacion, String firmaPaciente,
 			String firmaMedico) {
 		super();
-		this.fk_IDT_Documento = fk_IDT_Documento;
 		this.fk_empresa = fk_empresa;
 		this.fk_medico = fk_medico;
 		this.fk_paciente = fk_paciente;
@@ -98,20 +96,6 @@ public class HistoriaVisiometria {
 		RequiereRemisionEspecialista_Observacion = requiereRemisionEspecialista_Observacion;
 		this.firmaPaciente = firmaPaciente;
 		this.firmaMedico = firmaMedico;
-	}
-
-	/**
-	 * @return the fk_IDT_Documento
-	 */
-	public int getFk_IDT_Documento() {
-		return fk_IDT_Documento;
-	}
-
-	/**
-	 * @param fk_IDT_Documento the fk_IDT_Documento to set
-	 */
-	public void setFk_IDT_Documento(int fk_IDT_Documento) {
-		this.fk_IDT_Documento = fk_IDT_Documento;
 	}
 
 	/**
