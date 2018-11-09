@@ -1,7 +1,10 @@
 package co.analicom.ws.controller;
 
+import java.util.Calendar;
+
 import co.analicom.ws.hc.dao.implementsdao.AgudezaVisualDao;
 import co.analicom.ws.hc.modelo.AgudezaVisual;
+import co.analicom.ws.hc.modelo.HistoriaVisiometria;
 
 public class PruebaInsert {
 
@@ -15,4 +18,6 @@ public class PruebaInsert {
 		AgudezaVisualDao dao = new AgudezaVisualDao();
 		dao.insertarAgudezaVisual(agudezaVisual);
 	}
+
 }
+

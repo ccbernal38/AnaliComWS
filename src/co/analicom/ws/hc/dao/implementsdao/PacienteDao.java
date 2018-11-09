@@ -57,8 +57,8 @@ public class PacienteDao implements PacienteDaoInterface {
 				preparedStatement.setInt(23, paciente.getIDT_TelefonoCelular());
 				preparedStatement.setInt(24, paciente.getIDT_AvisoEmergenciaTelefono());
 				preparedStatement.setInt(25, paciente.getIDT_AvisoEmergenciaTelefonoCelular());
-				preparedStatement.setBlob(26, paciente.getFoto());
-				preparedStatement.setBlob(27, paciente.getFirma());
+				preparedStatement.setBytes(26, paciente.getFoto());
+				preparedStatement.setBytes(27, paciente.getFirma());
 				//preparedStatement.setTimestamp(28, new Timestamp(paciente.getFechaDeDiligenciamiento().getTime()));
 				//preparedStatement.setTimestamp(29, new Timestamp(paciente.getFechaDeModificacion().getTime()));		
 				preparedStatement.setTimestamp(28, new Timestamp(Calendar.getInstance().getTimeInMillis()));
