@@ -11,9 +11,8 @@ public class HistoriaClinica {
 	public HistoriaClinica(String accidenteTrabajo, String anular, String enfermedadProfesional, String estado,
 			String fk_DocumentoMD, String fk_IDT_DocumentoID, String impreso, String lugar, String medico_cierre,
 			String quienModifico, String revisionPorSistema, String tipoDeExamen, String tipoDeExamenExtra,
-			String userCierre, String userModifico, int cantImpresiones, int id_empresa, int pk_DocumentoHC,
-			Date fechaDeDiligenciamiento, Date fechaCDeDiligenciamiento, Date fechaDeModificacion, byte[] firmaMedico,
-			byte[] firmaPaciente) {
+			String userCierre, String userModifico, String firmaMedico, String firmaPaciente, int cantImpresiones, 
+			int id_empresa, int pk_DocumentoHC, Date fechaDeDiligenciamiento, Date fechaCDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		AccidenteTrabajo = accidenteTrabajo;
 		this.anular = anular;
@@ -42,13 +41,11 @@ public class HistoriaClinica {
 
 	private String AccidenteTrabajo, anular, EnfermedadProfesional, Estado, fk_DocumentoMD, fk_IDT_DocumentoID, Impreso,
 			Lugar, medico_cierre, QuienModifico, revisionPorSistema, TipoDeExamen, TipoDeExamenExtra, userCierre,
-			UserModifico;
+			UserModifico, firmaMedico, firmaPaciente;
 
 	private int CantImpresiones, id_empresa, pk_DocumentoHC;
 
 	private Date FechaDeDiligenciamiento, FechaCDeDiligenciamiento, FechaDeModificacion;
-
-	private byte[] firmaMedico, firmaPaciente;
 
 	public String getAccidenteTrabajo() {
 		return AccidenteTrabajo;
@@ -218,19 +215,19 @@ public class HistoriaClinica {
 		FechaDeModificacion = fechaDeModificacion;
 	}
 
-	public byte[] getFirmaMedico() {
+	public String getFirmaMedico() {
 		return firmaMedico;
 	}
 
-	public void setFirmaMedico(byte[] firmaMedico) {
+	public void setFirmaMedico(String firmaMedico) {
 		this.firmaMedico = firmaMedico;
 	}
 
-	public byte[] getFirmaPaciente() {
+	public String getFirmaPaciente() {
 		return firmaPaciente;
 	}
 
-	public void setFirmaPaciente(byte[] firmaPaciente) {
+	public void setFirmaPaciente(String firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
 	}
 

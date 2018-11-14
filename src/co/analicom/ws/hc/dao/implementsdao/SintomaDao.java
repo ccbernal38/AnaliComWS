@@ -47,7 +47,8 @@ public class SintomaDao implements SintomasDaoInterface {
 				
 				if(!statement.execute()) {
 					System.out.println("Insertado!!");
-				}				
+				}	
+				conexion.cerrarConexion();
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());

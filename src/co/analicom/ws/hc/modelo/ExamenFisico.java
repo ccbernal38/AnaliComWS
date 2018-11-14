@@ -64,8 +64,7 @@ public class ExamenFisico {
 			Reflejos_Osteotendinosos_7, Reflejos_Osteotendinosos_8, RsCs, RsCs_Descripcion, RsRs, Senos, Shober,
 			Shower_Descripcion, Torax, Wells, Wells_Descripcion;
 
-	private int FC, fk_DocumentoMD, fk_IDT_DocumentoID, FR, Fuerza_1, Fuerza_2, Fuerza_3, Fuerza_4, Fuerza_5, Fuerza_6,
-			Fuerza_7, Fuerza_8, PerimetroAbdominal, Peso, T, TAD, Talla, TAS;
+	private int FC, fk_DocumentoMD, fk_IDT_DocumentoID, FR, Fuerza_1, Fuerza_2, Fuerza_3, Fuerza_4, Fuerza_5, Fuerza_6,Fuerza_7, Fuerza_8, PerimetroAbdominal, Peso, T, TAD, Talla, TAS;
 
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
