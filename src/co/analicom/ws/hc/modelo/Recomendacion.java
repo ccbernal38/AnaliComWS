@@ -43,8 +43,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param habitosEVS
-	 *            the habitosEVS to set
+	 * @param habitosEVS the habitosEVS to set
 	 */
 	public void setHabitosEVS(String habitosEVS) {
 		HabitosEVS = habitosEVS;
@@ -58,8 +57,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param habitosEVS_ConducirVentanaCerrada
-	 *            the habitosEVS_ConducirVentanaCerrada to set
+	 * @param habitosEVS_ConducirVentanaCerrada the
+	 *                                          habitosEVS_ConducirVentanaCerrada to
+	 *                                          set
 	 */
 	public void setHabitosEVS_ConducirVentanaCerrada(String habitosEVS_ConducirVentanaCerrada) {
 		HabitosEVS_ConducirVentanaCerrada = habitosEVS_ConducirVentanaCerrada;
@@ -73,8 +73,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param habitosEVS_ControlNutricionalPeso
-	 *            the habitosEVS_ControlNutricionalPeso to set
+	 * @param habitosEVS_ControlNutricionalPeso the
+	 *                                          habitosEVS_ControlNutricionalPeso to
+	 *                                          set
 	 */
 	public void setHabitosEVS_ControlNutricionalPeso(String habitosEVS_ControlNutricionalPeso) {
 		HabitosEVS_ControlNutricionalPeso = habitosEVS_ControlNutricionalPeso;
@@ -88,8 +89,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param habitosEVS_DejarDeFumar
-	 *            the habitosEVS_DejarDeFumar to set
+	 * @param habitosEVS_DejarDeFumar the habitosEVS_DejarDeFumar to set
 	 */
 	public void setHabitosEVS_DejarDeFumar(String habitosEVS_DejarDeFumar) {
 		HabitosEVS_DejarDeFumar = habitosEVS_DejarDeFumar;
@@ -103,8 +103,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param habitosEVS_InicioActividadFisica
-	 *            the habitosEVS_InicioActividadFisica to set
+	 * @param habitosEVS_InicioActividadFisica the habitosEVS_InicioActividadFisica
+	 *                                         to set
 	 */
 	public void setHabitosEVS_InicioActividadFisica(String habitosEVS_InicioActividadFisica) {
 		HabitosEVS_InicioActividadFisica = habitosEVS_InicioActividadFisica;
@@ -118,8 +118,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param habitosEVS_ReducirConsumoAlcohol
-	 *            the habitosEVS_ReducirConsumoAlcohol to set
+	 * @param habitosEVS_ReducirConsumoAlcohol the habitosEVS_ReducirConsumoAlcohol
+	 *                                         to set
 	 */
 	public void setHabitosEVS_ReducirConsumoAlcohol(String habitosEVS_ReducirConsumoAlcohol) {
 		HabitosEVS_ReducirConsumoAlcohol = habitosEVS_ReducirConsumoAlcohol;
@@ -133,8 +133,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoPVE
-	 *            the ingresoPVE to set
+	 * @param ingresoPVE the ingresoPVE to set
 	 */
 	public void setIngresoPVE(String ingresoPVE) {
 		IngresoPVE = ingresoPVE;
@@ -148,8 +147,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoSVE
-	 *            the ingresoSVE to set
+	 * @param ingresoSVE the ingresoSVE to set
 	 */
 	public void setIngresoSVE(String ingresoSVE) {
 		IngresoSVE = ingresoSVE;
@@ -163,8 +161,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoSVE_Biologico
-	 *            the ingresoSVE_Biologico to set
+	 * @param ingresoSVE_Biologico the ingresoSVE_Biologico to set
 	 */
 	public void setIngresoSVE_Biologico(String ingresoSVE_Biologico) {
 		IngresoSVE_Biologico = ingresoSVE_Biologico;
@@ -178,8 +175,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoSVE_CardiovascularMetabolico
-	 *            the ingresoSVE_CardiovascularMetabolico to set
+	 * @param ingresoSVE_CardiovascularMetabolico the
+	 *                                            ingresoSVE_CardiovascularMetabolico
+	 *                                            to set
 	 */
 	public void setIngresoSVE_CardiovascularMetabolico(String ingresoSVE_CardiovascularMetabolico) {
 		IngresoSVE_CardiovascularMetabolico = ingresoSVE_CardiovascularMetabolico;
@@ -193,8 +191,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoSVE_Ergonomico
-	 *            the ingresoSVE_Ergonomico to set
+	 * @param ingresoSVE_Ergonomico the ingresoSVE_Ergonomico to set
 	 */
 	public void setIngresoSVE_Ergonomico(String ingresoSVE_Ergonomico) {
 		IngresoSVE_Ergonomico = ingresoSVE_Ergonomico;
@@ -208,8 +205,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoSVE_Psicolaboral
-	 *            the ingresoSVE_Psicolaboral to set
+	 * @param ingresoSVE_Psicolaboral the ingresoSVE_Psicolaboral to set
 	 */
 	public void setIngresoSVE_Psicolaboral(String ingresoSVE_Psicolaboral) {
 		IngresoSVE_Psicolaboral = ingresoSVE_Psicolaboral;
@@ -223,8 +219,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoSVE_Ruido
-	 *            the ingresoSVE_Ruido to set
+	 * @param ingresoSVE_Ruido the ingresoSVE_Ruido to set
 	 */
 	public void setIngresoSVE_Ruido(String ingresoSVE_Ruido) {
 		IngresoSVE_Ruido = ingresoSVE_Ruido;
@@ -238,8 +233,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ingresoSVE_Visual
-	 *            the ingresoSVE_Visual to set
+	 * @param ingresoSVE_Visual the ingresoSVE_Visual to set
 	 */
 	public void setIngresoSVE_Visual(String ingresoSVE_Visual) {
 		IngresoSVE_Visual = ingresoSVE_Visual;
@@ -253,8 +247,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas
-	 *            the medicas to set
+	 * @param medicas the medicas to set
 	 */
 	public void setMedicas(String medicas) {
 		Medicas = medicas;
@@ -268,8 +261,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_AudiometriaConfirmatoria
-	 *            the medicas_AudiometriaConfirmatoria to set
+	 * @param medicas_AudiometriaConfirmatoria the medicas_AudiometriaConfirmatoria
+	 *                                         to set
 	 */
 	public void setMedicas_AudiometriaConfirmatoria(String medicas_AudiometriaConfirmatoria) {
 		Medicas_AudiometriaConfirmatoria = medicas_AudiometriaConfirmatoria;
@@ -283,8 +276,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_CitologiaCervicoVaginal
-	 *            the medicas_CitologiaCervicoVaginal to set
+	 * @param medicas_CitologiaCervicoVaginal the medicas_CitologiaCervicoVaginal to
+	 *                                        set
 	 */
 	public void setMedicas_CitologiaCervicoVaginal(String medicas_CitologiaCervicoVaginal) {
 		Medicas_CitologiaCervicoVaginal = medicas_CitologiaCervicoVaginal;
@@ -298,8 +291,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_ContinuarManejoMedico
-	 *            the medicas_ContinuarManejoMedico to set
+	 * @param medicas_ContinuarManejoMedico the medicas_ContinuarManejoMedico to set
 	 */
 	public void setMedicas_ContinuarManejoMedico(String medicas_ContinuarManejoMedico) {
 		Medicas_ContinuarManejoMedico = medicas_ContinuarManejoMedico;
@@ -313,8 +305,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_ControlAnualOptometrico
-	 *            the medicas_ControlAnualOptometrico to set
+	 * @param medicas_ControlAnualOptometrico the medicas_ControlAnualOptometrico to
+	 *                                        set
 	 */
 	public void setMedicas_ControlAnualOptometrico(String medicas_ControlAnualOptometrico) {
 		Medicas_ControlAnualOptometrico = medicas_ControlAnualOptometrico;
@@ -328,8 +320,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_ControlAudilogicoAnual
-	 *            the medicas_ControlAudilogicoAnual to set
+	 * @param medicas_ControlAudilogicoAnual the medicas_ControlAudilogicoAnual to
+	 *                                       set
 	 */
 	public void setMedicas_ControlAudilogicoAnual(String medicas_ControlAudilogicoAnual) {
 		Medicas_ControlAudilogicoAnual = medicas_ControlAudilogicoAnual;
@@ -343,8 +335,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_ControlAudilogicoPeriodico
-	 *            the medicas_ControlAudilogicoPeriodico to set
+	 * @param medicas_ControlAudilogicoPeriodico the
+	 *                                           medicas_ControlAudilogicoPeriodico
+	 *                                           to set
 	 */
 	public void setMedicas_ControlAudilogicoPeriodico(String medicas_ControlAudilogicoPeriodico) {
 		Medicas_ControlAudilogicoPeriodico = medicas_ControlAudilogicoPeriodico;
@@ -358,8 +351,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_ControlAudilogicoSemestral
-	 *            the medicas_ControlAudilogicoSemestral to set
+	 * @param medicas_ControlAudilogicoSemestral the
+	 *                                           medicas_ControlAudilogicoSemestral
+	 *                                           to set
 	 */
 	public void setMedicas_ControlAudilogicoSemestral(String medicas_ControlAudilogicoSemestral) {
 		Medicas_ControlAudilogicoSemestral = medicas_ControlAudilogicoSemestral;
@@ -373,8 +367,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_ControlOdontologicoPeriodico
-	 *            the medicas_ControlOdontologicoPeriodico to set
+	 * @param medicas_ControlOdontologicoPeriodico the
+	 *                                             medicas_ControlOdontologicoPeriodico
+	 *                                             to set
 	 */
 	public void setMedicas_ControlOdontologicoPeriodico(String medicas_ControlOdontologicoPeriodico) {
 		Medicas_ControlOdontologicoPeriodico = medicas_ControlOdontologicoPeriodico;
@@ -388,8 +383,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_EsquemaVacunacionAdulto
-	 *            the medicas_EsquemaVacunacionAdulto to set
+	 * @param medicas_EsquemaVacunacionAdulto the medicas_EsquemaVacunacionAdulto to
+	 *                                        set
 	 */
 	public void setMedicas_EsquemaVacunacionAdulto(String medicas_EsquemaVacunacionAdulto) {
 		Medicas_EsquemaVacunacionAdulto = medicas_EsquemaVacunacionAdulto;
@@ -403,8 +398,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_ExamenesComplementarios
-	 *            the medicas_ExamenesComplementarios to set
+	 * @param medicas_ExamenesComplementarios the medicas_ExamenesComplementarios to
+	 *                                        set
 	 */
 	public void setMedicas_ExamenesComplementarios(String medicas_ExamenesComplementarios) {
 		Medicas_ExamenesComplementarios = medicas_ExamenesComplementarios;
@@ -418,8 +413,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_Otros
-	 *            the medicas_Otros to set
+	 * @param medicas_Otros the medicas_Otros to set
 	 */
 	public void setMedicas_Otros(String medicas_Otros) {
 		Medicas_Otros = medicas_Otros;
@@ -433,8 +427,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_RemisionaEPS
-	 *            the medicas_RemisionaEPS to set
+	 * @param medicas_RemisionaEPS the medicas_RemisionaEPS to set
 	 */
 	public void setMedicas_RemisionaEPS(String medicas_RemisionaEPS) {
 		Medicas_RemisionaEPS = medicas_RemisionaEPS;
@@ -448,8 +441,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_RemisionARP
-	 *            the medicas_RemisionARP to set
+	 * @param medicas_RemisionARP the medicas_RemisionARP to set
 	 */
 	public void setMedicas_RemisionARP(String medicas_RemisionARP) {
 		Medicas_RemisionARP = medicas_RemisionARP;
@@ -463,8 +455,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_RemisionEPS
-	 *            the medicas_RemisionEPS to set
+	 * @param medicas_RemisionEPS the medicas_RemisionEPS to set
 	 */
 	public void setMedicas_RemisionEPS(String medicas_RemisionEPS) {
 		Medicas_RemisionEPS = medicas_RemisionEPS;
@@ -478,8 +469,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_SeguimientoCasoxARP
-	 *            the medicas_SeguimientoCasoxARP to set
+	 * @param medicas_SeguimientoCasoxARP the medicas_SeguimientoCasoxARP to set
 	 */
 	public void setMedicas_SeguimientoCasoxARP(String medicas_SeguimientoCasoxARP) {
 		Medicas_SeguimientoCasoxARP = medicas_SeguimientoCasoxARP;
@@ -493,8 +483,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_TamizajeProstatico
-	 *            the medicas_TamizajeProstatico to set
+	 * @param medicas_TamizajeProstatico the medicas_TamizajeProstatico to set
 	 */
 	public void setMedicas_TamizajeProstatico(String medicas_TamizajeProstatico) {
 		Medicas_TamizajeProstatico = medicas_TamizajeProstatico;
@@ -508,8 +497,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param medicas_Valoracion_ControlORL
-	 *            the medicas_Valoracion_ControlORL to set
+	 * @param medicas_Valoracion_ControlORL the medicas_Valoracion_ControlORL to set
 	 */
 	public void setMedicas_Valoracion_ControlORL(String medicas_Valoracion_ControlORL) {
 		Medicas_Valoracion_ControlORL = medicas_Valoracion_ControlORL;
@@ -523,8 +511,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales
-	 *            the ocupacionales to set
+	 * @param ocupacionales the ocupacionales to set
 	 */
 	public void setOcupacionales(String ocupacionales) {
 		Ocupacionales = ocupacionales;
@@ -538,8 +525,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales_DistribucionFuerzasCargas
-	 *            the ocupacionales_DistribucionFuerzasCargas to set
+	 * @param ocupacionales_DistribucionFuerzasCargas the
+	 *                                                ocupacionales_DistribucionFuerzasCargas
+	 *                                                to set
 	 */
 	public void setOcupacionales_DistribucionFuerzasCargas(String ocupacionales_DistribucionFuerzasCargas) {
 		Ocupacionales_DistribucionFuerzasCargas = ocupacionales_DistribucionFuerzasCargas;
@@ -553,8 +541,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales_EPPAuditivo
-	 *            the ocupacionales_EPPAuditivo to set
+	 * @param ocupacionales_EPPAuditivo the ocupacionales_EPPAuditivo to set
 	 */
 	public void setOcupacionales_EPPAuditivo(String ocupacionales_EPPAuditivo) {
 		Ocupacionales_EPPAuditivo = ocupacionales_EPPAuditivo;
@@ -568,8 +555,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales_HigienePostural
-	 *            the ocupacionales_HigienePostural to set
+	 * @param ocupacionales_HigienePostural the ocupacionales_HigienePostural to set
 	 */
 	public void setOcupacionales_HigienePostural(String ocupacionales_HigienePostural) {
 		Ocupacionales_HigienePostural = ocupacionales_HigienePostural;
@@ -583,8 +569,8 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales_PausasActivas45min
-	 *            the ocupacionales_PausasActivas45min to set
+	 * @param ocupacionales_PausasActivas45min the ocupacionales_PausasActivas45min
+	 *                                         to set
 	 */
 	public void setOcupacionales_PausasActivas45min(String ocupacionales_PausasActivas45min) {
 		Ocupacionales_PausasActivas45min = ocupacionales_PausasActivas45min;
@@ -598,8 +584,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales_ReposoAuditivoExtralaboral
-	 *            the ocupacionales_ReposoAuditivoExtralaboral to set
+	 * @param ocupacionales_ReposoAuditivoExtralaboral the
+	 *                                                 ocupacionales_ReposoAuditivoExtralaboral
+	 *                                                 to set
 	 */
 	public void setOcupacionales_ReposoAuditivoExtralaboral(String ocupacionales_ReposoAuditivoExtralaboral) {
 		Ocupacionales_ReposoAuditivoExtralaboral = ocupacionales_ReposoAuditivoExtralaboral;
@@ -613,8 +600,9 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales_RotaDiademaTelefonica
-	 *            the ocupacionales_RotaDiademaTelefonica to set
+	 * @param ocupacionales_RotaDiademaTelefonica the
+	 *                                            ocupacionales_RotaDiademaTelefonica
+	 *                                            to set
 	 */
 	public void setOcupacionales_RotaDiademaTelefonica(String ocupacionales_RotaDiademaTelefonica) {
 		Ocupacionales_RotaDiademaTelefonica = ocupacionales_RotaDiademaTelefonica;
@@ -628,8 +616,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param ocupacionales_UsoDeEPP
-	 *            the ocupacionales_UsoDeEPP to set
+	 * @param ocupacionales_UsoDeEPP the ocupacionales_UsoDeEPP to set
 	 */
 	public void setOcupacionales_UsoDeEPP(String ocupacionales_UsoDeEPP) {
 		Ocupacionales_UsoDeEPP = ocupacionales_UsoDeEPP;
@@ -643,8 +630,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param productosPracticos
-	 *            the productosPracticos to set
+	 * @param productosPracticos the productosPracticos to set
 	 */
 	public void setProductosPracticos(String productosPracticos) {
 		ProductosPracticos = productosPracticos;
@@ -658,8 +644,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param pruebasComplementarias
-	 *            the pruebasComplementarias to set
+	 * @param pruebasComplementarias the pruebasComplementarias to set
 	 */
 	public void setPruebasComplementarias(String pruebasComplementarias) {
 		PruebasComplementarias = pruebasComplementarias;
@@ -673,8 +658,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param recomendacionesAdicionales
-	 *            the recomendacionesAdicionales to set
+	 * @param recomendacionesAdicionales the recomendacionesAdicionales to set
 	 */
 	public void setRecomendacionesAdicionales(String recomendacionesAdicionales) {
 		RecomendacionesAdicionales = recomendacionesAdicionales;
@@ -688,8 +672,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param restricciones
-	 *            the restricciones to set
+	 * @param restricciones the restricciones to set
 	 */
 	public void setRestricciones(String restricciones) {
 		Restricciones = restricciones;
@@ -703,8 +686,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param _fk_DocumentoMD
-	 *            the _fk_DocumentoMD to set
+	 * @param _fk_DocumentoMD the _fk_DocumentoMD to set
 	 */
 	public void set_fk_DocumentoMD(int _fk_DocumentoMD) {
 		this._fk_DocumentoMD = _fk_DocumentoMD;
@@ -718,8 +700,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param _fk_IDT_DocumentoID the _fk_IDT_DocumentoID to set
 	 */
 	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
 		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
@@ -733,8 +714,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param fechaDeDiligenciamiento
-	 *            the fechaDeDiligenciamiento to set
+	 * @param fechaDeDiligenciamiento the fechaDeDiligenciamiento to set
 	 */
 	public void setFechaDeDiligenciamiento(Date fechaDeDiligenciamiento) {
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
@@ -748,8 +728,7 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @param fechaDeModificacion
-	 *            the fechaDeModificacion to set
+	 * @param fechaDeModificacion the fechaDeModificacion to set
 	 */
 	public void setFechaDeModificacion(Date fechaDeModificacion) {
 		FechaDeModificacion = fechaDeModificacion;
