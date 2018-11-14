@@ -2,7 +2,6 @@ package co.analicom.ws.hc.modelo;
 
 import java.util.Date;
 
-import com.mysql.jdbc.Blob;
 
 public class HistoriaAudiometria {
 
@@ -11,7 +10,7 @@ public class HistoriaAudiometria {
 			RequiereRemisionEspecialista_Observacion, TipoDeExamen, TipoDeExamenExtra, userModifica, usuarioModifica;
 	private int CantImpresiones, fk_DocumentoMD, fk_Empresa, fk_IDT_DocumentoID, fk_Otoscopia, pk_DocumentoHA;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
-	private Blob firmaMedico, firmaPaciente;
+	private byte[] firmaMedico, firmaPaciente;
 
 	public HistoriaAudiometria() {
 		// TODO Auto-generated constructor stub
@@ -48,7 +47,7 @@ public class HistoriaAudiometria {
 			String requiereRemisionEspecialista_Observacion, String tipoDeExamen, String tipoDeExamenExtra,
 			String userModifica, String usuarioModifica, int cantImpresiones, int fk_DocumentoMD, int fk_Empresa,
 			int fk_IDT_DocumentoID, int fk_Otoscopia, int pk_DocumentoHA, Date fechaDeDiligenciamiento,
-			Date fechaDeModificacion, Blob firmaMedico, Blob firmaPaciente) {
+			Date fechaDeModificacion, byte[] firmaMedico, byte[] firmaPaciente) {
 		super();
 		this.estado = estado;
 		this.impreso = impreso;
@@ -393,7 +392,7 @@ public class HistoriaAudiometria {
 	/**
 	 * @return the firmaMedico
 	 */
-	public Blob getFirmaMedico() {
+	public byte[] getFirmaMedico() {
 		return firmaMedico;
 	}
 
@@ -401,14 +400,14 @@ public class HistoriaAudiometria {
 	 * @param firmaMedico
 	 *            the firmaMedico to set
 	 */
-	public void setFirmaMedico(Blob firmaMedico) {
+	public void setFirmaMedico(byte[] firmaMedico) {
 		this.firmaMedico = firmaMedico;
 	}
 
 	/**
 	 * @return the firmaPaciente
 	 */
-	public Blob getFirmaPaciente() {
+	public byte[] getFirmaPaciente() {
 		return firmaPaciente;
 	}
 
@@ -416,7 +415,7 @@ public class HistoriaAudiometria {
 	 * @param firmaPaciente
 	 *            the firmaPaciente to set
 	 */
-	public void setFirmaPaciente(Blob firmaPaciente) {
+	public void setFirmaPaciente(byte[] firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
 	}
 

@@ -19,16 +19,16 @@ public class PacienteDao implements PacienteDaoInterface {
 	}
 
 	@Override
-	public void insertPaciente(Paciente paciente) {
+	public boolean insertPaciente(Paciente paciente) {
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "insert into paciente(documento, tipodocumento, IDT_Nombres, IDT_Apellidos, IDT_Sexo, IDT_fechaNacimiento, " + 
-						"IDT_LugarNacimiento, IDT_DireccionDomicilio, IDT_DomicilioCiudad," + 
-						"IDT_CorreoElectronico, IDT_Escolaridad, IDT_EPS, IDT_ARL, IDT_AFP," + 
-						"IDT_AvisoEmergenciaNombres, IDT_AvisoEmergenciaApellidos, IDT_AvisoEmergenciaParentesco, " + 
-						"GrupoSanguineo, RH, cargo, antiguedad,IDT_telefonoDomicilio, IDT_TelefonoCelular, IDT_AvisoEmergenciaTelefono, " + 
-						"IDT_AvisoEmergenciaTelefonoCelular,foto, firma, fechaDeDiligenciamiento, fechaDeModificacion) "
+				String consulta = "insert into paciente(documento, tipodocumento, IDT_Nombres, IDT_Apellidos, IDT_Sexo, IDT_fechaNacimiento, "
+						+ "IDT_LugarNacimiento, IDT_DireccionDomicilio, IDT_DomicilioCiudad,"
+						+ "IDT_CorreoElectronico, IDT_Escolaridad, IDT_EPS, IDT_ARL, IDT_AFP,"
+						+ "IDT_AvisoEmergenciaNombres, IDT_AvisoEmergenciaApellidos, IDT_AvisoEmergenciaParentesco, "
+						+ "GrupoSanguineo, RH, cargo, antiguedad,IDT_telefonoDomicilio, IDT_TelefonoCelular, IDT_AvisoEmergenciaTelefono, "
+						+ "IDT_AvisoEmergenciaTelefonoCelular,foto, firma, fechaDeDiligenciamiento, fechaDeModificacion) "
 						+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 				PreparedStatement preparedStatement = connection.prepareStatement(consulta);
@@ -53,24 +53,25 @@ public class PacienteDao implements PacienteDaoInterface {
 				preparedStatement.setString(19, paciente.getRH());
 				preparedStatement.setString(20, paciente.getCargo());
 				preparedStatement.setString(21, paciente.getAntiguedad());
-				preparedStatement.setInt(22, paciente.getIDT_telefonoDomicilio());
-				preparedStatement.setInt(23, paciente.getIDT_TelefonoCelular());
-				preparedStatement.setInt(24, paciente.getIDT_AvisoEmergenciaTelefono());
-				preparedStatement.setInt(25, paciente.getIDT_AvisoEmergenciaTelefonoCelular());
+				preparedStatement.setString(22, paciente.getIDT_telefonoDomicilio());
+				preparedStatement.setString(23, paciente.getIDT_TelefonoCelular());
+				preparedStatement.setString(24, paciente.getIDT_AvisoEmergenciaTelefono());
+				preparedStatement.setString(25, paciente.getIDT_AvisoEmergenciaTelefonoCelular());
 				preparedStatement.setBytes(26, paciente.getFoto());
 				preparedStatement.setBytes(27, paciente.getFirma());
-				//preparedStatement.setTimestamp(28, new Timestamp(paciente.getFechaDeDiligenciamiento().getTime()));
-				//preparedStatement.setTimestamp(29, new Timestamp(paciente.getFechaDeModificacion().getTime()));		
 				preparedStatement.setTimestamp(28, new Timestamp(Calendar.getInstance().getTimeInMillis()));
-				preparedStatement.setTimestamp(29, new Timestamp(Calendar.getInstance().getTimeInMillis()));		
+				preparedStatement.setTimestamp(29, new Timestamp(Calendar.getInstance().getTimeInMillis()));
 				preparedStatement.execute();
 
 				conexion.cerrarConexion();
+
 			}
 		} catch (Exception e) {
-			System.out.println("Error en orden: " + e.getLocalizedMessage());
+			System.out.println("Error en orden: " + e.getMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return true;
 	}
 
 	@Override

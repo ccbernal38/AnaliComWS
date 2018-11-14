@@ -10,7 +10,7 @@ import co.analicom.ws.hc.modelo.Paciente;
  */
 public interface PacienteDaoInterface {
 
-	public void insertPaciente(Paciente paciente);
+	public boolean insertPaciente(Paciente paciente);
 
 	public boolean verificarPacienteExiste(String documento);
 

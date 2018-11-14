@@ -11,7 +11,7 @@ public class Paciente {
 			IDT_AFP, IDT_AvisoEmergenciaNombres, IDT_AvisoEmergenciaApellidos, IDT_AvisoEmergenciaParentesco,
 			GrupoSanguineo, RH, cargo, antiguedad;
 
-	private int IDT_telefonoDomicilio, IDT_TelefonoCelular, IDT_AvisoEmergenciaTelefono,
+	private String IDT_telefonoDomicilio, IDT_TelefonoCelular, IDT_AvisoEmergenciaTelefono,
 			IDT_AvisoEmergenciaTelefonoCelular;
 
 	private byte[] foto, firma;
@@ -54,8 +54,8 @@ public class Paciente {
 			String iDT_DomicilioCiudad, String iDT_CorreoElectronico, String iDT_Escolaridad, String iDT_EPS,
 			String iDT_ARL, String iDT_AFP, String iDT_AvisoEmergenciaNombres, String iDT_AvisoEmergenciaApellidos,
 			String iDT_AvisoEmergenciaParentesco, String grupoSanguineo, String rH, String cargo, String antiguedad,
-			int iDT_telefonoDomicilio, int iDT_TelefonoCelular, int iDT_AvisoEmergenciaTelefono,
-			int iDT_AvisoEmergenciaTelefonoCelular, byte[] foto, byte[] firma, Date fechaDeDiligenciamiento,
+			String iDT_telefonoDomicilio, String iDT_TelefonoCelular, String iDT_AvisoEmergenciaTelefono,
+			String iDT_AvisoEmergenciaTelefonoCelular, byte[] foto, byte[] firma, Date fechaDeDiligenciamiento,
 			Date fechaDeModificacion) {
 		super();
 		this.documento = documento;
@@ -257,35 +257,35 @@ public class Paciente {
 		this.antiguedad = antiguedad;
 	}
 
-	public int getIDT_telefonoDomicilio() {
+	public String getIDT_telefonoDomicilio() {
 		return IDT_telefonoDomicilio;
 	}
 
-	public void setIDT_telefonoDomicilio(int iDT_telefonoDomicilio) {
+	public void setIDT_telefonoDomicilio(String iDT_telefonoDomicilio) {
 		IDT_telefonoDomicilio = iDT_telefonoDomicilio;
 	}
 
-	public int getIDT_TelefonoCelular() {
+	public String getIDT_TelefonoCelular() {
 		return IDT_TelefonoCelular;
 	}
 
-	public void setIDT_TelefonoCelular(int iDT_TelefonoCelular) {
+	public void setIDT_TelefonoCelular(String iDT_TelefonoCelular) {
 		IDT_TelefonoCelular = iDT_TelefonoCelular;
 	}
 
-	public int getIDT_AvisoEmergenciaTelefono() {
+	public String getIDT_AvisoEmergenciaTelefono() {
 		return IDT_AvisoEmergenciaTelefono;
 	}
 
-	public void setIDT_AvisoEmergenciaTelefono(int iDT_AvisoEmergenciaTelefono) {
+	public void setIDT_AvisoEmergenciaTelefono(String iDT_AvisoEmergenciaTelefono) {
 		IDT_AvisoEmergenciaTelefono = iDT_AvisoEmergenciaTelefono;
 	}
 
-	public int getIDT_AvisoEmergenciaTelefonoCelular() {
+	public String getIDT_AvisoEmergenciaTelefonoCelular() {
 		return IDT_AvisoEmergenciaTelefonoCelular;
 	}
 
-	public void setIDT_AvisoEmergenciaTelefonoCelular(int iDT_AvisoEmergenciaTelefonoCelular) {
+	public void setIDT_AvisoEmergenciaTelefonoCelular(String iDT_AvisoEmergenciaTelefonoCelular) {
 		IDT_AvisoEmergenciaTelefonoCelular = iDT_AvisoEmergenciaTelefonoCelular;
 	}
 
@@ -319,6 +319,23 @@ public class Paciente {
 
 	public void setFechaDeModificacion(Date fechaDeModificacion) {
 		this.fechaDeModificacion = fechaDeModificacion;
+	}
+
+	@Override
+	public String toString() {
+		return "Paciente [documento=" + documento + ", tipodocumento=" + tipodocumento + ", IDT_Nombres=" + IDT_Nombres
+				+ ", IDT_Apellidos=" + IDT_Apellidos + ", IDT_sexo=" + IDT_sexo + ", IDT_fechaNacimiento="
+				+ IDT_fechaNacimiento + ", IDT_LugarNacimiento=" + IDT_LugarNacimiento + ", IDT_DireccionDomicilio="
+				+ IDT_DireccionDomicilio + ", IDT_DomicilioCiudad=" + IDT_DomicilioCiudad + ", IDT_CorreoElectronico="
+				+ IDT_CorreoElectronico + ", IDT_Escolaridad=" + IDT_Escolaridad + ", IDT_EPS=" + IDT_EPS + ", IDT_ARL="
+				+ IDT_ARL + ", IDT_AFP=" + IDT_AFP + ", IDT_AvisoEmergenciaNombres=" + IDT_AvisoEmergenciaNombres
+				+ ", IDT_AvisoEmergenciaApellidos=" + IDT_AvisoEmergenciaApellidos + ", IDT_AvisoEmergenciaParentesco="
+				+ IDT_AvisoEmergenciaParentesco + ", GrupoSanguineo=" + GrupoSanguineo + ", RH=" + RH + ", cargo="
+				+ cargo + ", antiguedad=" + antiguedad + ", IDT_telefonoDomicilio=" + IDT_telefonoDomicilio
+				+ ", IDT_TelefonoCelular=" + IDT_TelefonoCelular + ", IDT_AvisoEmergenciaTelefono="
+				+ IDT_AvisoEmergenciaTelefono + ", IDT_AvisoEmergenciaTelefonoCelular="
+				+ IDT_AvisoEmergenciaTelefonoCelular + ", fechaDeDiligenciamiento=" + fechaDeDiligenciamiento
+				+ ", fechaDeModificacion=" + fechaDeModificacion + "]";
 	}
 
 }
