@@ -5,34 +5,33 @@ package co.analicom.ws.hc.dao.implementsdao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Timestamp;
-
 import co.analicom.ws.database.Conexion;
-import co.analicom.ws.hc.dao.interfacedao.HistoricoImpresionDaoInterface;
-import co.analicom.ws.hc.modelo.HistoricoImpresion;
+import co.analicom.ws.hc.dao.interfacedao.AudiogramaDaoInterface;
+import co.analicom.ws.hc.modelo.Audiograma;
 
 /**
  * @author Cristian Cruz
  */
-public class HistoricoImpresionDao implements HistoricoImpresionDaoInterface{
-	
+public class AudiogramaDao implements AudiogramaDaoInterface{
 	Conexion conexion;
 	
-	public HistoricoImpresionDao() {
+	public AudiogramaDao() {
 		conexion = new Conexion();
 	}
 	
 	@Override
-	public void insertHistoricoImpresion(HistoricoImpresion historicoImpresion) {
+	public void insertAudiograma(Audiograma audiograma) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "INSERT INTO HistoricoImpresiones (usuario, historia_id, fecha) VALUES (?,?,?)";
+				
+				String consulta = "INSERT INTO Audiograma (_fk_DocumentoFrecuencia, _fk_DocumentosHA, oidoDerecho, oidoIzquierdo) VALUES (?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
-				statement.setString(1, historicoImpresion.getUsuario());
-				statement.setInt(2, historicoImpresion.getHistoria_id());
-				statement.setTimestamp(3,new Timestamp(historicoImpresion.getFecha().getTime()));
+				statement.setInt(1, audiograma.get_fk_DocumentoFrecuencia());
+				statement.setInt(2, audiograma.get_fk_DocumentosHA());
+				statement.setInt(3, audiograma.getOidoDerecho());
+				statement.setInt(4, audiograma.getOidoIzquierdo());
 				if(!statement.execute()) {
 					System.out.println("Insertado!!");
 				}	
@@ -41,8 +40,6 @@ public class HistoricoImpresionDao implements HistoricoImpresionDaoInterface{
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
-		}
-		
-	}
-
+			}	
+		}	
 }

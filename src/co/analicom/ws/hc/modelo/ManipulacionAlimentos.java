@@ -10,8 +10,7 @@ import java.util.Date;
  */
 public class ManipulacionAlimentos {
 
-	private String DermatologicoA, DermatologicoB, DermatologicoBCual, Lesiones, Observaciones, Respiratorio,
-			Respiratorio_Ascultacion, Respiratorio_Inspeccion, Solicitado;
+	private String DermatologicoA, DermatologicoB, DermatologicoBCual, Lesiones, Observaciones, Respiratorio, Respiratorio_Ascultacion, Respiratorio_Inspeccion, Solicitado;
 
 	private int _fk_IDT_DocumentoID;
 
