@@ -10,8 +10,7 @@ import java.util.Date;
  */
 public class RevisionPorSistemas {
 
-	private String Cardiovascular, Desmatologico, Diagnostico, Digestivo, Genitourinario, Hematologico, Neurologico,
-			Observaciones, Osteomuscular, Osteomuscular_Otras, Psiquiatrico, Respiratorio;
+	private String Cardiovascular, Desmatologico, Diagnostico, Digestivo, Genitourinario, Hematologico, Neurologico,Observaciones, Osteomuscular, Osteomuscular_Otras, Psiquiatrico, Respiratorio;
 	private int _fk_DocumentoMD, _fk_IDT_DocumentoID;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 

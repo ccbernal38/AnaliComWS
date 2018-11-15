@@ -9,7 +9,6 @@ public class Otoscopia {
 	private String CAE_Normal, CAE_Otros, CAE_TaponParcial, CAE_TaponTotal, MT_Abultada, MT_Hiperemica, MT_Normal,
 			MT_NoVisualiza, MT_Opaca, MT_Otros, MT_Perforada, MT_PlacaCalcarea, PA_Agenesia, PA_Atresia, PA_Cicatriz,
 			PA_Normal, PA_Otros;
-	private int _fk_IDT_DocumentoID;
 
 	/**
 	 * 
@@ -36,12 +35,11 @@ public class Otoscopia {
 	 * @param pA_Cicatriz
 	 * @param pA_Normal
 	 * @param pA_Otros
-	 * @param _fk_IDT_DocumentoID
 	 */
 	public Otoscopia(String cAE_Normal, String cAE_Otros, String cAE_TaponParcial, String cAE_TaponTotal,
 			String mT_Abultada, String mT_Hiperemica, String mT_Normal, String mT_NoVisualiza, String mT_Opaca,
 			String mT_Otros, String mT_Perforada, String mT_PlacaCalcarea, String pA_Agenesia, String pA_Atresia,
-			String pA_Cicatriz, String pA_Normal, String pA_Otros, int _fk_IDT_DocumentoID) {
+			String pA_Cicatriz, String pA_Normal, String pA_Otros) {
 		super();
 		CAE_Normal = cAE_Normal;
 		CAE_Otros = cAE_Otros;
@@ -60,7 +58,6 @@ public class Otoscopia {
 		PA_Cicatriz = pA_Cicatriz;
 		PA_Normal = pA_Normal;
 		PA_Otros = pA_Otros;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
 	}
 
 	/**
@@ -316,22 +313,5 @@ public class Otoscopia {
 	 */
 	public void setPA_Otros(String pA_Otros) {
 		PA_Otros = pA_Otros;
-	}
-
-	/**
-	 * @return the _fk_IDT_DocumentoID
-	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
-	}
-
-	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
-	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
-	}
-	
-	
+	}	
 }
