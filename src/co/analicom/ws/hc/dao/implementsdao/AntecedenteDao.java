@@ -23,7 +23,7 @@ public class AntecedenteDao implements AntecedentesDaoInterface{
 	}
 	 
 	@Override
-	public void insertAntecedentes(Antecedente antecedente) {
+	public boolean insertAntecedentes(Antecedente antecedente) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();			
@@ -200,11 +200,15 @@ public class AntecedenteDao implements AntecedentesDaoInterface{
 				if(!statement.execute()) {
 					System.out.println("Insertado!!");
 				}
+				conexion.cerrarConexion();
+				return true;
 			}			
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 
 }

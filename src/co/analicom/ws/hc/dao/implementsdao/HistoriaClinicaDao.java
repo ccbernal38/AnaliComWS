@@ -5,7 +5,9 @@ package co.analicom.ws.hc.dao.implementsdao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import co.analicom.ws.database.Conexion;
 import co.analicom.ws.hc.dao.interfacedao.HistoriaClinicaInterfaceDao;
@@ -23,7 +25,7 @@ public class HistoriaClinicaDao implements HistoriaClinicaInterfaceDao{
 	}
 	
 	@Override
-	public void insertHistoriaClinica(HistoriaClinica clinica) {
+	public boolean insertHistoriaClinica(HistoriaClinica clinica) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -61,11 +63,34 @@ public class HistoriaClinicaDao implements HistoriaClinicaInterfaceDao{
 					System.out.println("Insertado!!");
 				}
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
+	}
+
+	@Override
+	public int obtenerID(String fk_IDT_DocumentoID) {
+		try {
+			Connection connection = conexion.getConexionHC();
+			if (connection != null) {
+				String consulta = "SELECT fk_IDT_DocumentoID FROM HistoriaClinica WHERE fk_IDT_DocumentoID = ? ORDER BY fechaDeDiligenciamiento DESC";
+				PreparedStatement statement = connection.prepareStatement(consulta);
+				statement.setString(1, fk_IDT_DocumentoID);
+				ResultSet result = statement.executeQuery();
+				while (result.next()) {
+					return result.getInt(1);
+				}
+			}
+			
+		} catch (Exception e) {
+			return -1;
+		}
+		return -1;
 	}
 
 }
