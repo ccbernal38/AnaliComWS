@@ -2,7 +2,6 @@ package co.analicom.ws.hc.modelo;
 
 import java.util.Date;
 
-
 public class HistoriaClinica {
 
 	public HistoriaClinica() {
@@ -11,8 +10,8 @@ public class HistoriaClinica {
 	public HistoriaClinica(String accidenteTrabajo, String anular, String enfermedadProfesional, String estado,
 			String fk_DocumentoMD, String fk_IDT_DocumentoID, String impreso, String lugar, String medico_cierre,
 			String quienModifico, String revisionPorSistema, String tipoDeExamen, String tipoDeExamenExtra,
-			String userCierre, String userModifico, String firmaMedico, String firmaPaciente, int cantImpresiones, 
-			int id_empresa, int pk_DocumentoHC, Date fechaDeDiligenciamiento, Date fechaCDeDiligenciamiento, Date fechaDeModificacion) {
+			String userCierre, String userModifico, String firmaMedico, String firmaPaciente, int cantImpresiones,
+			int id_empresa, Date fechaDeDiligenciamiento, Date fechaCDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		AccidenteTrabajo = accidenteTrabajo;
 		this.anular = anular;
@@ -31,7 +30,6 @@ public class HistoriaClinica {
 		UserModifico = userModifico;
 		CantImpresiones = cantImpresiones;
 		this.id_empresa = id_empresa;
-		this.pk_DocumentoHC = pk_DocumentoHC;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaCDeDiligenciamiento = fechaCDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
@@ -183,14 +181,6 @@ public class HistoriaClinica {
 		this.id_empresa = id_empresa;
 	}
 
-	public int getPk_DocumentoHC() {
-		return pk_DocumentoHC;
-	}
-
-	public void setPk_DocumentoHC(int pk_DocumentoHC) {
-		this.pk_DocumentoHC = pk_DocumentoHC;
-	}
-
 	public Date getFechaDeDiligenciamiento() {
 		return FechaDeDiligenciamiento;
 	}
@@ -229,6 +219,14 @@ public class HistoriaClinica {
 
 	public void setFirmaPaciente(String firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
+	}
+
+	public int getPk_DocumentoHC() {
+		return pk_DocumentoHC;
+	}
+
+	public void setPk_DocumentoHC(int pk_DocumentoHC) {
+		this.pk_DocumentoHC = pk_DocumentoHC;
 	}
 
 }

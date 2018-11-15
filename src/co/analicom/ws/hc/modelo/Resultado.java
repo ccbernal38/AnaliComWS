@@ -17,7 +17,9 @@ public class Resultado {
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
 	/**
-	 * 
+	 * Aplazado, Aplazado_Motivo, AptoConRestriccion, AptoConRestriccion_Motivo, AptoParaElCargo,
+			ConPatologiaQueNoLimitaLabor, NoApto, NoApto_Motivo, Otros_escribir, PuedoContinuarConSuLabor,
+			SeSugiereReubicacionLaboral, SinPatologiaAparente, _fk_IDT_DocumentoID, _fk_IDT_DocumentoMD, FechaDeDiligenciamiento, FechaDeModificacion
 	 */
 	public Resultado() {
 		// TODO Auto-generated constructor stub

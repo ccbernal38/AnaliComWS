@@ -86,4 +86,20 @@ public class HCService {
 		}
 		return Response.status(200).entity("" + jsonObject).build();
 	}
+	
+	@POST
+	@Path("/historiaclinica")
+	@Produces({ MediaType.APPLICATION_JSON })
+	@Consumes({ MediaType.APPLICATION_JSON })
+	public Response insertHC(String json) throws Exception {
+		
+		JSONObject jsonObject = new JSONObject();
+		if(true) {
+			jsonObject.put("code", 1);
+		}else {
+			jsonObject.put("code", 0);
+		}
+		System.out.println(json);
+		return Response.status(200).entity("" + jsonObject).build();
+	}
 }
