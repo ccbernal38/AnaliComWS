@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.Paraclinico;
  */
 public interface ParaclinicoDaoInterface {
 	
-	public void insertParaclinico(Paraclinico paraclinico);
+	public boolean insertParaclinico(Paraclinico paraclinico);
 }

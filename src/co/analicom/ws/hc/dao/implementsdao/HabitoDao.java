@@ -23,7 +23,7 @@ public class HabitoDao implements HabitoDaoInterface{
 	}
 	
 	@Override
-	public void insertHabito(Habito habito) {
+	public boolean insertHabito(Habito habito) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -57,12 +57,14 @@ public class HabitoDao implements HabitoDaoInterface{
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
-		
+		return false;
 	}
 
 }

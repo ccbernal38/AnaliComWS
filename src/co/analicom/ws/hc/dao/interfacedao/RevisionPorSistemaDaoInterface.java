@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.RevisionPorSistemas;
  */
 public interface RevisionPorSistemaDaoInterface {
 	
-	public void insertRevisionSistema(RevisionPorSistemas revisionPorSistemas);
+	public boolean insertRevisionSistema(RevisionPorSistemas revisionPorSistemas);
 }

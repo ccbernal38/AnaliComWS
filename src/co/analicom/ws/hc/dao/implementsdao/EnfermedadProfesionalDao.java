@@ -23,7 +23,7 @@ public class EnfermedadProfesionalDao implements EnfermedadProfesionalDaoInterfa
 	}
 	
 	@Override
-	public void insertEnfermedadProfesional(EnfermedadProfesional enfermedadProfesional) {
+	public boolean insertEnfermedadProfesional(EnfermedadProfesional enfermedadProfesional) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -47,11 +47,14 @@ public class EnfermedadProfesionalDao implements EnfermedadProfesionalDaoInterfa
 					System.out.println("Insertado");
 				}
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.out.println("Error en orden: " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 
 }

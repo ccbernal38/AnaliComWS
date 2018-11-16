@@ -23,7 +23,7 @@ public class ExamenFisicoDao implements ExamenFisicoDaoInterface{
 	}
 	
 	@Override
-	public void insertExamenFisico(ExamenFisico examenFisico) {
+	public boolean insertExamenFisico(ExamenFisico examenFisico) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -311,12 +311,14 @@ public class ExamenFisicoDao implements ExamenFisicoDaoInterface{
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
-		
+		return false;
 	}
 
 }

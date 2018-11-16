@@ -23,7 +23,7 @@ public class ImpresionDiagnosticaDao implements ImpresionDiagnosticaDaoInterface
 	}
 	
 	@Override
-	public void insertImpresionDiagnostica(ImpresionDiagnostica impresionDiagnostica) {
+	public boolean insertImpresionDiagnostica(ImpresionDiagnostica impresionDiagnostica) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -43,12 +43,14 @@ public class ImpresionDiagnosticaDao implements ImpresionDiagnosticaDaoInterface
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 		}
 	} catch (Exception e) {
 		System.err.println("Error en la inserción " + e.getLocalizedMessage());
 		e.printStackTrace();
+		return false;
 		}
-		
+		return false;
 	}
 
 }

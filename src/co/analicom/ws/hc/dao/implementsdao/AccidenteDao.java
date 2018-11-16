@@ -18,7 +18,7 @@ public class AccidenteDao implements AccidenteDaoInterface {
 	}
 
 	@Override
-	public void insertAccidente(Accidente accidente) {
+	public boolean insertAccidente(Accidente accidente) {
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
@@ -42,13 +42,15 @@ public class AccidenteDao implements AccidenteDaoInterface {
 				preparedStatement.setTimestamp(12, new Timestamp(accidente.getFechaDeDiligenciamiento().getTime()));
 				preparedStatement.setTimestamp(13, new Timestamp(accidente.getFechaDeModificacion().getTime()));
 				preparedStatement.execute();
-
+				
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.out.println("Error en orden: " + e.getLocalizedMessage());
-
+			return false;
 		}
+		return false;
 	}
 
 }

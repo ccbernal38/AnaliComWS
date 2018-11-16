@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class RevisionPorSistemas {
 
-	private String Cardiovascular, Desmatologico, Diagnostico, Digestivo, Genitourinario, Hematologico, Neurologico,Observaciones, Osteomuscular, Osteomuscular_Otras, Psiquiatrico, Respiratorio;
+	private String Cardiovascular, Dermatologico, Diagnostico, Digestivo, Genitourinario, Hematologico, Neurologico,Observaciones, Osteomuscular, Osteomuscular_Otras, Psiquiatrico, Respiratorio;
 	private int _fk_DocumentoMD, _fk_IDT_DocumentoID;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
@@ -45,7 +45,7 @@ public class RevisionPorSistemas {
 			int _fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		Cardiovascular = cardiovascular;
-		Desmatologico = desmatologico;
+		Dermatologico = desmatologico;
 		Diagnostico = diagnostico;
 		Digestivo = digestivo;
 		Genitourinario = genitourinario;
@@ -81,7 +81,7 @@ public class RevisionPorSistemas {
 	 * @return the desmatologico
 	 */
 	public String getDesmatologico() {
-		return Desmatologico;
+		return Dermatologico;
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class RevisionPorSistemas {
 	 *            the desmatologico to set
 	 */
 	public void setDesmatologico(String desmatologico) {
-		Desmatologico = desmatologico;
+		Dermatologico = desmatologico;
 	}
 
 	/**
