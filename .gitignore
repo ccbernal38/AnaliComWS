@@ -24,4 +24,4 @@ hs_err_pid*
 /build/
 /target/
 /target/m2e-wtp/web-resources/META-INF/maven/AnaliComWS/AnaliComWS/pom.properties
-.classpath
+/.classpath
