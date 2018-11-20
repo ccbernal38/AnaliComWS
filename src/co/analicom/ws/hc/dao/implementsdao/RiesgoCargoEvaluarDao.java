@@ -21,7 +21,7 @@ public class RiesgoCargoEvaluarDao implements RiesgoCargoEvaluarDaoInterface{
 	}
 	
 	@Override
-	public void insertRiesgoCargoEvaluar(RiesgoCargoEvaluar riesgoCargoEvaluar) {
+	public boolean insertRiesgoCargoEvaluar(RiesgoCargoEvaluar riesgoCargoEvaluar) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -46,11 +46,15 @@ public class RiesgoCargoEvaluarDao implements RiesgoCargoEvaluarDaoInterface{
 				if(!statement.execute()) {
 					System.out.println("Insertado!!");
 				}
+				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 		
 	}
 }

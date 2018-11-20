@@ -25,7 +25,7 @@ public class HistoriaVisiometriaDao implements HistoriaVisiometriaDaoInterface{
 	}
 
 	@Override
-	public void insertarHistoriaVisiometria(HistoriaVisiometria historiaVisiometria) {
+	public boolean insertarHistoriaVisiometria(HistoriaVisiometria historiaVisiometria) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -71,12 +71,16 @@ public class HistoriaVisiometriaDao implements HistoriaVisiometriaDaoInterface{
 				if(!statement.execute()) {
 					System.out.println("Insertado!!");
 				}
+				conexion.cerrarConexion();
+				return true;
 			}
 							
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 
 	@Override
@@ -103,4 +107,22 @@ public class HistoriaVisiometriaDao implements HistoriaVisiometriaDaoInterface{
 		return false;
 	}
 	
+	@Override
+	public int obtenerID() {
+		try {
+			Connection connection = conexion.getConexionHC();
+			if (connection != null) {
+				String consulta = "SELECT fk_IDT_DocumentoID FROM HistoriaVisiometria ORDER BY fechaDiligenciamiento DESC";
+				PreparedStatement statement = connection.prepareStatement(consulta);
+				ResultSet result = statement.executeQuery();
+				while (result.next()) {
+					return result.getInt(1);
+				}
+			}
+			
+		} catch (Exception e) {
+			return -1;
+		}
+		return -1;
+	}
 }

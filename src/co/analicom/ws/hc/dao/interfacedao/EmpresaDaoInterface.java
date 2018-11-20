@@ -10,5 +10,6 @@ import co.analicom.ws.hc.modelo.Empresa;
  */
 public interface EmpresaDaoInterface {
 	
-	public void insertEmpresa(Empresa empresa);
+	public boolean insertEmpresa(Empresa empresa);
+	public int obtenerID();
 }

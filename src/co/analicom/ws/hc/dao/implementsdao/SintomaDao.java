@@ -22,7 +22,7 @@ public class SintomaDao implements SintomasDaoInterface {
 	}
 	
 	@Override
-	public void insertSintomas(Sintoma sintoma) {
+	public boolean insertSintomas(Sintoma sintoma) {
 		
 		try {
 			Connection connection = (Connection) conexion.getConexionHC();
@@ -49,11 +49,14 @@ public class SintomaDao implements SintomasDaoInterface {
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 
 }

@@ -74,13 +74,12 @@ public class HistoriaClinicaDao implements HistoriaClinicaInterfaceDao{
 	}
 
 	@Override
-	public int obtenerID(String fk_IDT_DocumentoID) {
+	public int obtenerID() {
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "SELECT fk_IDT_DocumentoID FROM HistoriaClinica WHERE fk_IDT_DocumentoID = ? ORDER BY fechaDeDiligenciamiento DESC";
+				String consulta = "SELECT pk_DocumentoHC FROM HistoriaClinica ORDER BY fechaDeDiligenciamiento DESC";
 				PreparedStatement statement = connection.prepareStatement(consulta);
-				statement.setString(1, fk_IDT_DocumentoID);
 				ResultSet result = statement.executeQuery();
 				while (result.next()) {
 					return result.getInt(1);

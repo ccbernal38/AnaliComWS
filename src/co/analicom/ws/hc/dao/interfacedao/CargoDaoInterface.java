@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.Cargo;
  */
 public interface CargoDaoInterface {
 	
-	public void insertCargo(Cargo cargo);
+	public boolean insertCargo(Cargo cargo);
 }

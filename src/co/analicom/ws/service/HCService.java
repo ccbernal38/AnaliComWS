@@ -1,6 +1,5 @@
 package co.analicom.ws.service;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -10,17 +9,18 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
 import org.json.JSONObject;
-
-import com.sun.jersey.core.impl.provider.entity.XMLJAXBElementProvider.General;
-
 import co.analicom.ws.hc.dao.implementsdao.AccidenteDao;
+import co.analicom.ws.hc.dao.implementsdao.AgudezaVisualDao;
 import co.analicom.ws.hc.dao.implementsdao.AntecedenteDao;
+import co.analicom.ws.hc.dao.implementsdao.CargoDao;
+import co.analicom.ws.hc.dao.implementsdao.DatoOcupacionalDao;
+import co.analicom.ws.hc.dao.implementsdao.EmpresaDao;
 import co.analicom.ws.hc.dao.implementsdao.EnfermedadProfesionalDao;
 import co.analicom.ws.hc.dao.implementsdao.ExamenFisicoDao;
 import co.analicom.ws.hc.dao.implementsdao.HabitoDao;
 import co.analicom.ws.hc.dao.implementsdao.HistoriaClinicaDao;
+import co.analicom.ws.hc.dao.implementsdao.HistoriaVisiometriaDao;
 import co.analicom.ws.hc.dao.implementsdao.ImpresionDiagnosticaDao;
 import co.analicom.ws.hc.dao.implementsdao.ManipulacionAlimentoDao;
 import co.analicom.ws.hc.dao.implementsdao.PacienteDao;
@@ -28,13 +28,19 @@ import co.analicom.ws.hc.dao.implementsdao.ParaclinicoDao;
 import co.analicom.ws.hc.dao.implementsdao.RecomendacionDao;
 import co.analicom.ws.hc.dao.implementsdao.ResultadoDao;
 import co.analicom.ws.hc.dao.implementsdao.RevisionPorSistemaDao;
-import co.analicom.ws.hc.dao.interfacedao.HabitoDaoInterface;
+import co.analicom.ws.hc.dao.implementsdao.RiesgoCargoEvaluarDao;
+import co.analicom.ws.hc.dao.implementsdao.SintomaDao;
 import co.analicom.ws.hc.modelo.Accidente;
+import co.analicom.ws.hc.modelo.AgudezaVisual;
 import co.analicom.ws.hc.modelo.Antecedente;
+import co.analicom.ws.hc.modelo.Cargo;
+import co.analicom.ws.hc.modelo.DatoOcupacional;
+import co.analicom.ws.hc.modelo.Empresa;
 import co.analicom.ws.hc.modelo.EnfermedadProfesional;
 import co.analicom.ws.hc.modelo.ExamenFisico;
 import co.analicom.ws.hc.modelo.Habito;
 import co.analicom.ws.hc.modelo.HistoriaClinica;
+import co.analicom.ws.hc.modelo.HistoriaVisiometria;
 import co.analicom.ws.hc.modelo.ImpresionDiagnostica;
 import co.analicom.ws.hc.modelo.ManipulacionAlimentos;
 import co.analicom.ws.hc.modelo.Paciente;
@@ -42,6 +48,8 @@ import co.analicom.ws.hc.modelo.Paraclinico;
 import co.analicom.ws.hc.modelo.Recomendacion;
 import co.analicom.ws.hc.modelo.Resultado;
 import co.analicom.ws.hc.modelo.RevisionPorSistemas;
+import co.analicom.ws.hc.modelo.RiesgoCargoEvaluar;
+import co.analicom.ws.hc.modelo.Sintoma;
 import co.analicom.ws.util.Util;
 
 @Path("/hc")
@@ -96,7 +104,6 @@ public class HCService {
 					.parse(fechaDeModificacion);
 		}
 		 
-
 		Paciente paciente = new Paciente(documento, tipodocumento, iDT_Nombres, iDT_Apellidos, iDT_sexo,
 				iDT_fechaNacimiento, iDT_LugarNacimiento, iDT_DireccionDomicilio, iDT_DomicilioCiudad,
 				iDT_CorreoElectronico, iDT_Escolaridad, iDT_EPS, iDT_ARL, iDT_AFP, iDT_AvisoEmergenciaNombres,
@@ -104,13 +111,29 @@ public class HCService {
 				(iDT_telefonoDomicilio), (iDT_TelefonoCelular), (iDT_AvisoEmergenciaTelefono),
 				(iDT_AvisoEmergenciaTelefonoCelular), Util.convertirABytes(foto), Util.convertirABytes(firma),
 				dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+
+		JSONObject jsonEnfermedadP = jsonPaciente.getJSONObject("enfermedadProfesional");
+		JSONObject jsonAccidente = jsonPaciente.getJSONObject("accidentes");
 		PacienteDao dao = new PacienteDao();
 		boolean result = dao.insertPaciente(paciente);
+		int IDP = dao.obtenerID(documento);
+		boolean resultEnfermedadP = generarJsonEnfermedadProfesional(jsonEnfermedadP, IDP);
+		boolean resultAccidente = generarJsonAccidente(jsonAccidente, IDP);
 		JSONObject jsonObject = new JSONObject();
 		if(result) {
 			jsonObject.put("code", 1);
 		}else {
 			jsonObject.put("code", 0);
+		}
+		if (resultEnfermedadP) {
+			jsonObject.put("Enfermedad", 1);
+		} else {
+			jsonObject.put("Enfermedad", 0);
+		}
+		if (resultAccidente) {
+			jsonObject.put("Accidente", 1);
+		}else {
+			jsonObject.put("Accidente", 0);
 		}
 		return Response.status(200).entity("" + jsonObject).build();
 	}
@@ -179,29 +202,27 @@ public class HCService {
 		JSONObject jsonRecomendacion = jsonHC.getJSONObject("recomendacion");
 		JSONObject jsonAntecedentes = jsonHC.getJSONObject("antecedente");
 		JSONObject jsonExamenFisico = jsonHC.getJSONObject("examenfisico");
-		JSONObject jsonEnfermedadP = jsonHC.getJSONObject("enfermedadProfesional");
-		JSONObject jsonAccidente = jsonHC.getJSONObject("AccidenteTrabajo");
 		JSONObject jsonManipulacionA = jsonHC.getJSONObject("manipulacionalimentos");
 		JSONObject jsonRevisionS = jsonHC.getJSONObject("revisionPorSistema");
 		JSONObject jsonHabitos = jsonHC.getJSONObject("habito");
 		JSONObject jsonResultado = jsonHC.getJSONObject("resultado");
 		JSONObject jsonImpresionD = jsonHC.getJSONObject("impresiondiagnostica");
 		JSONObject jsonParaclinicos = jsonHC.getJSONObject("paraclinicos");
+		JSONObject jsonEmpresa = jsonHC.getJSONObject("empresa");
 		
 		//Se insertan los datos a la BD principal
 		boolean result = historiaClinicaDao.insertHistoriaClinica(historiaClinica);
-		int IDHC = historiaClinicaDao.obtenerID(fk_IDT_DocumentoID);
+		int IDHC = historiaClinicaDao.obtenerID();
 		boolean recomendacion = generarJsonRecomendacion(jsonRecomendacion, IDHC);
 		boolean antecedentes = generarJsonAntecedentes(jsonAntecedentes, IDHC);
 		boolean examenFisico = generarJsonExamenFisico(jsonExamenFisico, IDHC);
-//		boolean enfermedadP = generarJsonEnfermedadProfesional(jsonEnfermedadP, IDHC);
-//		boolean accidente = generarJsonAccidente(jsonAccidente, IDHC);
 		boolean manipulacionA = generarJsonManipulacionAlimentos(jsonManipulacionA, IDHC);
 		boolean RevisionS = generarJsonRevisionSistema(jsonRevisionS, IDHC);
 		boolean habito = generarJsonHabito(jsonHabitos, IDHC);
 		boolean resultado = generarJsonResultados(jsonResultado, IDHC);
 		boolean impresionD = generarJsonImpresionDiag(jsonImpresionD, IDHC);
 		boolean paraclinico = generarJsonParaclinicos(jsonParaclinicos, IDHC);
+		JSONObject empresa = generarJsonEmpresa(jsonEmpresa, IDHC);
 		
 		//JSON de retorno de transacción satisfactoria
 		JSONObject jsonObject = new JSONObject();
@@ -255,20 +276,99 @@ public class HCService {
 		}else {
 			jsonObject.put("Paraclinico", 0);
 		}
-//		if (enfermedadP) {
-//			jsonObject.put("enfermedadProfesional", 1);
-//		}else {
-//			jsonObject.put("enfermedadProfesional", 0);
-//		}
+		jsonObject.put("Empresa, Cargo, DatosOcupacionales", empresa);
 		return Response.status(200).entity("" + jsonObject).build();
 	}
 	
-	/**
-	 * 
-	 * @param jsonRecomendacion
-	 * @return
-	 * @throws ParseException 
-	 */
+	@POST
+	@Path("/historiavisiometria")
+	@Produces({ MediaType.APPLICATION_JSON })
+	@Consumes({ MediaType.APPLICATION_JSON })
+	public Response insertHV(String json) throws Exception{
+		
+		JSONObject jsonHV = new JSONObject(json);
+		String fk_empresa = jsonHV.getString("fk_empresa");
+		String fk_medico = jsonHV.getString("fk_medico");
+		String fk_paciente = jsonHV.getString("fk_paciente");
+		String tipoExamen = jsonHV.getString("tipoExamen");
+		String tipoExamenOtro = jsonHV.getString("tipoExamenOtro");
+		String fechaDiligenciamiento = jsonHV.getString("fechaDiligenciamiento");
+		String fechaModificacion = jsonHV.getString("fechaModificacion");
+		String impresionDiagnostica = jsonHV.getString("impresionDiagnostica");
+		String impresionDiagnosticaObservacion = jsonHV.getString("impresionDiagnosticaObservacion");
+		String userModifica = jsonHV.getString("userModifica");
+		String impreso = jsonHV.getString("impreso");
+		String cantImpresiones = jsonHV.getString("cantImpresiones");
+		String estado = jsonHV.getString("estado");
+		String PacienteCompatibleLabor = jsonHV.getString("PacienteCompatibleLabor");
+		String PacienteCompatibleLabor_Observacion = jsonHV.getString("PacienteCompatibleLabor_Observacion");
+		String RequiereNuevaValoracion = jsonHV.getString("RequiereNuevaValoracion");
+		String RequiereNuevaValoracion_Observacion = jsonHV.getString("RequiereNuevaValoracion_Observacion");
+		String RequiereRemisionEspecialista = jsonHV.getString("RequiereRemisionEspecialista");
+		String RequiereRemisionEspecialista_Observacion = jsonHV.getString("RequiereRemisionEspecialista_Observacion");
+		String firmaPaciente = jsonHV.getString("firmaPaciente");
+		String firmaMedico = jsonHV.getString("firmaMedico");
+		
+		java.util.Date dateFechaDeDiligenciamiento = null;
+		try {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a").parse(fechaDiligenciamiento);
+		} catch (Exception e) {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm a").parse(fechaDiligenciamiento);
+		}
+		java.util.Date dateFechaDeModificacion =null;
+		try {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a")
+					.parse(fechaModificacion);
+		} catch (Exception e) {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm a")
+					.parse(fechaModificacion);
+		}
+		
+		HistoriaVisiometria historiaVisiometria = new HistoriaVisiometria(Integer.parseInt(fk_empresa), Integer.parseInt(fk_medico), 
+				Integer.parseInt(fk_paciente), tipoExamen, tipoExamenOtro, dateFechaDeDiligenciamiento, dateFechaDeModificacion, 
+				impresionDiagnostica, impresionDiagnosticaObservacion, userModifica, impreso, Integer.parseInt(cantImpresiones), 
+				estado, PacienteCompatibleLabor, PacienteCompatibleLabor_Observacion, RequiereNuevaValoracion, RequiereNuevaValoracion_Observacion,
+				RequiereRemisionEspecialista, RequiereRemisionEspecialista_Observacion, firmaPaciente, firmaMedico);
+		HistoriaVisiometriaDao dao = new HistoriaVisiometriaDao();
+		
+		//Creacion de JSONTablas
+		JSONObject jsonSintoma = jsonHV.getJSONObject("sintomas");
+		JSONObject jsonAgudezaV = jsonHV.getJSONObject("agudezavisual");
+		JSONObject jsonRiesgoCE = jsonHV.getJSONObject("riesgocargoevaluar");
+//		
+//		//Se insertan los datos a la BD principal
+		boolean result = dao.insertarHistoriaVisiometria(historiaVisiometria);
+		int IDHV = dao.obtenerID();
+		boolean sintomas = generarJsonSintomas(jsonSintoma, IDHV);
+		boolean agudezaV = generarJsonAgudezaVisual(jsonAgudezaV, IDHV);
+		boolean riesgoCE = generarJsonRiesgoCE(jsonRiesgoCE, IDHV);
+		
+		boolean resultHV = dao.insertarHistoriaVisiometria(historiaVisiometria);
+		JSONObject jsonObject = new JSONObject();
+		if(resultHV) {
+			jsonObject.put("Historia Visiometria", 1);
+		}else {
+			jsonObject.put("Historia Visiometria", 0);
+		}
+		if (sintomas) {
+			jsonObject.put("Sintomas", 1);
+		}else {
+			jsonObject.put("Sintomas", 0);
+		}
+		if (agudezaV) {
+			jsonObject.put("Agudeza visual", 1);
+		}else {
+			jsonObject.put("Agudeza visual", 0);
+		}
+		if (riesgoCE) {
+			jsonObject.put("Riesgo Cargo Evaluar", 1);
+		}else {
+			jsonObject.put("Riesgo Cargo Evaluar", 0);
+		}
+		
+		return Response.status(200).entity("" + jsonObject).build();
+	}
+	
 	public boolean generarJsonRecomendacion(JSONObject jsonRecomendacion, int IDHC) throws ParseException {
 		
 		String 	HabitosEVS = jsonRecomendacion.getString("HabitosEVS");
@@ -546,7 +646,7 @@ public class HCService {
 		return result;
 	}
 	
-	public boolean generarJsonEnfermedadProfesional(JSONObject jsonEnfermedadP, int IDHC) throws ParseException {
+	public boolean generarJsonEnfermedadProfesional(JSONObject jsonEnfermedadP, int IDP) throws ParseException {
 		
 		String AccidentesDeTrabajo = jsonEnfermedadP.getString("AccidentesDeTrabajo");
 		String ARL = jsonEnfermedadP.getString("ARL");
@@ -555,7 +655,7 @@ public class HCService {
 		String empresa = jsonEnfermedadP.getString("empresa");
 		String enfermedadProfesional = jsonEnfermedadP.getString("enfermedadProfesional");
 		String reubicacion = jsonEnfermedadP.getString("reubicacion");
-		int _fk_IDT_DocumentoID = IDHC;
+		int _fk_IDT_DocumentoID = IDP;
 		String fechaDeDiligenciamiento = jsonEnfermedadP.getString("fechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonEnfermedadP.getString("FechaDeModificacion");
 		java.util.Date dateFechaDeDiligenciamiento = null;
@@ -578,7 +678,7 @@ public class HCService {
 		return result;
 	}
 	
-	public boolean generarJsonAccidente(JSONObject jsonAccidente, int IDHC) throws ParseException {
+	public boolean generarJsonAccidente(JSONObject jsonAccidente, int IDP) throws ParseException {
 		
 		String AccidentesDeTrabajo = jsonAccidente.getString("AccidentesDeTrabajo");
 		String ARL = jsonAccidente.getString("ARL");
@@ -590,7 +690,7 @@ public class HCService {
 		String Reubicacion = jsonAccidente.getString("Reubicacion");
 		String Secuelas = jsonAccidente.getString("Secuelas");
 		String DiasIncapacidad = jsonAccidente.getString("DiasIncapacidad");
-		int _fk_IDT_DocumentoID = IDHC;
+		int _fk_IDT_DocumentoID = IDP;
 		String FechaDeDiligenciamiento = jsonAccidente.getString("FechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonAccidente.getString("FechaDeModificacion");
 		
@@ -1164,6 +1264,248 @@ public class HCService {
 				dateFechaDeModificacion);
 		ParaclinicoDao dao = new ParaclinicoDao();
 		boolean result = dao.insertParaclinico(paraclinico);
+		return result;
+	}
+	
+	public JSONObject generarJsonEmpresa(JSONObject jsonEmpresa, int IDHC) throws ParseException{
+		
+		String ActividadEconomica = jsonEmpresa.getString("ActividadEconomica");
+		String direccion = jsonEmpresa.getString("direccion");
+		String Nombre = jsonEmpresa.getString("Nombre");
+		String  telefono = jsonEmpresa.getString(" telefono");
+		int fk_IDT_DocumentoID = IDHC;
+		String nit = jsonEmpresa.getString("nit");
+		String  pk_nit = jsonEmpresa.getString(" pk_nit");
+		String FechaDeDiligenciamiento = jsonEmpresa.getString("FechaDeDiligenciamiento");
+		String FechaDeModificacion = jsonEmpresa.getString("FechaDeModificacion");
+		
+		java.util.Date dateFechaDeDiligenciamiento = null;
+		try {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a").parse(FechaDeDiligenciamiento);
+		} catch (Exception e) {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm a").parse(FechaDeDiligenciamiento);
+		}
+		java.util.Date dateFechaDeModificacion =null;
+		try {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a")
+					.parse(FechaDeModificacion);
+		} catch (Exception e) {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm a")
+					.parse(FechaDeModificacion);
+		}
+		
+		Empresa empresa = new Empresa(ActividadEconomica, direccion, Nombre, telefono, fk_IDT_DocumentoID, Integer.parseInt(nit), 
+				Integer.parseInt(pk_nit), dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+		EmpresaDao dao = new EmpresaDao();
+		boolean resultEmpresa = dao.insertEmpresa(empresa);
+		JSONObject jsonResult = new JSONObject();
+		if (resultEmpresa) {
+			jsonResult.put("Empresa", 1);
+			int IDE = dao.obtenerID();
+			JSONObject jsonCargo = jsonEmpresa.getJSONObject("cargo");
+			boolean cargo = generarJsonCargo(jsonCargo, IDE);
+			if (cargo) {
+				jsonResult.put("Cargo", 1);
+			}else {
+				jsonResult.put("Cargo", 0);
+			}
+				JSONObject jsonDatoOcupacional = jsonEmpresa.getJSONObject("datosocupacionales");
+				boolean datoOcupacional = generarJsonDatosOcupacionales(jsonDatoOcupacional, IDE);
+				if (datoOcupacional) {
+					jsonResult.put("Dato ocupacional", 1);
+				}else {
+					jsonResult.put("Dato ocupacional", 0);
+				}
+		}else {
+			jsonResult.put("Empresa", 0);
+		}
+		return jsonResult;
+	}
+	
+	public boolean generarJsonDatosOcupacionales(JSONObject jsonDatosOcupacionales, int IDE) throws ParseException{
+		
+		String Biologicos = jsonDatosOcupacionales.getString("Biologicos");
+		String Ergonomicos = jsonDatosOcupacionales.getString("Ergonomicos");
+		String Fisicos = jsonDatosOcupacionales.getString("Fisicos");
+		String Otros = jsonDatosOcupacionales.getString("Otros");
+		String Psicosociales = jsonDatosOcupacionales.getString("Psicosociales");
+		String Quimicos = jsonDatosOcupacionales.getString("Quimicos");
+		String Seguridad = jsonDatosOcupacionales.getString("Seguridad");
+		String fk_IDT_DocumentoID = jsonDatosOcupacionales.getString("fk_IDT_DocumentoID");
+		int fk_NIT = IDE;
+		String TiempoExposicion = jsonDatosOcupacionales.getString("TiempoExposicion");
+		String FechaDeDiligenciamiento = jsonDatosOcupacionales.getString("FechaDeDiligenciamiento");
+		String FechaDeModificacion = jsonDatosOcupacionales.getString("FechaDeModificacion");
+		
+		java.util.Date dateFechaDeDiligenciamiento = null;
+		try {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a").parse(FechaDeDiligenciamiento);
+		} catch (Exception e) {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm a").parse(FechaDeDiligenciamiento);
+		}
+		java.util.Date dateFechaDeModificacion =null;
+		try {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a")
+					.parse(FechaDeModificacion);
+		} catch (Exception e) {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm a")
+					.parse(FechaDeModificacion);
+		}
+		
+		DatoOcupacional datoOcupacional = new DatoOcupacional(Biologicos, Ergonomicos, Fisicos, Otros, Psicosociales, Quimicos, Seguridad, 
+				Integer.parseInt(fk_IDT_DocumentoID), fk_NIT, Integer.parseInt(TiempoExposicion), dateFechaDeDiligenciamiento, 
+				dateFechaDeModificacion);
+		DatoOcupacionalDao dao = new DatoOcupacionalDao();
+		boolean result = dao.insertDatoOcupacional(datoOcupacional);
+		return result;
+	}
+	
+	public boolean generarJsonCargo(JSONObject jsonCargos, int IDE) throws ParseException{
+		
+		String Area = jsonCargos.getString("Area");
+		String Cargo = jsonCargos.getString("Cargo");
+		String CargoEvaluar = jsonCargos.getString("CargoEvaluar");
+		String ElementosDeProteccion = jsonCargos.getString("ElementosDeProteccion");
+		String Empresa = jsonCargos.getString("Empresa");
+		String JornadaDeTrabajo = jsonCargos.getString("JornadaDeTrabajo");
+		String unidad = jsonCargos.getString("unidad");
+		String Antiguedad = jsonCargos.getString("Antiguedad");
+		String CargoTiempo = jsonCargos.getString("CargoTiempo");
+		String fk_IDT_DocumentoID = jsonCargos.getString("fk_IDT_DocumentoID");
+		int fk_NIT = IDE;
+		String HorasTrabajadas = jsonCargos.getString("HorasTrabajadas");
+		String FechaIngreso = jsonCargos.getString("FechaIngreso");
+		String FechaRetiro = jsonCargos.getString("FechaRetiro");
+		String FechaDeDiligenciamiento = jsonCargos.getString("FechaDeDiligenciamiento");
+		String FechaDeModificacion = jsonCargos.getString("FechaDeModificacion");
+		
+		java.util.Date dateFechaIngreso = null;
+		try {
+			dateFechaIngreso = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a").parse(FechaIngreso);
+		} catch (Exception e) {
+			dateFechaIngreso = new SimpleDateFormat("dd/MM/yyyy hh:mm a").parse(FechaIngreso);
+		}
+		java.util.Date dateFechaRetiro =null;
+		try {
+			dateFechaRetiro = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a")
+					.parse(FechaRetiro);
+		} catch (Exception e) {
+			dateFechaRetiro = new SimpleDateFormat("dd/MM/yyyy hh:mm a")
+					.parse(FechaRetiro);
+		}
+		java.util.Date dateFechaDeDiligenciamiento = null;
+		try {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a").parse(FechaDeDiligenciamiento);
+		} catch (Exception e) {
+			dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm a").parse(FechaDeDiligenciamiento);
+		}
+		java.util.Date dateFechaDeModificacion =null;
+		try {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a")
+					.parse(FechaDeModificacion);
+		} catch (Exception e) {
+			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm a")
+					.parse(FechaDeModificacion);
+		}
+		
+		Cargo cargo2 = new Cargo(Area, Cargo, CargoEvaluar, ElementosDeProteccion, Empresa, JornadaDeTrabajo, unidad, Integer.parseInt(Antiguedad), 
+				Integer.parseInt(CargoTiempo), Integer.parseInt(fk_IDT_DocumentoID), fk_NIT, Integer.parseInt(HorasTrabajadas), 
+				dateFechaIngreso, dateFechaRetiro, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+		CargoDao cargoDao = new CargoDao();
+		boolean result = cargoDao.insertCargo(cargo2);
+		return result;
+	}
+	
+	public boolean generarJsonSintomas(JSONObject jsonSintoma, int IDHV) throws ParseException{
+		
+		int fk_IDT_DocumentoID = IDHV;
+		String visionBorrosaLejana = jsonSintoma.getString("visionBorrosaLejana");
+		String visionBorrosaCercana = jsonSintoma.getString("visionBorrosaCercana");
+		String fotofobia = jsonSintoma.getString("fotofobia");
+		String dolorOcular = jsonSintoma.getString("dolorOcular");
+		String VisionDoble = jsonSintoma.getString("VisionDoble");
+		String cefalea = jsonSintoma.getString("cefalea");
+		String saltoRenglon = jsonSintoma.getString("saltoRenglon");
+		String epifora = jsonSintoma.getString("epifora");
+		String enrojecimiento = jsonSintoma.getString("enrojecimiento");
+		String suenioAlLeer = jsonSintoma.getString("suenioAlLeer");
+		String ardor = jsonSintoma.getString("ardor");
+		String noRefiere = jsonSintoma.getString("noRefiere");
+		
+		Sintoma sintoma = new Sintoma(fk_IDT_DocumentoID, visionBorrosaLejana, visionBorrosaCercana, fotofobia, dolorOcular, VisionDoble, cefalea, 
+				saltoRenglon, epifora, enrojecimiento, suenioAlLeer, ardor, noRefiere);
+		SintomaDao dao = new SintomaDao();
+		boolean result = dao.insertSintomas(sintoma);
+		return result;
+	}
+	
+	public boolean generarJsonAgudezaVisual(JSONObject jsonAgudezaV, int IDHV)throws ParseException{
+		
+		int fk_IDT_DocumentoID = IDHV;
+		String visionProfundidadEscribir = jsonAgudezaV.getString("visionProfundidadEscribir");
+		String visionProfundidad = jsonAgudezaV.getString("visionProfundidad");
+		String visionColorEscribir = jsonAgudezaV.getString("visionColorEscribir");
+		String visionColor = jsonAgudezaV.getString("visionColor");
+		String segmentoAnteriorEscribir = jsonAgudezaV.getString("segmentoAnteriorEscribir");
+		String segmentoAnterior = jsonAgudezaV.getString("segmentoAnterior");
+		String motilidadOcularEscribir = jsonAgudezaV.getString("motilidadOcularEscribir");
+		String motilidadOcular = jsonAgudezaV.getString("motilidadOcular");
+		String lS_OIObservacion = jsonAgudezaV.getString("lS_OIObservacion");
+		String lS_OI20 = jsonAgudezaV.getString("lS_OI20");
+		String lS_ODObservacion = jsonAgudezaV.getString("lS_ODObservacion");
+		String lS_OD20 = jsonAgudezaV.getString("lS_OD20");
+		String lS_BObservacion = jsonAgudezaV.getString("lS_BObservacion");
+		String lS_Binocular20 = jsonAgudezaV.getString("lS_Binocular20");
+		String lC_OIObservacion = jsonAgudezaV.getString("lC_OIObservacion");
+		String lC_OI20 = jsonAgudezaV.getString("lC_OI20");
+		String lC_ODObservacion = jsonAgudezaV.getString("lC_ODObservacion");
+		String lC_OD20 = jsonAgudezaV.getString("lC_OD20");
+		String lC_BObservacion = jsonAgudezaV.getString("lC_BObservacion");
+		String lC_Binocular20 = jsonAgudezaV.getString("lC_Binocular20");
+		String cS_OIObservacion = jsonAgudezaV.getString("cS_OIObservacion");
+		String cS_OI20 = jsonAgudezaV.getString("cS_OI20");
+		String cS_ODObservacion = jsonAgudezaV.getString("cS_ODObservacion");
+		String cS_OD20 = jsonAgudezaV.getString("cS_OD20");
+		String cS_BObservacion = jsonAgudezaV.getString("cS_BObservacion");
+		String cS_Binocular20 = jsonAgudezaV.getString("cS_Binocular20");
+		String cC_OIObservacion = jsonAgudezaV.getString("cC_OIObservacion");
+		String cC_OI20 = jsonAgudezaV.getString("cC_OI20");
+		String cC_ODObservacion = jsonAgudezaV.getString("cC_ODObservacion");
+		String cC_OD20 = jsonAgudezaV.getString("cC_OD20");
+		String cC_BObservacion = jsonAgudezaV.getString("cC_BObservacion");
+		String cC_Binocular20 = jsonAgudezaV.getString("cC_Binocular20");
+		String campoVisualEscribir = jsonAgudezaV.getString("campoVisualEscribir");
+		String campoVisual = jsonAgudezaV.getString("campoVisual");
+		
+		AgudezaVisual agudezaVisual = new AgudezaVisual(fk_IDT_DocumentoID, visionProfundidadEscribir, visionProfundidad, visionColorEscribir, 
+				visionColor, segmentoAnteriorEscribir, segmentoAnterior, motilidadOcularEscribir, motilidadOcular, lS_OIObservacion, lS_OI20, 
+				lS_ODObservacion, lS_OD20, lS_BObservacion, lS_Binocular20, lC_OIObservacion, lC_OI20, lC_ODObservacion, lC_OD20, lC_BObservacion, 
+				lC_Binocular20, cS_OIObservacion, cS_OI20, cS_ODObservacion, cS_OD20, cS_BObservacion, cS_Binocular20, cC_OIObservacion, cC_OI20, 
+				cC_ODObservacion, cC_OD20, cC_BObservacion, cC_Binocular20, campoVisualEscribir, campoVisual);
+		AgudezaVisualDao agudezaVisualDao = new AgudezaVisualDao();
+		boolean result = agudezaVisualDao.insertarAgudezaVisual(agudezaVisual);
+		return result;
+	}
+	
+	public boolean generarJsonRiesgoCE(JSONObject jsonRiesgoCE, int IDHV) throws ParseException{
+		
+		int fk_IDT_DocumentoID = IDHV;
+		String trauma = jsonRiesgoCE.getString("trauma");
+		String eXPOSICIONMATERIALPARTICULADO = jsonRiesgoCE.getString("eXPOSICIONMATERIALPARTICULADO");
+		String eXPOSICIONMATERIALENPROYECCION = jsonRiesgoCE.getString("eXPOSICIONMATERIALENPROYECCION");
+		String iLUMINACION = jsonRiesgoCE.getString("iLUMINACION");
+		String eXPOSICIONAVIDEOTERMINALES = jsonRiesgoCE.getString("eXPOSICIONAVIDEOTERMINALES");
+		String eXPOSICIONQUIMICOSYOSOLVENTES = jsonRiesgoCE.getString("eXPOSICIONQUIMICOSYOSOLVENTES");
+		String eXPOSICIONAGASESVAPORES = jsonRiesgoCE.getString("eXPOSICIONAGASESVAPORES");
+		String rADIACIONESIONIZANTES = jsonRiesgoCE.getString("rADIACIONESIONIZANTES");
+		String rADIACIONESNOIONIZANTES = jsonRiesgoCE.getString("rADIACIONESNOIONIZANTES");
+		String oTROS = jsonRiesgoCE.getString("oTROS");
+		
+		RiesgoCargoEvaluar riesgoCargoEvaluar = new RiesgoCargoEvaluar(fk_IDT_DocumentoID, trauma, eXPOSICIONMATERIALPARTICULADO, eXPOSICIONMATERIALENPROYECCION, 
+				iLUMINACION, eXPOSICIONAVIDEOTERMINALES, eXPOSICIONQUIMICOSYOSOLVENTES, eXPOSICIONAGASESVAPORES, rADIACIONESIONIZANTES, 
+				rADIACIONESNOIONIZANTES, oTROS);
+		RiesgoCargoEvaluarDao cargoEvaluarDao = new RiesgoCargoEvaluarDao();
+		boolean result = cargoEvaluarDao.insertRiesgoCargoEvaluar(riesgoCargoEvaluar);
 		return result;
 	}
 }

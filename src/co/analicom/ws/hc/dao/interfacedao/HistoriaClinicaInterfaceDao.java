@@ -14,5 +14,5 @@ public interface HistoriaClinicaInterfaceDao {
 	
 	public boolean insertHistoriaClinica(HistoriaClinica clinica);
 	
-	public int obtenerID(String fk_IDT_DocumentoID);
+	public int obtenerID();
 }
