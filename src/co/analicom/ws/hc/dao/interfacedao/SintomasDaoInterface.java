@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.Sintoma;
  */
 public interface SintomasDaoInterface {
 	
-	public void insertSintomas(Sintoma sintoma);
+	public boolean insertSintomas(Sintoma sintoma);
 }

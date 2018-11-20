@@ -75,27 +75,27 @@ public class PacienteDao implements PacienteDaoInterface {
 	}
 
 	@Override
-	public boolean verificarPacienteExiste(String documento) {
+	public int obtenerID(String documento) {
 
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "Select count(*) from paciente where documento = ?";
+				String consulta = "Select __pk_IDT_DocumentoID from paciente where documento = ?";
 
 				PreparedStatement preparedStatement = connection.prepareStatement(consulta);
 				preparedStatement.setString(1, documento);
 				ResultSet resultSet = preparedStatement.executeQuery();
 
 				if (resultSet.next()) {
-					conexion.cerrarConexion();
-					return true;
+					return resultSet.getInt(1);
 				}
+				conexion.cerrarConexion();
 			}
 		} catch (Exception e) {
 			System.out.println("Error en orden: " + e.getLocalizedMessage());
-
+			return -1;
 		}
-		return false;
+		return -1;
 	}
 
 }

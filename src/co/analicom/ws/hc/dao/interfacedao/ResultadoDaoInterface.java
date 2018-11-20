@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.Resultado;
  */
 public interface ResultadoDaoInterface {
 	
-	public void insertResultado(Resultado resultado);
+	public boolean insertResultado(Resultado resultado);
 }

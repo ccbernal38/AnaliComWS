@@ -10,7 +10,7 @@ import co.analicom.ws.hc.modelo.AgudezaVisual;
  */
 public interface AgudezaVisualDaoInterface {
 	
-	public void insertarAgudezaVisual(AgudezaVisual agudezaVisual);
+	public boolean insertarAgudezaVisual(AgudezaVisual agudezaVisual);
 	
 	//public boolean verificarAgudezaVisualExiste(String );
 }

@@ -11,7 +11,7 @@ import co.analicom.ws.hc.modelo.Paciente;
  */
 public interface AccidenteDaoInterface {
 
-	public void insertAccidente(Accidente accidente);
+	public boolean insertAccidente(Accidente accidente);
 
 	//public boolean verificarPacienteExiste(String documento);
 }

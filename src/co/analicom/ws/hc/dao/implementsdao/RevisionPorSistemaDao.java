@@ -23,7 +23,7 @@ public class RevisionPorSistemaDao implements RevisionPorSistemaDaoInterface{
 	}
 	
 	@Override
-	public void insertRevisionSistema(RevisionPorSistemas revisionPorSistemas) {
+	public boolean insertRevisionSistema(RevisionPorSistemas revisionPorSistemas) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -52,11 +52,14 @@ public class RevisionPorSistemaDao implements RevisionPorSistemaDaoInterface{
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 	
 	

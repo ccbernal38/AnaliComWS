@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.Habito;
  */
 public interface HabitoDaoInterface {
 	
-	public void insertHabito(Habito habito);
+	public boolean insertHabito(Habito habito);
 }

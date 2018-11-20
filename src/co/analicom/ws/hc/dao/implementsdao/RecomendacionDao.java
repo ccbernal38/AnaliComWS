@@ -23,7 +23,7 @@ public class RecomendacionDao implements RecomendacioDaoInterface {
 	}
 	
 	@Override
-	public void insertRecomendacion(Recomendacion recomendacion) {
+	public boolean insertRecomendacion(Recomendacion recomendacion) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -95,12 +95,14 @@ public class RecomendacionDao implements RecomendacioDaoInterface {
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
-		
+		return false;
 	}
 
 }

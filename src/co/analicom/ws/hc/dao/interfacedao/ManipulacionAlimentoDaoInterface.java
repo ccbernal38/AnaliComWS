@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.ManipulacionAlimentos;
  */
 public interface ManipulacionAlimentoDaoInterface {
 	
-	public void insertManipulacionAlimento(ManipulacionAlimentos manipulacionAlimentos);
+	public boolean insertManipulacionAlimento(ManipulacionAlimentos manipulacionAlimentos);
 }

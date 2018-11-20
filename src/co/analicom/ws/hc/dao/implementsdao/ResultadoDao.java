@@ -23,7 +23,7 @@ public class ResultadoDao implements ResultadoDaoInterface{
 	}
 	
 	@Override
-	public void insertResultado(Resultado resultado) {
+	public boolean insertResultado(Resultado resultado) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -54,12 +54,14 @@ public class ResultadoDao implements ResultadoDaoInterface{
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
-		
+		return false;
 	}
 
 }

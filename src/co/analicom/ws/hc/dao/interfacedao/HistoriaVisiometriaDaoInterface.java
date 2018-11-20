@@ -10,7 +10,8 @@ import co.analicom.ws.hc.modelo.HistoriaVisiometria;
  */
 public interface HistoriaVisiometriaDaoInterface {
 	
-	public void insertarHistoriaVisiometria(HistoriaVisiometria historiaVisiometria);
+	public boolean insertarHistoriaVisiometria(HistoriaVisiometria historiaVisiometria);
 	public boolean verificarHistoriaVisioExiste(String fecha, String documento);
+	int obtenerID();
 
 }

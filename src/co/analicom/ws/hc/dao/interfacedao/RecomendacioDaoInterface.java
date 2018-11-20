@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.Recomendacion;
  */
 public interface RecomendacioDaoInterface {
 	
-	public void insertRecomendacion(Recomendacion recomendacion);
+	public boolean insertRecomendacion(Recomendacion recomendacion);
 }

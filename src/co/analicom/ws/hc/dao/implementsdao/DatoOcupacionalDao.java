@@ -23,7 +23,7 @@ public class DatoOcupacionalDao implements DatoOcupacionalDaoInterface{
 	}
 	
 	@Override
-	public void insertDatoOcupacional(DatoOcupacional datoOcupacional) {
+	public boolean insertDatoOcupacional(DatoOcupacional datoOcupacional) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -49,12 +49,14 @@ public class DatoOcupacionalDao implements DatoOcupacionalDaoInterface{
 					System.out.println("Insertado!");
 				}
 				conexion.cerrarConexion();
+				return true;
 			}
 			
 		} catch (Exception e) {
 			System.out.println("Error en orden: " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
-
 }

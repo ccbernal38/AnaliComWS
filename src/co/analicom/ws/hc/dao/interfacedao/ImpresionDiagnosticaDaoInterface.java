@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.ImpresionDiagnostica;
  */
 public interface ImpresionDiagnosticaDaoInterface {
 	
-	public void insertImpresionDiagnostica(ImpresionDiagnostica impresionDiagnostica);
+	public boolean insertImpresionDiagnostica(ImpresionDiagnostica impresionDiagnostica);
 }

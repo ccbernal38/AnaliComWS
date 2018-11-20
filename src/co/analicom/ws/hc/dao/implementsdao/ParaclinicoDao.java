@@ -23,7 +23,7 @@ public class ParaclinicoDao implements ParaclinicoDaoInterface{
 	}
 	
 	@Override
-	public void insertParaclinico(Paraclinico paraclinico) {
+	public boolean insertParaclinico(Paraclinico paraclinico) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -55,10 +55,13 @@ public class ParaclinicoDao implements ParaclinicoDaoInterface{
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 		}
 	} catch (Exception e) {
 		System.err.println("Error en la inserción " + e.getLocalizedMessage());
 		e.printStackTrace();
+		return false;
 		}		
+		return false;
 	}
 }

@@ -3,6 +3,8 @@
  */
 package co.analicom.ws.hc.dao.interfacedao;
 
+import java.util.Date;
+
 import co.analicom.ws.hc.modelo.HistoriaClinica;
 
 /**
@@ -10,5 +12,7 @@ import co.analicom.ws.hc.modelo.HistoriaClinica;
  */
 public interface HistoriaClinicaInterfaceDao {
 	
-	public void insertHistoriaClinica(HistoriaClinica clinica);
+	public boolean insertHistoriaClinica(HistoriaClinica clinica);
+	
+	public int obtenerID();
 }

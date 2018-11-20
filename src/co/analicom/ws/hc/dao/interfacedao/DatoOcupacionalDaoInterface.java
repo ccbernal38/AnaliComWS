@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.DatoOcupacional;
  */
 public interface DatoOcupacionalDaoInterface {
 	
-	public void insertDatoOcupacional(DatoOcupacional datoOcupacional);
+	public boolean insertDatoOcupacional(DatoOcupacional datoOcupacional);
 }

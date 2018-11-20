@@ -22,7 +22,7 @@ public class CargoDao implements CargoDaoInterface{
 		connexion = new Conexion();
 	}	
 	@Override
-	public void insertCargo(Cargo cargo) {
+	public boolean insertCargo(Cargo cargo) {
 		
 		try {
 			Connection connection = connexion.getConexionHC();
@@ -53,11 +53,14 @@ public class CargoDao implements CargoDaoInterface{
 					System.out.println("Insertado!");
 				}
 				connexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.out.println("Error en orden: " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 
 }

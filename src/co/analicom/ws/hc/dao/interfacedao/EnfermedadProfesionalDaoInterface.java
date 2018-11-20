@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.EnfermedadProfesional;
  */
 public interface EnfermedadProfesionalDaoInterface {
 	
-	public void insertEnfermedadProfesional(EnfermedadProfesional enfermedadProfesional);
+	public boolean insertEnfermedadProfesional(EnfermedadProfesional enfermedadProfesional);
 }

@@ -22,7 +22,7 @@ public class AgudezaVisualDao implements AgudezaVisualDaoInterface {
 	}
 	
 	@Override
-	public void insertarAgudezaVisual(AgudezaVisual agudezaVisual) {
+	public boolean insertarAgudezaVisual(AgudezaVisual agudezaVisual) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -75,11 +75,14 @@ public class AgudezaVisualDao implements AgudezaVisualDaoInterface {
 					System.out.println("Insertado!!");
 				}
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch(Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 
 }

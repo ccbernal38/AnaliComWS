@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.ExamenFisico;
  */
 public interface ExamenFisicoDaoInterface {
 	
-	public void insertExamenFisico(ExamenFisico examenFisico);
+	public boolean insertExamenFisico(ExamenFisico examenFisico);
 }

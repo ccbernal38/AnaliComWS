@@ -22,7 +22,7 @@ public class ManipulacionAlimentoDao implements ManipulacionAlimentoDaoInterface
 	}
 
 	@Override
-	public void insertManipulacionAlimento(ManipulacionAlimentos manipulacionAlimentos) {
+	public boolean insertManipulacionAlimento(ManipulacionAlimentos manipulacionAlimentos) {
 
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -48,11 +48,14 @@ public class ManipulacionAlimentoDao implements ManipulacionAlimentoDaoInterface
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
+		return false;
 	}
 
 }

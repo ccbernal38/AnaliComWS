@@ -12,6 +12,6 @@ public interface PacienteDaoInterface {
 
 	public boolean insertPaciente(Paciente paciente);
 
-	public boolean verificarPacienteExiste(String documento);
+	public int obtenerID(String documento);
 
 }
