@@ -10,5 +10,7 @@ import co.analicom.ws.hc.modelo.Otoscopia;
  */
 public interface OtoscopiaDaoInterface {
 	
-	public void insertOtoscopia(Otoscopia otoscopia);
+	public boolean insertOtoscopia(Otoscopia otoscopia);
+
+	public int obtenerID();
 }

@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.Audiograma;
  */
 public interface AudiogramaDaoInterface {
 	
-	public void insertAudiograma(Audiograma audiograma);
+	public boolean insertAudiograma(Audiograma audiograma);
 }

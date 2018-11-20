@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.ConductaRecomendacion;
  */
 public interface ConductaRecomendacionDaoInterface {
 	
-	public void insertConductaRecomendacion(ConductaRecomendacion conductaRecomendacion);
+	public boolean insertConductaRecomendacion(ConductaRecomendacion conductaRecomendacion);
 }

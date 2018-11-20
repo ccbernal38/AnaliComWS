@@ -5,6 +5,7 @@ package co.analicom.ws.hc.dao.implementsdao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import co.analicom.ws.database.Conexion;
 import co.analicom.ws.hc.dao.interfacedao.OtoscopiaDaoInterface;
@@ -22,7 +23,7 @@ public class OtoscopiaDao implements OtoscopiaDaoInterface{
 	}
 	
 	@Override
-	public void insertOtoscopia(Otoscopia otoscopia) {
+	public boolean insertOtoscopia(Otoscopia otoscopia) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -53,10 +54,32 @@ public class OtoscopiaDao implements OtoscopiaDaoInterface{
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 			}	
-		}		
+		return false;
+	}
+	
+	@Override
+	public int obtenerID() {
+		try {
+			Connection connection = conexion.getConexionHC();
+			if (connection != null) {
+				String consulta = "SELECT _fk_IDT_DocumentoID FROM Otoscopia ORDER BY fechaDeCreacion DESC";
+				PreparedStatement statement = connection.prepareStatement(consulta);
+				ResultSet result = statement.executeQuery();
+				while (result.next()) {
+					return result.getInt(1);
+				}
+			}
+			
+		} catch (Exception e) {
+			return -1;
+		}
+		return -1;
+	}
 }

@@ -10,5 +10,7 @@ import co.analicom.ws.hc.modelo.HistoriaAudiometria;
  */
 public interface HistoriaAudiometriaDaoInterface {
 	
-	public void insertHistoriaAudiometria(HistoriaAudiometria historiaAudiometria);
+	public boolean insertHistoriaAudiometria(HistoriaAudiometria historiaAudiometria);
+
+	public int obtenerID();
 }

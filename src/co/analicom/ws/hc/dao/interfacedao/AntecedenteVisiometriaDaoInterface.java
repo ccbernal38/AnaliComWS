@@ -10,5 +10,5 @@ import co.analicom.ws.hc.modelo.AntecedenteVisiometria;
  */
 public interface AntecedenteVisiometriaDaoInterface {
 	
-	public void insertAntecedenteVisiometria(AntecedenteVisiometria antecedenteVisiometria);
+	public boolean insertAntecedenteVisiometria(AntecedenteVisiometria antecedenteVisiometria);
 }

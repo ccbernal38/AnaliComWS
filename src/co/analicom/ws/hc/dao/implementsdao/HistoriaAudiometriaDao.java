@@ -5,6 +5,7 @@ package co.analicom.ws.hc.dao.implementsdao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Timestamp;
 
 import co.analicom.ws.database.Conexion;
@@ -23,7 +24,7 @@ public class HistoriaAudiometriaDao implements HistoriaAudiometriaDaoInterface{
 	}
 	
 	@Override
-	public void insertHistoriaAudiometria(HistoriaAudiometria historiaAudiometria) {
+	public boolean insertHistoriaAudiometria(HistoriaAudiometria historiaAudiometria) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -59,12 +60,32 @@ public class HistoriaAudiometriaDao implements HistoriaAudiometriaDaoInterface{
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 			}
-		
+		return false;
 	}
-
+	
+	@Override
+	public int obtenerID() {
+		try {
+			Connection connection = conexion.getConexionHC();
+			if (connection != null) {
+				String consulta = "SELECT pk_DocumentoHA FROM HistoriaAudiometria ORDER BY fechaDeDiligenciamiento DESC";
+				PreparedStatement statement = connection.prepareStatement(consulta);
+				ResultSet result = statement.executeQuery();
+				while (result.next()) {
+					return result.getInt(1);
+				}
+			}
+			
+		} catch (Exception e) {
+			return -1;
+		}
+		return -1;
+	}
 }

@@ -22,7 +22,7 @@ public class AntecedenteVisiometriaDao implements AntecedenteVisiometriaDaoInter
 	}
 
 	@Override
-	public void insertAntecedenteVisiometria(AntecedenteVisiometria antecedenteVisiometria) {
+	public boolean insertAntecedenteVisiometria(AntecedenteVisiometria antecedenteVisiometria) {
 		
 		try {
 			Connection connection = conexion.getConexionHC();
@@ -71,12 +71,14 @@ public class AntecedenteVisiometriaDao implements AntecedenteVisiometriaDaoInter
 					System.out.println("Insertado!!");
 				}	
 				conexion.cerrarConexion();
+				return true;
 			}
 		} catch (Exception e) {
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
+			return false;
 		}
-		
+		return false;
 	}
 
 }
