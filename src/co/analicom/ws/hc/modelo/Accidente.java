@@ -23,6 +23,7 @@ public class Accidente {
 	}
 
 	/**
+	 * 
 	 * @param accidentesDeTrabajo
 	 * @param aRL
 	 * @param descripcion

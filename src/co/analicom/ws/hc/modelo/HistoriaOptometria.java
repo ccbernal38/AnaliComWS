@@ -24,7 +24,7 @@ public class HistoriaOptometria {
 			SAParpadosEscribir, SAPestañas, SAPestañasEscribir, SAPupilas, SAPupilasEscribir, SAViasLagrimales,
 			SAViasLagrimalesEscribir, TipoDeExamen, TipoDeExamenExtra, TipoLente, userModifica, VisionColor,
 			VisionColorEscribir, VisionProfundidad;
-	private int __pk_DocumentoHO, _fk_DocumentoMD, _fk_Empresa, _fk_IDT_DocumentoID, CantImpresiones;
+	private int pk_DocumentoHO, fk_DocumentoMD, fk_Empresa, fk_IDT_DocumentoID, CantImpresiones;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 	private byte[] firmaMedico, firmaPaciente;
 
@@ -77,10 +77,10 @@ public class HistoriaOptometria {
 	 * @param visionColor
 	 * @param visionColorEscribir
 	 * @param visionProfundidad
-	 * @param __pk_DocumentoHO
-	 * @param _fk_DocumentoMD
-	 * @param _fk_Empresa
-	 * @param _fk_IDT_DocumentoID
+	 * @param pk_DocumentoHO
+	 * @param fk_DocumentoMD
+	 * @param fk_Empresa
+	 * @param fk_IDT_DocumentoID
 	 * @param cantImpresiones
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
@@ -99,8 +99,8 @@ public class HistoriaOptometria {
 			String sAParpadosEscribir, String sAPestañas, String sAPestañasEscribir, String sAPupilas,
 			String sAPupilasEscribir, String sAViasLagrimales, String sAViasLagrimalesEscribir, String tipoDeExamen,
 			String tipoDeExamenExtra, String tipoLente, String userModifica, String visionColor,
-			String visionColorEscribir, String visionProfundidad, int __pk_DocumentoHO, int _fk_DocumentoMD,
-			int _fk_Empresa, int _fk_IDT_DocumentoID, int cantImpresiones, Date fechaDeDiligenciamiento,
+			String visionColorEscribir, String visionProfundidad, int pk_DocumentoHO, int fk_DocumentoMD,
+			int fk_Empresa, int fk_IDT_DocumentoID, int cantImpresiones, Date fechaDeDiligenciamiento,
 			Date fechaDeModificacion, byte[] firmaMedico, byte[] firmaPaciente) {
 		super();
 		ADDLENSOMETRIA = aDDLENSOMETRIA;
@@ -151,10 +151,10 @@ public class HistoriaOptometria {
 		VisionColor = visionColor;
 		VisionColorEscribir = visionColorEscribir;
 		VisionProfundidad = visionProfundidad;
-		this.__pk_DocumentoHO = __pk_DocumentoHO;
-		this._fk_DocumentoMD = _fk_DocumentoMD;
-		this._fk_Empresa = _fk_Empresa;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.pk_DocumentoHO = pk_DocumentoHO;
+		this.fk_DocumentoMD = fk_DocumentoMD;
+		this.fk_Empresa = fk_Empresa;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		CantImpresiones = cantImpresiones;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
@@ -886,7 +886,7 @@ public class HistoriaOptometria {
 	 * @return the __pk_DocumentoHO
 	 */
 	public int get__pk_DocumentoHO() {
-		return __pk_DocumentoHO;
+		return pk_DocumentoHO;
 	}
 
 	/**
@@ -894,14 +894,14 @@ public class HistoriaOptometria {
 	 *            the __pk_DocumentoHO to set
 	 */
 	public void set__pk_DocumentoHO(int __pk_DocumentoHO) {
-		this.__pk_DocumentoHO = __pk_DocumentoHO;
+		this.pk_DocumentoHO = __pk_DocumentoHO;
 	}
 
 	/**
 	 * @return the _fk_DocumentoMD
 	 */
 	public int get_fk_DocumentoMD() {
-		return _fk_DocumentoMD;
+		return fk_DocumentoMD;
 	}
 
 	/**
@@ -909,14 +909,14 @@ public class HistoriaOptometria {
 	 *            the _fk_DocumentoMD to set
 	 */
 	public void set_fk_DocumentoMD(int _fk_DocumentoMD) {
-		this._fk_DocumentoMD = _fk_DocumentoMD;
+		this.fk_DocumentoMD = _fk_DocumentoMD;
 	}
 
 	/**
 	 * @return the _fk_Empresa
 	 */
 	public int get_fk_Empresa() {
-		return _fk_Empresa;
+		return fk_Empresa;
 	}
 
 	/**
@@ -924,14 +924,14 @@ public class HistoriaOptometria {
 	 *            the _fk_Empresa to set
 	 */
 	public void set_fk_Empresa(int _fk_Empresa) {
-		this._fk_Empresa = _fk_Empresa;
+		this.fk_Empresa = _fk_Empresa;
 	}
 
 	/**
 	 * @return the _fk_IDT_DocumentoID
 	 */
 	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
@@ -939,7 +939,7 @@ public class HistoriaOptometria {
 	 *            the _fk_IDT_DocumentoID to set
 	 */
 	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
 	}
 
 	/**
