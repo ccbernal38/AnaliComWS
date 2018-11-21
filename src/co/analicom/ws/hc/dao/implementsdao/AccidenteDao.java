@@ -23,7 +23,7 @@ public class AccidenteDao implements AccidenteDaoInterface {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
 				String consulta = "insert into paciente(AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, Empresa, EnfermedadProfesional, Lesion,"
-						+ "Reubicacion, Secuelas, DiasIncapacidad, _fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion) "
+						+ "Reubicacion, Secuelas, DiasIncapacidad, fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion) "
 						+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 				PreparedStatement preparedStatement = connection.prepareStatement(consulta);
@@ -37,7 +37,7 @@ public class AccidenteDao implements AccidenteDaoInterface {
 				preparedStatement.setString(8, accidente.getReubicacion());
 				preparedStatement.setString(9, accidente.getSecuelas());
 				preparedStatement.setInt(10, accidente.getDiasIncapacidad());
-				preparedStatement.setInt(11, accidente.get_fk_IDT_DocumentoID());                                                                                                                  
+				preparedStatement.setInt(11, accidente.getfk_IDT_DocumentoID());                                                                                                                  
 
 				preparedStatement.setTimestamp(12, new Timestamp(accidente.getFechaDeDiligenciamiento().getTime()));
 				preparedStatement.setTimestamp(13, new Timestamp(accidente.getFechaDeModificacion().getTime()));

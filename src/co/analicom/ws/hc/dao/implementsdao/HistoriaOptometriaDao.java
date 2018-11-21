@@ -36,7 +36,7 @@ public class HistoriaOptometriaDao implements HistoriaOptometriaDaoInterface{
 						+ "SACejas, SACejasEscribir, SAConjuntiva, SAConjuntivaEscribir, SACornea, SACorneaEscribir, SAEsclerotica, SAEscleroticaEscribir, "
 						+ "SAIris, SAIrisEscribir, SAParpados, SAParpadosEscribir, SAPestañas, SAPestañasEscribir, SAPupilas, SAPupilasEscribir, "
 						+ "SAViasLagrimales, SAViasLagrimalesEscribir, TipoDeExamen, TipoDeExamenExtra, TipoLente, userModifica, VisionColor, "
-						+ "VisionColorEscribir, VisionProfundidad, __pk_DocumentoHO, _fk_DocumentoMD, _fk_Empresa, _fk_IDT_DocumentoID, "
+						+ "VisionColorEscribir, VisionProfundidad, __pk_DocumentoHO, fk_DocumentoMD, fk_Empresa, fk_IDT_DocumentoID, "
 						+ "CantImpresiones, FechaDeDiligenciamiento, FechaDeModificacion, firmaMedico, firmaPaciente) VALUES "
 						+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
@@ -89,9 +89,9 @@ public class HistoriaOptometriaDao implements HistoriaOptometriaDaoInterface{
 				statement.setString(47, historiaOptometria.getVisionColorEscribir());
 				statement.setString(48, historiaOptometria.getVisionProfundidad());
 				statement.setInt(49, historiaOptometria.get__pk_DocumentoHO());
-				statement.setInt(50, historiaOptometria.get_fk_DocumentoMD());
-				statement.setInt(51, historiaOptometria.get_fk_Empresa());
-				statement.setInt(52, historiaOptometria.get_fk_IDT_DocumentoID());
+				statement.setInt(50, historiaOptometria.getfk_DocumentoMD());
+				statement.setInt(51, historiaOptometria.getfk_Empresa());
+				statement.setInt(52, historiaOptometria.getfk_IDT_DocumentoID());
 				statement.setInt(53, historiaOptometria.getCantImpresiones());
 				statement.setTimestamp(54, new Timestamp(historiaOptometria.getFechaDeDiligenciamiento().getTime()));
 				statement.setTimestamp(55, new Timestamp(historiaOptometria.getFechaDeModificacion().getTime()));

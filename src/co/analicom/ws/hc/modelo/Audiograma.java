@@ -27,33 +27,33 @@ public class Audiograma {
 	}
 
 	/**
-	 * @return the _fk_DocumentoFrecuencia
+	 * @return the fk_DocumentoFrecuencia
 	 */
-	public int get_fk_DocumentoFrecuencia() {
+	public int getfk_DocumentoFrecuencia() {
 		return fk_DocumentoFrecuencia;
 	}
 
 	/**
-	 * @param _fk_DocumentoFrecuencia
-	 *            the _fk_DocumentoFrecuencia to set
+	 * @param fk_DocumentoFrecuencia
+	 *            the fk_DocumentoFrecuencia to set
 	 */
-	public void set_fk_DocumentoFrecuencia(int _fk_DocumentoFrecuencia) {
-		this.fk_DocumentoFrecuencia = _fk_DocumentoFrecuencia;
+	public void setfk_DocumentoFrecuencia(int fk_DocumentoFrecuencia) {
+		this.fk_DocumentoFrecuencia = fk_DocumentoFrecuencia;
 	}
 
 	/**
-	 * @return the _fk_DocumentosHA
+	 * @return the fk_DocumentosHA
 	 */
-	public int get_fk_DocumentosHA() {
+	public int getfk_DocumentosHA() {
 		return fk_DocumentosHA;
 	}
 
 	/**
-	 * @param _fk_DocumentosHA
-	 *            the _fk_DocumentosHA to set
+	 * @param fk_DocumentosHA
+	 *            the fk_DocumentosHA to set
 	 */
-	public void set_fk_DocumentosHA(int _fk_DocumentosHA) {
-		this.fk_DocumentosHA = _fk_DocumentosHA;
+	public void setfk_DocumentosHA(int fk_DocumentosHA) {
+		this.fk_DocumentosHA = fk_DocumentosHA;
 	}
 
 	/**

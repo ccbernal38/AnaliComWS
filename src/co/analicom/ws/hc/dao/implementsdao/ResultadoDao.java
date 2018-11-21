@@ -30,7 +30,7 @@ public class ResultadoDao implements ResultadoDaoInterface{
 			if (connection != null) {
 				String consulta = "INSERT INTO Resultado (Aplazado, Aplazado_Motivo, AptoConRestriccion, AptoConRestriccion_Motivo, "
 						+ "AptoParaElCargo, ConPatologiaQueNoLimitaLabor, NoApto, NoApto_Motivo, Otros_escribir, PuedoContinuarConSuLabor, "
-						+ "SeSugiereReubicacionLaboral, SinPatologiaAparente, _fk_IDT_DocumentoID, _fk_IDT_DocumentoMD,"
+						+ "SeSugiereReubicacionLaboral, SinPatologiaAparente, fk_IDT_DocumentoID, fk_IDT_DocumentoMD,"
 						+ "FechaDeDiligenciamiento, FechaDeModificacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
 				statement.setString(1, resultado.getAplazado());
@@ -45,8 +45,8 @@ public class ResultadoDao implements ResultadoDaoInterface{
 				statement.setString(10, resultado.getPuedoContinuarConSuLabor());
 				statement.setString(11, resultado.getSeSugiereReubicacionLaboral());
 				statement.setString(12, resultado.getSinPatologiaAparente());
-				statement.setInt(13, resultado.get_fk_IDT_DocumentoID());
-				statement.setInt(14, resultado.get_fk_IDT_DocumentoMD());
+				statement.setInt(13, resultado.getfk_IDT_DocumentoID());
+				statement.setInt(14, resultado.getfk_IDT_DocumentoMD());
 				statement.setTimestamp(15, new Timestamp(resultado.getFechaDeDiligenciamiento().getTime()));
 				statement.setTimestamp(16, new Timestamp(resultado.getFechaDeModificacion().getTime()));
 

@@ -898,48 +898,48 @@ public class HistoriaOptometria {
 	}
 
 	/**
-	 * @return the _fk_DocumentoMD
+	 * @return the fk_DocumentoMD
 	 */
-	public int get_fk_DocumentoMD() {
+	public int getfk_DocumentoMD() {
 		return fk_DocumentoMD;
 	}
 
 	/**
-	 * @param _fk_DocumentoMD
-	 *            the _fk_DocumentoMD to set
+	 * @param fk_DocumentoMD
+	 *            the fk_DocumentoMD to set
 	 */
-	public void set_fk_DocumentoMD(int _fk_DocumentoMD) {
-		this.fk_DocumentoMD = _fk_DocumentoMD;
+	public void setfk_DocumentoMD(int fk_DocumentoMD) {
+		this.fk_DocumentoMD = fk_DocumentoMD;
 	}
 
 	/**
-	 * @return the _fk_Empresa
+	 * @return the fk_Empresa
 	 */
-	public int get_fk_Empresa() {
+	public int getfk_Empresa() {
 		return fk_Empresa;
 	}
 
 	/**
-	 * @param _fk_Empresa
-	 *            the _fk_Empresa to set
+	 * @param fk_Empresa
+	 *            the fk_Empresa to set
 	 */
-	public void set_fk_Empresa(int _fk_Empresa) {
-		this.fk_Empresa = _fk_Empresa;
+	public void setfk_Empresa(int fk_Empresa) {
+		this.fk_Empresa = fk_Empresa;
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
+	public int getfk_IDT_DocumentoID() {
 		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID
+	 *            the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this.fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**

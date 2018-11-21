@@ -12,7 +12,7 @@ public class ManipulacionAlimentos {
 
 	private String DermatologicoA, DermatologicoB, DermatologicoBCual, Lesiones, Observaciones, Respiratorio, Respiratorio_Ascultacion, Respiratorio_Inspeccion, Solicitado;
 
-	private int _fk_IDT_DocumentoID;
+	private int fk_IDT_DocumentoID;
 
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
@@ -33,13 +33,13 @@ public class ManipulacionAlimentos {
 	 * @param respiratorio_Ascultacion
 	 * @param respiratorio_Inspeccion
 	 * @param solicitado
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_IDT_DocumentoID
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
 	public ManipulacionAlimentos(String dermatologicoA, String dermatologicoB, String dermatologicoBCual,
 			String lesiones, String observaciones, String respiratorio, String respiratorio_Ascultacion,
-			String respiratorio_Inspeccion, String solicitado, int _fk_IDT_DocumentoID, Date fechaDeDiligenciamiento,
+			String respiratorio_Inspeccion, String solicitado, int fk_IDT_DocumentoID, Date fechaDeDiligenciamiento,
 			Date fechaDeModificacion) {
 		super();
 		DermatologicoA = dermatologicoA;
@@ -51,7 +51,7 @@ public class ManipulacionAlimentos {
 		Respiratorio_Ascultacion = respiratorio_Ascultacion;
 		Respiratorio_Inspeccion = respiratorio_Inspeccion;
 		Solicitado = solicitado;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}
@@ -192,18 +192,18 @@ public class ManipulacionAlimentos {
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID
+	 *            the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**

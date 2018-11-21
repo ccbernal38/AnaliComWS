@@ -26,10 +26,10 @@ public class AudiogramaDao implements AudiogramaDaoInterface{
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
 				
-				String consulta = "INSERT INTO Audiograma (_fk_DocumentoFrecuencia, _fk_DocumentosHA, oidoDerecho, oidoIzquierdo) VALUES (?,?,?,?)";
+				String consulta = "INSERT INTO Audiograma (fk_DocumentoFrecuencia, fk_DocumentosHA, oidoDerecho, oidoIzquierdo) VALUES (?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
-				statement.setInt(1, audiograma.get_fk_DocumentoFrecuencia());
-				statement.setInt(2, audiograma.get_fk_DocumentosHA());
+				statement.setInt(1, audiograma.getfk_DocumentoFrecuencia());
+				statement.setInt(2, audiograma.getfk_DocumentosHA());
 				statement.setInt(3, audiograma.getOidoDerecho());
 				statement.setInt(4, audiograma.getOidoIzquierdo());
 				if(!statement.execute()) {

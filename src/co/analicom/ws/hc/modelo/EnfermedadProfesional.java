@@ -11,7 +11,7 @@ import java.util.Date;
 public class EnfermedadProfesional {
 
 	private String AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, empresa, enfermedadProfesional, reubicacion;
-	private int _fk_IDT_DocumentoID;
+	private int fk_IDT_DocumentoID;
 	private Date fechaDeDiligenciamiento, FechaDeModificacion;
 
 	/**
@@ -29,12 +29,12 @@ public class EnfermedadProfesional {
 	 * @param empresa
 	 * @param enfermedadProfesional
 	 * @param reubicacion
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_IDT_DocumentoID
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
 	public EnfermedadProfesional(String accidentesDeTrabajo, String aRL, String descripcion, String diagnostico,
-			String empresa, String enfermedadProfesional, String reubicacion, int _fk_IDT_DocumentoID,
+			String empresa, String enfermedadProfesional, String reubicacion, int fk_IDT_DocumentoID,
 			Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		AccidentesDeTrabajo = accidentesDeTrabajo;
@@ -44,7 +44,7 @@ public class EnfermedadProfesional {
 		this.empresa = empresa;
 		this.enfermedadProfesional = enfermedadProfesional;
 		this.reubicacion = reubicacion;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		this.fechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}
@@ -155,18 +155,18 @@ public class EnfermedadProfesional {
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID
+	 *            the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**

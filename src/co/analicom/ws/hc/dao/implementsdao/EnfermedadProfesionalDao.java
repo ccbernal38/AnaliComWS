@@ -28,11 +28,11 @@ public class EnfermedadProfesionalDao implements EnfermedadProfesionalDaoInterfa
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "INSERT INTO ENFERMEDADPROFESIONAL (_fk_IDT_DocumentoID, AccidentesDeTrabajo, ARL, Descripcion, "
+				String consulta = "INSERT INTO ENFERMEDADPROFESIONAL (fk_IDT_DocumentoID, AccidentesDeTrabajo, ARL, Descripcion, "
 						+ "Diagnostico, empresa, enfermedadProfesional, reubicacion, fechaDeDiligenciamiento, FechaDeModificacion) "
 						+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
-				statement.setInt(1, enfermedadProfesional.get_fk_IDT_DocumentoID());
+				statement.setInt(1, enfermedadProfesional.getfk_IDT_DocumentoID());
 				statement.setString(2, enfermedadProfesional.getAccidentesDeTrabajo());
 				statement.setString(3, enfermedadProfesional.getARL());
 				statement.setString(4, enfermedadProfesional.getDescripcion());

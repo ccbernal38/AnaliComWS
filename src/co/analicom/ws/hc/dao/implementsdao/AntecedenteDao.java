@@ -58,7 +58,7 @@ public class AntecedenteDao implements AntecedentesDaoInterface{
 						+ "AP_Quimicos_escribir, AP_Quirurgicos, AP_Quirurgicos_escribir, AP_RehabilitacionVisual,"
 						+ "AP_RehabilitacionVisual_escribir, AP_Transfusionales, AP_Transfusionales_escribir, AP_Traumaticos,"
 						+ "AP_Traumaticos_escribir, AP_UsuariosRx, AP_UsuariosRx_escribir, OtrosOculares, OtrosOcularesEscribir, "
-						+ "_fk_IDT_DocumentoID, AG_Dias, AG_FObstetrica_A, AG_FObstetrica_C, AG_FObstetrica_E, AG_FObstetrica_G,"
+						+ "fk_IDT_DocumentoID, AG_Dias, AG_FObstetrica_A, AG_FObstetrica_C, AG_FObstetrica_E, AG_FObstetrica_G,"
 						+ "AG_FObstetrica_P, AG_FObstetrica_V, AG_Menarquia) "
 						+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
 						+ "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
@@ -182,7 +182,7 @@ public class AntecedenteDao implements AntecedentesDaoInterface{
 				statement.setString(116, antecedente.getAP_UsuariosRx_escribir());
 				statement.setString(117, antecedente.getOtrosOculares());
 				statement.setString(118, antecedente.getOtrosOcularesEscribir());
-				statement.setInt(119,antecedente.get_fk_IDT_DocumentoID());
+				statement.setInt(119,antecedente.getfk_IDT_DocumentoID());
 				statement.setInt(120,antecedente.getAG_Dias());
 				statement.setInt(121,antecedente.getAG_FObstetrica_A());
 				statement.setInt(122,antecedente.getAG_FObstetrica_C());

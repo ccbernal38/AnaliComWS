@@ -12,7 +12,7 @@ public class Accidente {
 
 	private String AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, Empresa, EnfermedadProfesional, Lesion,
 			Reubicacion, Secuelas;
-	private int DiasIncapacidad, _fk_IDT_DocumentoID;
+	private int DiasIncapacidad, fk_IDT_DocumentoID;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
 	/**
@@ -34,13 +34,13 @@ public class Accidente {
 	 * @param reubicacion
 	 * @param secuelas
 	 * @param diasIncapacidad
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_IDT_DocumentoID
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
 	public Accidente(String accidentesDeTrabajo, String aRL, String descripcion, String diagnostico, String empresa,
 			String enfermedadProfesional, String lesion, String reubicacion, String secuelas, int diasIncapacidad,
-			int _fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
+			int fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		AccidentesDeTrabajo = accidentesDeTrabajo;
 		ARL = aRL;
@@ -52,7 +52,7 @@ public class Accidente {
 		Reubicacion = reubicacion;
 		Secuelas = secuelas;
 		DiasIncapacidad = diasIncapacidad;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}
@@ -208,18 +208,18 @@ public class Accidente {
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID
+	 *            the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**

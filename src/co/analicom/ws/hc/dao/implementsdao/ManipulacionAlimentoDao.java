@@ -28,7 +28,7 @@ public class ManipulacionAlimentoDao implements ManipulacionAlimentoDaoInterface
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
 				String consulta = "INSERT INTO ManipulacionAlimentos (DermatologicoA, DermatologicoB, DermatologicoBCual, Lesiones, "
-						+ "Observaciones, Respiratorio, Respiratorio_Ascultacion, Respiratorio_Inspeccion, Solicitado, _fk_IDT_DocumentoID, "
+						+ "Observaciones, Respiratorio, Respiratorio_Ascultacion, Respiratorio_Inspeccion, Solicitado, fk_IDT_DocumentoID, "
 						+ "FechaDeDiligenciamiento, FechaDeModificacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
 				statement.setString(1, manipulacionAlimentos.getDermatologicoA());
@@ -40,7 +40,7 @@ public class ManipulacionAlimentoDao implements ManipulacionAlimentoDaoInterface
 				statement.setString(7, manipulacionAlimentos.getRespiratorio_Ascultacion());
 				statement.setString(8, manipulacionAlimentos.getRespiratorio_Inspeccion());
 				statement.setString(9, manipulacionAlimentos.getSolicitado());
-				statement.setInt(10, manipulacionAlimentos.get_fk_IDT_DocumentoID());
+				statement.setInt(10, manipulacionAlimentos.getfk_IDT_DocumentoID());
 				statement.setTimestamp(11, new Timestamp(manipulacionAlimentos.getFechaDeDiligenciamiento().getTime()));
 				statement.setTimestamp(12, new Timestamp(manipulacionAlimentos.getFechaDeModificacion().getTime()));
 

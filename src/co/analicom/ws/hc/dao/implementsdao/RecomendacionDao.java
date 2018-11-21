@@ -39,7 +39,7 @@ public class RecomendacionDao implements RecomendacioDaoInterface {
 						+ "Medicas_Valoracion_ControlORL, Ocupacionales,Ocupacionales_DistribucionFuerzasCargas, Ocupacionales_EPPAuditivo, "
 						+ "Ocupacionales_HigienePostural,Ocupacionales_PausasActivas45min, Ocupacionales_ReposoAuditivoExtralaboral,"
 						+ "Ocupacionales_RotaDiademaTelefonica, Ocupacionales_UsoDeEPP, ProductosPracticos, PruebasComplementarias,"
-						+ "RecomendacionesAdicionales, Restricciones, _fk_DocumentoMD, _fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion"
+						+ "RecomendacionesAdicionales, Restricciones, fk_DocumentoMD, fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion"
 						+ ") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
 				statement.setString(1, recomendacion.getHabitosEVS());
@@ -86,8 +86,8 @@ public class RecomendacionDao implements RecomendacioDaoInterface {
 				statement.setString(42, recomendacion.getPruebasComplementarias());
 				statement.setString(43, recomendacion.getRecomendacionesAdicionales());
 				statement.setString(44, recomendacion.getRestricciones());
-				statement.setInt(45, recomendacion.get_fk_DocumentoMD());
-				statement.setInt(46, recomendacion.get_fk_IDT_DocumentoID());
+				statement.setInt(45, recomendacion.getfk_DocumentoMD());
+				statement.setInt(46, recomendacion.getfk_IDT_DocumentoID());
 				statement.setTimestamp(47, new Timestamp(recomendacion.getFechaDeDiligenciamiento().getTime()));
 				statement.setTimestamp(48, new Timestamp(recomendacion.getFechaDeModificacion().getTime()));
 

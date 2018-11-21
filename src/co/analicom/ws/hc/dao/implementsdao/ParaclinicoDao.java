@@ -32,7 +32,7 @@ public class ParaclinicoDao implements ParaclinicoDaoInterface{
 				String consulta = "INSERT INTO Paraclinicos (AlteracionCorregida, Audiometria, Audiometria_Resultado, "
 						+ "Audiometria_Resultado_Observaciones, Espirometria, Espirometria_Resultado, Espirometria_Resultado_Observaciones, "
 						+ "ExamenLaboratorioDX, Observaciones, Optometria, Optometria_Visiometria_Diagnostico, Visiometria, "
-						+ "_fk_CodigoExamen, _fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion) "
+						+ "fk_CodigoExamen, fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion) "
 						+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
 				statement.setString(1, paraclinico.getAlteracionCorregida());
@@ -47,8 +47,8 @@ public class ParaclinicoDao implements ParaclinicoDaoInterface{
 				statement.setString(10, paraclinico.getOptometria());
 				statement.setString(11, paraclinico.getOptometria_Visiometria_Diagnostico());
 				statement.setString(12, paraclinico.getVisiometria());
-				statement.setInt(13, paraclinico.get_fk_CodigoExamen());
-				statement.setInt(14, paraclinico.get_fk_IDT_DocumentoID());
+				statement.setInt(13, paraclinico.getfk_CodigoExamen());
+				statement.setInt(14, paraclinico.getfk_IDT_DocumentoID());
 				statement.setTimestamp(15, new Timestamp(paraclinico.getFechaDeDiligenciamiento().getTime()));
 				statement.setTimestamp(16, new Timestamp(paraclinico.getFechaDeModificacion().getTime()));
 				if(!statement.execute()) {

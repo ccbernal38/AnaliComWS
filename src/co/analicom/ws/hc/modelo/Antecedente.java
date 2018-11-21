@@ -48,7 +48,7 @@ public class Antecedente {
 			AP_RehabilitacionVisual_escribir, AP_Transfusionales, AP_Transfusionales_escribir, AP_Traumaticos,
 			AP_Traumaticos_escribir, AP_UsuariosRx, AP_UsuariosRx_escribir, OtrosOculares, OtrosOcularesEscribir;
 
-	private int _fk_IDT_DocumentoID, AG_Dias, AG_FObstetrica_A, AG_FObstetrica_C, AG_FObstetrica_E, AG_FObstetrica_G,
+	private int fk_IDT_DocumentoID, AG_Dias, AG_FObstetrica_A, AG_FObstetrica_C, AG_FObstetrica_E, AG_FObstetrica_G,
 			AG_FObstetrica_P, AG_FObstetrica_V, AG_Menarquia;
 	private Date AG_FUP, AG_FUR, AG_UltimaCitologia_Fecha, FechaDeDiligenciamiento, FechaDeModificacion;
 	
@@ -172,7 +172,7 @@ public class Antecedente {
 	 * @param aP_UsuariosRx_escribir
 	 * @param otrosOculares
 	 * @param otrosOcularesEscribir
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_IDT_DocumentoID
 	 * @param aG_Dias
 	 * @param aG_FObstetrica_A
 	 * @param aG_FObstetrica_C
@@ -225,7 +225,7 @@ public class Antecedente {
 			String aP_RehabilitacionVisual, String aP_RehabilitacionVisual_escribir, String aP_Transfusionales,
 			String aP_Transfusionales_escribir, String aP_Traumaticos, String aP_Traumaticos_escribir,
 			String aP_UsuariosRx, String aP_UsuariosRx_escribir, String otrosOculares, String otrosOcularesEscribir,
-			int _fk_IDT_DocumentoID, int aG_Dias, int aG_FObstetrica_A, int aG_FObstetrica_C, int aG_FObstetrica_E,
+			int fk_IDT_DocumentoID, int aG_Dias, int aG_FObstetrica_A, int aG_FObstetrica_C, int aG_FObstetrica_E,
 			int aG_FObstetrica_G, int aG_FObstetrica_P, int aG_FObstetrica_V, int aG_Menarquia, Date aG_FUP,
 			Date aG_FUR, Date aG_UltimaCitologia_Fecha, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
@@ -347,7 +347,7 @@ public class Antecedente {
 		AP_UsuariosRx_escribir = aP_UsuariosRx_escribir;
 		OtrosOculares = otrosOculares;
 		OtrosOcularesEscribir = otrosOcularesEscribir;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		AG_Dias = aG_Dias;
 		AG_FObstetrica_A = aG_FObstetrica_A;
 		AG_FObstetrica_C = aG_FObstetrica_C;
@@ -1780,16 +1780,16 @@ public class Antecedente {
 		OtrosOcularesEscribir = otrosOcularesEscribir;
 	}
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 	/**
-	 * @param _fk_IDT_DocumentoID the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 	/**
 	 * @return the aG_Dias

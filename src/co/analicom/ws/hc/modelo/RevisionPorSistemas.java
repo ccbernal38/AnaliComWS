@@ -11,7 +11,7 @@ import java.util.Date;
 public class RevisionPorSistemas {
 
 	private String Cardiovascular, Dermatologico, Diagnostico, Digestivo, Genitourinario, Hematologico, Neurologico,Observaciones, Osteomuscular, Osteomuscular_Otras, Psiquiatrico, Respiratorio;
-	private int _fk_DocumentoMD, _fk_IDT_DocumentoID;
+	private int fk_DocumentoMD, fk_IDT_DocumentoID;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
 	/**
@@ -34,15 +34,15 @@ public class RevisionPorSistemas {
 	 * @param osteomuscular_Otras
 	 * @param psiquiatrico
 	 * @param respiratorio
-	 * @param _fk_DocumentoMD
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_DocumentoMD
+	 * @param fk_IDT_DocumentoID
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
 	public RevisionPorSistemas(String cardiovascular, String desmatologico, String diagnostico, String digestivo,
 			String genitourinario, String hematologico, String neurologico, String observaciones, String osteomuscular,
-			String osteomuscular_Otras, String psiquiatrico, String respiratorio, int _fk_DocumentoMD,
-			int _fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
+			String osteomuscular_Otras, String psiquiatrico, String respiratorio, int fk_DocumentoMD,
+			int fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		Cardiovascular = cardiovascular;
 		Dermatologico = desmatologico;
@@ -56,8 +56,8 @@ public class RevisionPorSistemas {
 		Osteomuscular_Otras = osteomuscular_Otras;
 		Psiquiatrico = psiquiatrico;
 		Respiratorio = respiratorio;
-		this._fk_DocumentoMD = _fk_DocumentoMD;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_DocumentoMD = fk_DocumentoMD;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}
@@ -243,33 +243,33 @@ public class RevisionPorSistemas {
 	}
 
 	/**
-	 * @return the _fk_DocumentoMD
+	 * @return the fk_DocumentoMD
 	 */
-	public int get_fk_DocumentoMD() {
-		return _fk_DocumentoMD;
+	public int getfk_DocumentoMD() {
+		return fk_DocumentoMD;
 	}
 
 	/**
-	 * @param _fk_DocumentoMD
-	 *            the _fk_DocumentoMD to set
+	 * @param fk_DocumentoMD
+	 *            the fk_DocumentoMD to set
 	 */
-	public void set_fk_DocumentoMD(int _fk_DocumentoMD) {
-		this._fk_DocumentoMD = _fk_DocumentoMD;
+	public void setfk_DocumentoMD(int fk_DocumentoMD) {
+		this.fk_DocumentoMD = fk_DocumentoMD;
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID
+	 *            the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**

@@ -9,7 +9,7 @@ import java.util.Date;
 public class ImpresionDiagnostica {
 
 	private String Diagnostico, SospechaDeOrigen, TipoDeDiagnostico;
-	private int _fk_CIE10, _fk_IDT_DocumentoID;
+	private int fk_CIE10, fk_IDT_DocumentoID;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
 	public ImpresionDiagnostica() {
@@ -20,19 +20,19 @@ public class ImpresionDiagnostica {
 	 * @param diagnostico
 	 * @param sospechaDeOrigen
 	 * @param tipoDeDiagnostico
-	 * @param _fk_CIE10
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_CIE10
+	 * @param fk_IDT_DocumentoID
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
-	public ImpresionDiagnostica(String diagnostico, String sospechaDeOrigen, String tipoDeDiagnostico, int _fk_CIE10,
-			int _fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
+	public ImpresionDiagnostica(String diagnostico, String sospechaDeOrigen, String tipoDeDiagnostico, int fk_CIE10,
+			int fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		Diagnostico = diagnostico;
 		SospechaDeOrigen = sospechaDeOrigen;
 		TipoDeDiagnostico = tipoDeDiagnostico;
-		this._fk_CIE10 = _fk_CIE10;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_CIE10 = fk_CIE10;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}
@@ -80,31 +80,31 @@ public class ImpresionDiagnostica {
 	}
 
 	/**
-	 * @return the _fk_CIE10
+	 * @return the fk_CIE10
 	 */
-	public int get_fk_CIE10() {
-		return _fk_CIE10;
+	public int getfk_CIE10() {
+		return fk_CIE10;
 	}
 
 	/**
-	 * @param _fk_CIE10 the _fk_CIE10 to set
+	 * @param fk_CIE10 the fk_CIE10 to set
 	 */
-	public void set_fk_CIE10(int _fk_CIE10) {
-		this._fk_CIE10 = _fk_CIE10;
+	public void setfk_CIE10(int fk_CIE10) {
+		this.fk_CIE10 = fk_CIE10;
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**

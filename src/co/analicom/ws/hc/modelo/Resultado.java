@@ -13,13 +13,13 @@ public class Resultado {
 	private String Aplazado, Aplazado_Motivo, AptoConRestriccion, AptoConRestriccion_Motivo, AptoParaElCargo,
 			ConPatologiaQueNoLimitaLabor, NoApto, NoApto_Motivo, Otros_escribir, PuedoContinuarConSuLabor,
 			SeSugiereReubicacionLaboral, SinPatologiaAparente;
-	private int _fk_IDT_DocumentoID, _fk_IDT_DocumentoMD;
+	private int fk_IDT_DocumentoID, fk_IDT_DocumentoMD;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
 	/**
 	 * Aplazado, Aplazado_Motivo, AptoConRestriccion, AptoConRestriccion_Motivo, AptoParaElCargo,
 			ConPatologiaQueNoLimitaLabor, NoApto, NoApto_Motivo, Otros_escribir, PuedoContinuarConSuLabor,
-			SeSugiereReubicacionLaboral, SinPatologiaAparente, _fk_IDT_DocumentoID, _fk_IDT_DocumentoMD, FechaDeDiligenciamiento, FechaDeModificacion
+			SeSugiereReubicacionLaboral, SinPatologiaAparente, fk_IDT_DocumentoID, fk_IDT_DocumentoMD, FechaDeDiligenciamiento, FechaDeModificacion
 	 */
 	public Resultado() {
 		// TODO Auto-generated constructor stub
@@ -38,16 +38,16 @@ public class Resultado {
 	 * @param puedoContinuarConSuLabor
 	 * @param seSugiereReubicacionLaboral
 	 * @param sinPatologiaAparente
-	 * @param _fk_IDT_DocumentoID
-	 * @param _fk_IDT_DocumentoMD
+	 * @param fk_IDT_DocumentoID
+	 * @param fk_IDT_DocumentoMD
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
 	public Resultado(String aplazado, String aplazado_Motivo, String aptoConRestriccion,
 			String aptoConRestriccion_Motivo, String aptoParaElCargo, String conPatologiaQueNoLimitaLabor,
 			String noApto, String noApto_Motivo, String otros_escribir, String puedoContinuarConSuLabor,
-			String seSugiereReubicacionLaboral, String sinPatologiaAparente, int _fk_IDT_DocumentoID,
-			int _fk_IDT_DocumentoMD, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
+			String seSugiereReubicacionLaboral, String sinPatologiaAparente, int fk_IDT_DocumentoID,
+			int fk_IDT_DocumentoMD, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		Aplazado = aplazado;
 		Aplazado_Motivo = aplazado_Motivo;
@@ -61,8 +61,8 @@ public class Resultado {
 		PuedoContinuarConSuLabor = puedoContinuarConSuLabor;
 		SeSugiereReubicacionLaboral = seSugiereReubicacionLaboral;
 		SinPatologiaAparente = sinPatologiaAparente;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
-		this._fk_IDT_DocumentoMD = _fk_IDT_DocumentoMD;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
+		this.fk_IDT_DocumentoMD = fk_IDT_DocumentoMD;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}
@@ -248,33 +248,33 @@ public class Resultado {
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID
+	 *            the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoMD
+	 * @return the fk_IDT_DocumentoMD
 	 */
-	public int get_fk_IDT_DocumentoMD() {
-		return _fk_IDT_DocumentoMD;
+	public int getfk_IDT_DocumentoMD() {
+		return fk_IDT_DocumentoMD;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoMD
-	 *            the _fk_IDT_DocumentoMD to set
+	 * @param fk_IDT_DocumentoMD
+	 *            the fk_IDT_DocumentoMD to set
 	 */
-	public void set_fk_IDT_DocumentoMD(int _fk_IDT_DocumentoMD) {
-		this._fk_IDT_DocumentoMD = _fk_IDT_DocumentoMD;
+	public void setfk_IDT_DocumentoMD(int fk_IDT_DocumentoMD) {
+		this.fk_IDT_DocumentoMD = fk_IDT_DocumentoMD;
 	}
 
 	/**

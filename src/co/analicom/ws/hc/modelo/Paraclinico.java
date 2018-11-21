@@ -13,7 +13,7 @@ public class Paraclinico {
 	private String AlteracionCorregida, Audiometria, Audiometria_Resultado, Audiometria_Resultado_Observaciones,
 			Espirometria, Espirometria_Resultado, Espirometria_Resultado_Observaciones, ExamenLaboratorioDX,
 			Observaciones, Optometria, Optometria_Visiometria_Diagnostico, Visiometria;
-	private int _fk_CodigoExamen, _fk_IDT_DocumentoID;
+	private int fk_CodigoExamen, fk_IDT_DocumentoID;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
 	/**
@@ -36,16 +36,16 @@ public class Paraclinico {
 	 * @param optometria
 	 * @param optometria_Visiometria_Diagnostico
 	 * @param visiometria
-	 * @param _fk_CodigoExamen
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_CodigoExamen
+	 * @param fk_IDT_DocumentoID
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
 	public Paraclinico(String alteracionCorregida, String audiometria, String audiometria_Resultado,
 			String audiometria_Resultado_Observaciones, String espirometria, String espirometria_Resultado,
 			String espirometria_Resultado_Observaciones, String examenLaboratorioDX, String observaciones,
-			String optometria, String optometria_Visiometria_Diagnostico, String visiometria, int _fk_CodigoExamen,
-			int _fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
+			String optometria, String optometria_Visiometria_Diagnostico, String visiometria, int fk_CodigoExamen,
+			int fk_IDT_DocumentoID, Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		AlteracionCorregida = alteracionCorregida;
 		Audiometria = audiometria;
@@ -59,8 +59,8 @@ public class Paraclinico {
 		Optometria = optometria;
 		Optometria_Visiometria_Diagnostico = optometria_Visiometria_Diagnostico;
 		Visiometria = visiometria;
-		this._fk_CodigoExamen = _fk_CodigoExamen;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_CodigoExamen = fk_CodigoExamen;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}
@@ -246,33 +246,33 @@ public class Paraclinico {
 	}
 
 	/**
-	 * @return the _fk_CodigoExamen
+	 * @return the fk_CodigoExamen
 	 */
-	public int get_fk_CodigoExamen() {
-		return _fk_CodigoExamen;
+	public int getfk_CodigoExamen() {
+		return fk_CodigoExamen;
 	}
 
 	/**
-	 * @param _fk_CodigoExamen
-	 *            the _fk_CodigoExamen to set
+	 * @param fk_CodigoExamen
+	 *            the fk_CodigoExamen to set
 	 */
-	public void set_fk_CodigoExamen(int _fk_CodigoExamen) {
-		this._fk_CodigoExamen = _fk_CodigoExamen;
+	public void setfk_CodigoExamen(int fk_CodigoExamen) {
+		this.fk_CodigoExamen = fk_CodigoExamen;
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID
-	 *            the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID
+	 *            the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**

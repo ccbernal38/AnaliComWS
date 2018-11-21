@@ -69,7 +69,7 @@ public class OtoscopiaDao implements OtoscopiaDaoInterface{
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "SELECT _fk_IDT_DocumentoID FROM Otoscopia ORDER BY fechaDeCreacion DESC";
+				String consulta = "SELECT fk_IDT_DocumentoID FROM Otoscopia ORDER BY fechaDeCreacion DESC";
 				PreparedStatement statement = connection.prepareStatement(consulta);
 				ResultSet result = statement.executeQuery();
 				while (result.next()) {

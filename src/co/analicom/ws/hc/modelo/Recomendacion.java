@@ -24,7 +24,7 @@ public class Recomendacion {
 			Ocupacionales_RotaDiademaTelefonica, Ocupacionales_UsoDeEPP, ProductosPracticos, PruebasComplementarias,
 			RecomendacionesAdicionales, Restricciones;
 
-	private int _fk_DocumentoMD, _fk_IDT_DocumentoID;
+	private int fk_DocumentoMD, fk_IDT_DocumentoID;
 
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
 
@@ -679,31 +679,31 @@ public class Recomendacion {
 	}
 
 	/**
-	 * @return the _fk_DocumentoMD
+	 * @return the fk_DocumentoMD
 	 */
-	public int get_fk_DocumentoMD() {
-		return _fk_DocumentoMD;
+	public int getfk_DocumentoMD() {
+		return fk_DocumentoMD;
 	}
 
 	/**
-	 * @param _fk_DocumentoMD the _fk_DocumentoMD to set
+	 * @param fk_DocumentoMD the fk_DocumentoMD to set
 	 */
-	public void set_fk_DocumentoMD(int _fk_DocumentoMD) {
-		this._fk_DocumentoMD = _fk_DocumentoMD;
+	public void setfk_DocumentoMD(int fk_DocumentoMD) {
+		this.fk_DocumentoMD = fk_DocumentoMD;
 	}
 
 	/**
-	 * @return the _fk_IDT_DocumentoID
+	 * @return the fk_IDT_DocumentoID
 	 */
-	public int get_fk_IDT_DocumentoID() {
-		return _fk_IDT_DocumentoID;
+	public int getfk_IDT_DocumentoID() {
+		return fk_IDT_DocumentoID;
 	}
 
 	/**
-	 * @param _fk_IDT_DocumentoID the _fk_IDT_DocumentoID to set
+	 * @param fk_IDT_DocumentoID the fk_IDT_DocumentoID to set
 	 */
-	public void set_fk_IDT_DocumentoID(int _fk_IDT_DocumentoID) {
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+	public void setfk_IDT_DocumentoID(int fk_IDT_DocumentoID) {
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 	}
 
 	/**
@@ -779,8 +779,8 @@ public class Recomendacion {
 	 * @param pruebasComplementarias
 	 * @param recomendacionesAdicionales
 	 * @param restricciones
-	 * @param _fk_DocumentoMD
-	 * @param _fk_IDT_DocumentoID
+	 * @param fk_DocumentoMD
+	 * @param fk_IDT_DocumentoID
 	 * @param fechaDeDiligenciamiento
 	 * @param fechaDeModificacion
 	 */
@@ -801,7 +801,7 @@ public class Recomendacion {
 			String ocupacionales_HigienePostural, String ocupacionales_PausasActivas45min,
 			String ocupacionales_ReposoAuditivoExtralaboral, String ocupacionales_RotaDiademaTelefonica,
 			String ocupacionales_UsoDeEPP, String productosPracticos, String pruebasComplementarias,
-			String recomendacionesAdicionales, String restricciones, int _fk_DocumentoMD, int _fk_IDT_DocumentoID,
+			String recomendacionesAdicionales, String restricciones, int fk_DocumentoMD, int fk_IDT_DocumentoID,
 			Date fechaDeDiligenciamiento, Date fechaDeModificacion) {
 		super();
 		HabitosEVS = habitosEVS;
@@ -848,8 +848,8 @@ public class Recomendacion {
 		PruebasComplementarias = pruebasComplementarias;
 		RecomendacionesAdicionales = recomendacionesAdicionales;
 		Restricciones = restricciones;
-		this._fk_DocumentoMD = _fk_DocumentoMD;
-		this._fk_IDT_DocumentoID = _fk_IDT_DocumentoID;
+		this.fk_DocumentoMD = fk_DocumentoMD;
+		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
 		FechaDeDiligenciamiento = fechaDeDiligenciamiento;
 		FechaDeModificacion = fechaDeModificacion;
 	}

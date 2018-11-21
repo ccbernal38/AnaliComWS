@@ -234,7 +234,7 @@ public class HCService {
 		boolean paraclinico = generarJsonParaclinicos(jsonParaclinicos, IDHC);
 		JSONObject empresa = generarJsonEmpresa(jsonEmpresa, IDHC);
 		
-		//JSON de retorno de transacción satisfactoria
+		//JSON de retorno de transacciï¿½n satisfactoria
 		JSONObject jsonObject = new JSONObject();
 		if(result) {
 			jsonObject.put("Historia Clinica", 1);
@@ -539,12 +539,12 @@ public class HCService {
 		String  PruebasComplementarias = jsonRecomendacion.getString("PruebasComplementarias");
 		String  RecomendacionesAdicionales = jsonRecomendacion.getString("RecomendacionesAdicionales");
 		String  Restricciones = jsonRecomendacion.getString("Restricciones");
-		String  _fk_DocumentoMD = jsonRecomendacion.getString("_fk_DocumentoMD");
-		int  _fk_IDT_DocumentoID;
+		String  fk_DocumentoMD = jsonRecomendacion.getString("fk_DocumentoMD");
+		int  fk_IDT_DocumentoID;
 		if (IDHC == -1) {
-			_fk_IDT_DocumentoID = IDHA;
+			fk_IDT_DocumentoID = IDHA;
 		}else{
-			_fk_IDT_DocumentoID = IDHC;			
+			fk_IDT_DocumentoID = IDHC;			
 		}
 		String  FechaDeDiligenciamiento = jsonRecomendacion.getString("FechaDeDiligenciamiento");
 		String  FechaDeModificacion = jsonRecomendacion.getString("FechaDeModificacion");
@@ -571,8 +571,8 @@ public class HCService {
 				Medicas_RemisionaEPS, Medicas_RemisionARP, Medicas_RemisionEPS, Medicas_SeguimientoCasoxARP, Medicas_TamizajeProstatico, 
 				Medicas_Valoracion_ControlORL, Ocupacionales, Ocupacionales_DistribucionFuerzasCargas, Ocupacionales_EPPAuditivo, Ocupacionales_HigienePostural, 
 				Ocupacionales_PausasActivas45min, Ocupacionales_ReposoAuditivoExtralaboral, Ocupacionales_RotaDiademaTelefonica, Ocupacionales_UsoDeEPP, 
-				ProductosPracticos, PruebasComplementarias, RecomendacionesAdicionales, Restricciones, Integer.parseInt(_fk_DocumentoMD), 
-				_fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+				ProductosPracticos, PruebasComplementarias, RecomendacionesAdicionales, Restricciones, Integer.parseInt(fk_DocumentoMD), 
+				fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
 		RecomendacionDao dao = new RecomendacionDao();
 		boolean result = dao.insertRecomendacion(recomendacion);
 		return result;
@@ -698,11 +698,11 @@ public class HCService {
 		String AP_UsuariosRx_escribir = jsonAntecedentes.getString("AP_UsuariosRx_escribir");
 		String OtrosOculares = jsonAntecedentes.getString("OtrosOculares");
 		String OtrosOcularesEscribir = jsonAntecedentes.getString("OtrosOcularesEscribir");
-		int _fk_IDT_DocumentoID;
+		int fk_IDT_DocumentoID;
 		if (IDHC == -1) {
-			_fk_IDT_DocumentoID = IDHA;
+			fk_IDT_DocumentoID = IDHA;
 		} else {
-			_fk_IDT_DocumentoID = IDHC;
+			fk_IDT_DocumentoID = IDHC;
 		}
 		String AG_Dias = jsonAntecedentes.getString("AG_Dias");
 		String AG_FObstetrica_A = jsonAntecedentes.getString("AG_FObstetrica_A");
@@ -770,7 +770,7 @@ public class HCService {
 				AP_Catarata, AP_Catarata_escribir, AP_Esquirlas, AP_Esquirlas_escribir, AP_Farmacologicos_Alergicos, AP_Farmacologicos_Alergicos_escribir, 
 				AP_Galucoma, AP_Galucoma_escribir, AP_Otros, AP_Otros_escribir, AP_Patologicos, AP_Patologicos_escribir, AP_Quimicos, AP_Quimicos_escribir, 
 				AP_Quirurgicos, AP_Quirurgicos_escribir, AP_RehabilitacionVisual, AP_RehabilitacionVisual_escribir, AP_Transfusionales, AP_Transfusionales_escribir, 
-				AP_Traumaticos, AP_Traumaticos_escribir, AP_UsuariosRx, AP_UsuariosRx_escribir, OtrosOculares, OtrosOcularesEscribir, _fk_IDT_DocumentoID, 
+				AP_Traumaticos, AP_Traumaticos_escribir, AP_UsuariosRx, AP_UsuariosRx_escribir, OtrosOculares, OtrosOcularesEscribir, fk_IDT_DocumentoID, 
 				Integer.parseInt(AG_Dias), Integer.parseInt(AG_FObstetrica_A), Integer.parseInt(AG_FObstetrica_C), Integer.parseInt(AG_FObstetrica_E), 
 				Integer.parseInt(AG_FObstetrica_G), Integer.parseInt(AG_FObstetrica_P), Integer.parseInt(AG_FObstetrica_V), Integer.parseInt(AG_Menarquia), dateAG_FUP, 
 				dateAG_FUR, dateAG_UltimaCitologia_Fecha, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
@@ -789,7 +789,7 @@ public class HCService {
 		String empresa = jsonEnfermedadP.getString("empresa");
 		String enfermedadProfesional = jsonEnfermedadP.getString("enfermedadProfesional");
 		String reubicacion = jsonEnfermedadP.getString("reubicacion");
-		int _fk_IDT_DocumentoID = IDP;
+		int fk_IDT_DocumentoID = IDP;
 		String fechaDeDiligenciamiento = jsonEnfermedadP.getString("fechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonEnfermedadP.getString("FechaDeModificacion");
 		java.util.Date dateFechaDeDiligenciamiento = null;
@@ -805,7 +805,7 @@ public class HCService {
 		} catch (Exception e) {
 			dateFechaDeModificacion = new SimpleDateFormat("dd/MM/yyyy hh:mm a").parse(FechaDeModificacion);
 		}
-		EnfermedadProfesional enfermedadProfesional2 = new EnfermedadProfesional(AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, empresa, enfermedadProfesional, reubicacion, _fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+		EnfermedadProfesional enfermedadProfesional2 = new EnfermedadProfesional(AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, empresa, enfermedadProfesional, reubicacion, fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
 		EnfermedadProfesionalDao dao = new EnfermedadProfesionalDao();
 		boolean result = dao.insertEnfermedadProfesional(enfermedadProfesional2);
 		
@@ -824,7 +824,7 @@ public class HCService {
 		String Reubicacion = jsonAccidente.getString("Reubicacion");
 		String Secuelas = jsonAccidente.getString("Secuelas");
 		String DiasIncapacidad = jsonAccidente.getString("DiasIncapacidad");
-		int _fk_IDT_DocumentoID = IDP;
+		int fk_IDT_DocumentoID = IDP;
 		String FechaDeDiligenciamiento = jsonAccidente.getString("FechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonAccidente.getString("FechaDeModificacion");
 		
@@ -843,7 +843,7 @@ public class HCService {
 					.parse(FechaDeModificacion);
 		}
 		
-		Accidente accidente = new Accidente(AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, Empresa, EnfermedadProfesional, Lesion, Reubicacion, Secuelas, Integer.parseInt(DiasIncapacidad), _fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+		Accidente accidente = new Accidente(AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, Empresa, EnfermedadProfesional, Lesion, Reubicacion, Secuelas, Integer.parseInt(DiasIncapacidad), fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
 		AccidenteDao accidenteDao = new AccidenteDao();
 		boolean result = accidenteDao.insertAccidente(accidente);
 		
@@ -1168,7 +1168,7 @@ public class HCService {
 		String Respiratorio_Ascultacion = jsonManipulacionA.getString("Respiratorio_Ascultacion");
 		String Respiratorio_Inspeccion = jsonManipulacionA.getString("Respiratorio_Inspeccion");
 		String Solicitado = jsonManipulacionA.getString("Solicitado");
-		int _fk_IDT_DocumentoID = IDHC;
+		int fk_IDT_DocumentoID = IDHC;
 		String FechaDeDiligenciamiento = jsonManipulacionA.getString("FechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonManipulacionA.getString("FechaDeModificacion");
 		
@@ -1187,7 +1187,7 @@ public class HCService {
 					.parse(FechaDeModificacion);
 		}
 		ManipulacionAlimentos manipulacionAlimentos = new ManipulacionAlimentos(DermatologicoA, DermatologicoB, DermatologicoBCual, Lesiones, 
-				Observaciones, Respiratorio, Respiratorio_Ascultacion, Respiratorio_Inspeccion, Solicitado, _fk_IDT_DocumentoID, 
+				Observaciones, Respiratorio, Respiratorio_Ascultacion, Respiratorio_Inspeccion, Solicitado, fk_IDT_DocumentoID, 
 				dateFechaDeDiligenciamiento, dateFechaDeModificacion);
 		ManipulacionAlimentoDao alimentoDao = new ManipulacionAlimentoDao();
 		boolean result = alimentoDao.insertManipulacionAlimento(manipulacionAlimentos);
@@ -1209,12 +1209,12 @@ public class HCService {
 		String Osteomuscular_Otras = jsonRevisionS.getString("Osteomuscular_Otras");
 		String Psiquiatrico = jsonRevisionS.getString("Psiquiatrico");
 		String Respiratorio = jsonRevisionS.getString("Respiratorio");
-		String _fk_DocumentoMD = jsonRevisionS.getString("_fk_DocumentoMD");
-		int _fk_IDT_DocumentoID;
+		String fk_DocumentoMD = jsonRevisionS.getString("fk_DocumentoMD");
+		int fk_IDT_DocumentoID;
 		if (IDHC == -1) {
-			_fk_IDT_DocumentoID = IDHA;
+			fk_IDT_DocumentoID = IDHA;
 		}else {
-			_fk_IDT_DocumentoID = IDHC;
+			fk_IDT_DocumentoID = IDHC;
 		}
 		String FechaDeDiligenciamiento = jsonRevisionS.getString("FechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonRevisionS.getString("FechaDeModificacion");
@@ -1236,7 +1236,7 @@ public class HCService {
 		
 		RevisionPorSistemas revisionPorSistemas = new RevisionPorSistemas(Cardiovascular, Desmatologico, Diagnostico, Digestivo, Genitourinario,
 				Hematologico, Neurologico, Observaciones, Osteomuscular, Osteomuscular_Otras, Psiquiatrico, Respiratorio, 
-				Integer.parseInt(_fk_DocumentoMD), _fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+				Integer.parseInt(fk_DocumentoMD), fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
 		RevisionPorSistemaDao dao = new RevisionPorSistemaDao();
 		boolean result = dao.insertRevisionSistema(revisionPorSistemas);
 		
@@ -1304,8 +1304,8 @@ public class HCService {
 		String PuedoContinuarConSuLabor = jsonResultado.getString("PuedoContinuarConSuLabor");
 		String SeSugiereReubicacionLaboral = jsonResultado.getString("SeSugiereReubicacionLaboral");
 		String SinPatologiaAparente = jsonResultado.getString("SinPatologiaAparente");
-		int _fk_IDT_DocumentoID = IDHC;
-		String _fk_IDT_DocumentoMD = jsonResultado.getString("_fk_IDT_DocumentoMD");
+		int fk_IDT_DocumentoID = IDHC;
+		String fk_IDT_DocumentoMD = jsonResultado.getString("fk_IDT_DocumentoMD");
 		String FechaDeDiligenciamiento = jsonResultado.getString("FechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonResultado.getString("FechaDeModificacion");
 		
@@ -1326,7 +1326,7 @@ public class HCService {
 		
 		Resultado resultado = new Resultado(Aplazado, Aplazado_Motivo, AptoConRestriccion, AptoConRestriccion_Motivo, AptoParaElCargo, 
 				ConPatologiaQueNoLimitaLabor, NoApto, NoApto_Motivo, Otros_escribir, PuedoContinuarConSuLabor, SeSugiereReubicacionLaboral, 
-				SinPatologiaAparente, _fk_IDT_DocumentoID, Integer.parseInt(_fk_IDT_DocumentoMD), dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+				SinPatologiaAparente, fk_IDT_DocumentoID, Integer.parseInt(fk_IDT_DocumentoMD), dateFechaDeDiligenciamiento, dateFechaDeModificacion);
 		ResultadoDao dao = new ResultadoDao();
 		boolean result = dao.insertResultado(resultado);
 		return result;
@@ -1337,12 +1337,12 @@ public class HCService {
 		String Diagnostico = jsonImpresionD.getString("Diagnostico");
 		String SospechaDeOrigen = jsonImpresionD.getString("SospechaDeOrigen");
 		String TipoDeDiagnostico = jsonImpresionD.getString("TipoDeDiagnostico");
-		String _fk_CIE10 = jsonImpresionD.getString("_fk_CIE10");
-		int _fk_IDT_DocumentoID;
+		String fk_CIE10 = jsonImpresionD.getString("fk_CIE10");
+		int fk_IDT_DocumentoID;
 		if (IDHC == -1) {
-			_fk_IDT_DocumentoID = IDHA;
+			fk_IDT_DocumentoID = IDHA;
 		} else {
-			_fk_IDT_DocumentoID = IDHC;
+			fk_IDT_DocumentoID = IDHC;
 		}
 		String FechaDeDiligenciamiento = jsonImpresionD.getString("FechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonImpresionD.getString("FechaDeModificacion");
@@ -1362,7 +1362,7 @@ public class HCService {
 					.parse(FechaDeModificacion);
 		}
 		ImpresionDiagnostica impresionDiagnostica = new ImpresionDiagnostica(Diagnostico, SospechaDeOrigen, TipoDeDiagnostico, 
-				Integer.parseInt(_fk_CIE10), _fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
+				Integer.parseInt(fk_CIE10), fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, dateFechaDeModificacion);
 		ImpresionDiagnosticaDao dao = new ImpresionDiagnosticaDao();
 		boolean result = dao.insertImpresionDiagnostica(impresionDiagnostica);
 		return result;
@@ -1382,8 +1382,8 @@ public class HCService {
 		String Optometria = jsonParaclinicos.getString("Optometria");
 		String Optometria_Visiometria_Diagnostico = jsonParaclinicos.getString("Optometria_Visiometria_Diagnostico");
 		String Visiometria = jsonParaclinicos.getString("Visiometria");
-		String _fk_CodigoExamen = jsonParaclinicos.getString("_fk_CodigoExamen");
-		int _fk_IDT_DocumentoID = IDHC;
+		String fk_CodigoExamen = jsonParaclinicos.getString("fk_CodigoExamen");
+		int fk_IDT_DocumentoID = IDHC;
 		String FechaDeDiligenciamiento = jsonParaclinicos.getString("FechaDeDiligenciamiento");
 		String FechaDeModificacion = jsonParaclinicos.getString("FechaDeModificacion");
 		
@@ -1404,7 +1404,7 @@ public class HCService {
 		
 		Paraclinico paraclinico = new Paraclinico(AlteracionCorregida, Audiometria, Audiometria_Resultado, Audiometria_Resultado_Observaciones, 
 				Espirometria, Espirometria_Resultado, Espirometria_Resultado_Observaciones, ExamenLaboratorioDX, Observaciones, Optometria, 
-				Optometria_Visiometria_Diagnostico, Visiometria, Integer.parseInt(_fk_CodigoExamen), _fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, 
+				Optometria_Visiometria_Diagnostico, Visiometria, Integer.parseInt(fk_CodigoExamen), fk_IDT_DocumentoID, dateFechaDeDiligenciamiento, 
 				dateFechaDeModificacion);
 		ParaclinicoDao dao = new ParaclinicoDao();
 		boolean result = dao.insertParaclinico(paraclinico);
