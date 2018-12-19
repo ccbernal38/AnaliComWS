@@ -9,6 +9,9 @@ import co.analicom.ws.hc.modelo.HistoriaOptometria;
  * @author Cristian Cruz
  */
 public interface HistoriaOptometriaDaoInterface {
-	
-	public void insertHistoriaOptometria(HistoriaOptometria historiaOptometria);
+
+	public boolean insertHistoriaOptometria(HistoriaOptometria historiaOptometria);
+
+	public int obtenerID();
+
 }

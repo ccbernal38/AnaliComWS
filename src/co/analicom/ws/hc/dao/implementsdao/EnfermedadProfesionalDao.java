@@ -28,7 +28,7 @@ public class EnfermedadProfesionalDao implements EnfermedadProfesionalDaoInterfa
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "INSERT INTO ENFERMEDADPROFESIONAL (fk_IDT_DocumentoID, AccidentesDeTrabajo, ARL, Descripcion, "
+				String consulta = "INSERT INTO EnfermedadProfesional(fk_IDT_DocumentoID, AccidentesDeTrabajo, ARL, Descripcion, "
 						+ "Diagnostico, empresa, enfermedadProfesional, reubicacion, fechaDeDiligenciamiento, FechaDeModificacion) "
 						+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
@@ -50,7 +50,7 @@ public class EnfermedadProfesionalDao implements EnfermedadProfesionalDaoInterfa
 				return true;
 			}
 		} catch (Exception e) {
-			System.out.println("Error en orden: " + e.getLocalizedMessage());
+			System.out.println("Error en orden EP: " + e.getLocalizedMessage());
 			e.printStackTrace();
 			return false;
 		}

@@ -19,7 +19,7 @@ public class Conexion {
 		// registrar el controlador de cliente JDBC
 		try {
 			Class.forName("com.filemaker.jdbc.Driver").newInstance();
-			conn = DriverManager.getConnection("jdbc:filemaker://192.168.1.33/AnalisoftV2", "jdbc", "Alca2010!");			
+			conn = DriverManager.getConnection("jdbc:filemaker://192.168.1.31/AnalisoftV2", "jdbc", "Alca2010!");			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -30,7 +30,7 @@ public class Conexion {
 		// registrar el controlador de cliente JDBC
 		try {
 			Class.forName("com.filemaker.jdbc.Driver").newInstance();
-			conn = DriverManager.getConnection("jdbc:filemaker://192.168.1.31/AnaliSO_Pruebas", "jdbc", "Alca2010!");			
+			conn = DriverManager.getConnection("jdbc:filemaker://192.168.1.31/AnaliSOHCV10", "jdbc", "Alca2010!");			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -41,7 +41,7 @@ public class Conexion {
 
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 		conn = DriverManager.getConnection(
-				"jdbc:mysql://192.168.1.33:3306/lisweb?useUnicode=yes&characterEncoding=UTF-8", "lisweb", "Alca2010!");
+				"jdbc:mysql://18.188.83.81:3306/lisweb?useUnicode=yes&characterEncoding=UTF-8", "web", "Alca2010!");
 
 		return conn;
 	}

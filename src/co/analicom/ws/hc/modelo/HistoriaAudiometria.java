@@ -2,7 +2,6 @@ package co.analicom.ws.hc.modelo;
 
 import java.util.Date;
 
-
 public class HistoriaAudiometria {
 
 	private String estado, impreso, lugar, pacienteCompatibleLabor, PacienteCompatibleLabor_Observacion,
@@ -10,7 +9,7 @@ public class HistoriaAudiometria {
 			RequiereRemisionEspecialista_Observacion, TipoDeExamen, TipoDeExamenExtra, userModifica, usuarioModifica;
 	private int CantImpresiones, fk_DocumentoMD, fk_Empresa, fk_IDT_DocumentoID, fk_Otoscopia, pk_DocumentoHA;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
-	private byte[] firmaMedico, firmaPaciente;
+	private String firmaMedico, firmaPaciente;
 
 	public HistoriaAudiometria() {
 		// TODO Auto-generated constructor stub
@@ -47,7 +46,7 @@ public class HistoriaAudiometria {
 			String requiereRemisionEspecialista_Observacion, String tipoDeExamen, String tipoDeExamenExtra,
 			String userModifica, String usuarioModifica, int cantImpresiones, int fk_DocumentoMD, int fk_Empresa,
 			int fk_IDT_DocumentoID, int fk_Otoscopia, int pk_DocumentoHA, Date fechaDeDiligenciamiento,
-			Date fechaDeModificacion, byte[] firmaMedico, byte[] firmaPaciente) {
+			Date fechaDeModificacion, String firmaMedico, String firmaPaciente) {
 		super();
 		this.estado = estado;
 		this.impreso = impreso;
@@ -392,7 +391,7 @@ public class HistoriaAudiometria {
 	/**
 	 * @return the firmaMedico
 	 */
-	public byte[] getFirmaMedico() {
+	public String getFirmaMedico() {
 		return firmaMedico;
 	}
 
@@ -400,14 +399,14 @@ public class HistoriaAudiometria {
 	 * @param firmaMedico
 	 *            the firmaMedico to set
 	 */
-	public void setFirmaMedico(byte[] firmaMedico) {
+	public void setFirmaMedico(String firmaMedico) {
 		this.firmaMedico = firmaMedico;
 	}
 
 	/**
 	 * @return the firmaPaciente
 	 */
-	public byte[] getFirmaPaciente() {
+	public String getFirmaPaciente() {
 		return firmaPaciente;
 	}
 
@@ -415,7 +414,7 @@ public class HistoriaAudiometria {
 	 * @param firmaPaciente
 	 *            the firmaPaciente to set
 	 */
-	public void setFirmaPaciente(byte[] firmaPaciente) {
+	public void setFirmaPaciente(String firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
 	}
 

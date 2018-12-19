@@ -28,7 +28,7 @@ public class HabitoDao implements HabitoDaoInterface{
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "INSERT INTO Habito (Alcohol, AlcoholCantidad, AlcoholFrecuencia, Deporte, DeporteCual, DeporteFrecuencia, "
+				String consulta = "INSERT INTO Habitos (Alcohol, AlcoholCantidad, AlcoholFrecuencia, Deporte, DeporteCual, DeporteFrecuencia, "
 						+ "DeporteLesiones, DeporteLesionesCual, ExFumador, Fumador, Sedentarismo, SedentarismoFrecuencia, SustanciasPsicoactivas, "
 						+ "SustanciasPsicoactivasCual, SustanciasPsicoactivasFrecuencia, CantidadCigarrillosDia, fk_IDT_DocumentoID, TiempoFumador,"
 						+ "FechaDeDiligenciamiento, FechaDeModificacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";

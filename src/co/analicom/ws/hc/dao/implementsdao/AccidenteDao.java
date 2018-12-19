@@ -22,7 +22,7 @@ public class AccidenteDao implements AccidenteDaoInterface {
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "insert into paciente(AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, Empresa, EnfermedadProfesional, Lesion,"
+				String consulta = "insert into Accidentes(AccidentesDeTrabajo, ARL, Descripcion, Diagnostico, Empresa, EnfermedadProfesional, Lesion,"
 						+ "Reubicacion, Secuelas, DiasIncapacidad, fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion) "
 						+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -47,7 +47,7 @@ public class AccidenteDao implements AccidenteDaoInterface {
 				return true;
 			}
 		} catch (Exception e) {
-			System.out.println("Error en orden: " + e.getLocalizedMessage());
+			System.out.println("Error en orden A: " + e.getLocalizedMessage());
 			return false;
 		}
 		return false;

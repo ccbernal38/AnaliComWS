@@ -28,7 +28,7 @@ public class RevisionPorSistemaDao implements RevisionPorSistemaDaoInterface{
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "INSERT INTO Revision_por_Sistemas (Cardiovascular, Desmatologico, Diagnostico, Digestivo, Genitourinario, "
+				String consulta = "INSERT INTO Revision_por_Sistemas (Cardiovascular, Dermatologico, Diagnostico, Digestivo, Genitourinario, "
 						+ "Hematologico, Neurologico,Observaciones, Osteomuscular, Osteomuscular_Otras, Psiquiatrico, Respiratorio, "
 						+ "fk_DocumentoMD, fk_IDT_DocumentoID, FechaDeDiligenciamiento, FechaDeModificacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);

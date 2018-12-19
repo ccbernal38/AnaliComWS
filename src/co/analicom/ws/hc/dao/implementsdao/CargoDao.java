@@ -14,21 +14,22 @@ import co.analicom.ws.hc.modelo.Cargo;
 /**
  * @author Cristian Cruz
  */
-public class CargoDao implements CargoDaoInterface{
-	
+public class CargoDao implements CargoDaoInterface {
+
 	Conexion connexion;
-	
+
 	public CargoDao() {
 		connexion = new Conexion();
-	}	
+	}
+
 	@Override
 	public boolean insertCargo(Cargo cargo) {
-		
+
 		try {
 			Connection connection = connexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "INSERT INTO Cargo (Antiguedad, CargoTiempo, fk_IDT_DocumentoID, fk_NIT, HorasTrabajadas"
-						+ "Area, Cargo, CargoEvaluar,  ElementosDeProteccion, Empresa, JornadaDeTrabajo, unidad"
+				String consulta = "INSERT INTO Cargo (Antiguedad, CargoTiempo, fk_IDT_DocumentoID, fk_NIT, HorasTrabajadas, "
+						+ "Area, Cargo, CargoEvaluar,  ElementosDeProteccion, Empresa, JornadaDeTrabajo, unidad, "
 						+ "FechaIngreso, FechaRetiro, FechaDeDiligenciamiento, FechaDeModificacion) VALUES (?,?,?,?,"
 						+ "?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
@@ -44,13 +45,13 @@ public class CargoDao implements CargoDaoInterface{
 				statement.setString(10, cargo.getEmpresa());
 				statement.setString(11, cargo.getJornadaDeTrabajo());
 				statement.setString(12, cargo.getUnidad());
-				statement.setTimestamp(13, new Timestamp(cargo.getFechaIngreso().getTime()));
-				statement.setTimestamp(14, new Timestamp(cargo.getFechaRetiro().getTime()));
+				statement.setString(13, (cargo.getFechaIngreso()));
+				statement.setString(14, (cargo.getFechaRetiro()));
 				statement.setTimestamp(15, new Timestamp(cargo.getFechaDeDiligenciamiento().getTime()));
 				statement.setTimestamp(16, new Timestamp(cargo.getFechaDeModificacion().getTime()));
-				
+
 				if (!statement.execute()) {
-					System.out.println("Insertado!");
+
 				}
 				connexion.cerrarConexion();
 				return true;

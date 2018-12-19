@@ -21,12 +21,12 @@ public class HistoriaOptometria {
 			RequiereRemisionEspecialista, RequiereRemisionEspecialista_Observacion, Retino_ADD, Retino_OD, Retino_OI,
 			SA_Camara_Anterior, SACamaraAnteriorEscribir, SACejas, SACejasEscribir, SAConjuntiva, SAConjuntivaEscribir,
 			SACornea, SACorneaEscribir, SAEsclerotica, SAEscleroticaEscribir, SAIris, SAIrisEscribir, SAParpados,
-			SAParpadosEscribir, SAPestañas, SAPestañasEscribir, SAPupilas, SAPupilasEscribir, SAViasLagrimales,
+			SAParpadosEscribir, SAPestanas, SAPestanasEscribir, SAPupilas, SAPupilasEscribir, SAViasLagrimales,
 			SAViasLagrimalesEscribir, TipoDeExamen, TipoDeExamenExtra, TipoLente, userModifica, VisionColor,
 			VisionColorEscribir, VisionProfundidad;
-	private int pk_DocumentoHO, fk_DocumentoMD, fk_Empresa, fk_IDT_DocumentoID, CantImpresiones;
+	private int fk_DocumentoMD, fk_Empresa, fk_IDT_DocumentoID, CantImpresiones;
 	private Date FechaDeDiligenciamiento, FechaDeModificacion;
-	private byte[] firmaMedico, firmaPaciente;
+	private String firmaMedico, firmaPaciente;
 
 	/**
 	 * @param aDDLENSOMETRIA
@@ -64,8 +64,8 @@ public class HistoriaOptometria {
 	 * @param sAIrisEscribir
 	 * @param sAParpados
 	 * @param sAParpadosEscribir
-	 * @param sAPestañas
-	 * @param sAPestañasEscribir
+	 * @param sAPestanas
+	 * @param sAPestanasEscribir
 	 * @param sAPupilas
 	 * @param sAPupilasEscribir
 	 * @param sAViasLagrimales
@@ -77,7 +77,6 @@ public class HistoriaOptometria {
 	 * @param visionColor
 	 * @param visionColorEscribir
 	 * @param visionProfundidad
-	 * @param pk_DocumentoHO
 	 * @param fk_DocumentoMD
 	 * @param fk_Empresa
 	 * @param fk_IDT_DocumentoID
@@ -96,12 +95,12 @@ public class HistoriaOptometria {
 			String sA_Camara_Anterior, String sACamaraAnteriorEscribir, String sACejas, String sACejasEscribir,
 			String sAConjuntiva, String sAConjuntivaEscribir, String sACornea, String sACorneaEscribir,
 			String sAEsclerotica, String sAEscleroticaEscribir, String sAIris, String sAIrisEscribir, String sAParpados,
-			String sAParpadosEscribir, String sAPestañas, String sAPestañasEscribir, String sAPupilas,
+			String sAParpadosEscribir, String sAPestanas, String sAPestanasEscribir, String sAPupilas,
 			String sAPupilasEscribir, String sAViasLagrimales, String sAViasLagrimalesEscribir, String tipoDeExamen,
 			String tipoDeExamenExtra, String tipoLente, String userModifica, String visionColor,
-			String visionColorEscribir, String visionProfundidad, int pk_DocumentoHO, int fk_DocumentoMD,
+			String visionColorEscribir, String visionProfundidad, int fk_DocumentoMD,
 			int fk_Empresa, int fk_IDT_DocumentoID, int cantImpresiones, Date fechaDeDiligenciamiento,
-			Date fechaDeModificacion, byte[] firmaMedico, byte[] firmaPaciente) {
+			Date fechaDeModificacion, String firmaMedico, String firmaPaciente) {
 		super();
 		ADDLENSOMETRIA = aDDLENSOMETRIA;
 		this.estado = estado;
@@ -138,8 +137,8 @@ public class HistoriaOptometria {
 		SAIrisEscribir = sAIrisEscribir;
 		SAParpados = sAParpados;
 		SAParpadosEscribir = sAParpadosEscribir;
-		SAPestañas = sAPestañas;
-		SAPestañasEscribir = sAPestañasEscribir;
+		SAPestanas = sAPestanas;
+		SAPestanasEscribir = sAPestanasEscribir;
 		SAPupilas = sAPupilas;
 		SAPupilasEscribir = sAPupilasEscribir;
 		SAViasLagrimales = sAViasLagrimales;
@@ -151,7 +150,6 @@ public class HistoriaOptometria {
 		VisionColor = visionColor;
 		VisionColorEscribir = visionColorEscribir;
 		VisionProfundidad = visionProfundidad;
-		this.pk_DocumentoHO = pk_DocumentoHO;
 		this.fk_DocumentoMD = fk_DocumentoMD;
 		this.fk_Empresa = fk_Empresa;
 		this.fk_IDT_DocumentoID = fk_IDT_DocumentoID;
@@ -688,33 +686,33 @@ public class HistoriaOptometria {
 	}
 
 	/**
-	 * @return the sAPestañas
+	 * @return the sAPestanas
 	 */
-	public String getSAPestañas() {
-		return SAPestañas;
+	public String getSAPestanas() {
+		return SAPestanas;
 	}
 
 	/**
-	 * @param sAPestañas
-	 *            the sAPestañas to set
+	 * @param sAPestanas
+	 *            the sAPestanas to set
 	 */
-	public void setSAPestañas(String sAPestañas) {
-		SAPestañas = sAPestañas;
+	public void setSAPestanas(String sAPestanas) {
+		SAPestanas = sAPestanas;
 	}
 
 	/**
-	 * @return the sAPestañasEscribir
+	 * @return the sAPestanasEscribir
 	 */
-	public String getSAPestañasEscribir() {
-		return SAPestañasEscribir;
+	public String getSAPestanasEscribir() {
+		return SAPestanasEscribir;
 	}
 
 	/**
-	 * @param sAPestañasEscribir
-	 *            the sAPestañasEscribir to set
+	 * @param sAPestanasEscribir
+	 *            the sAPestanasEscribir to set
 	 */
-	public void setSAPestañasEscribir(String sAPestañasEscribir) {
-		SAPestañasEscribir = sAPestañasEscribir;
+	public void setSAPestanasEscribir(String sAPestanasEscribir) {
+		SAPestanasEscribir = sAPestanasEscribir;
 	}
 
 	/**
@@ -882,21 +880,7 @@ public class HistoriaOptometria {
 		VisionProfundidad = visionProfundidad;
 	}
 
-	/**
-	 * @return the __pk_DocumentoHO
-	 */
-	public int get__pk_DocumentoHO() {
-		return pk_DocumentoHO;
-	}
-
-	/**
-	 * @param __pk_DocumentoHO
-	 *            the __pk_DocumentoHO to set
-	 */
-	public void set__pk_DocumentoHO(int __pk_DocumentoHO) {
-		this.pk_DocumentoHO = __pk_DocumentoHO;
-	}
-
+	
 	/**
 	 * @return the fk_DocumentoMD
 	 */
@@ -990,7 +974,7 @@ public class HistoriaOptometria {
 	/**
 	 * @return the firmaMedico
 	 */
-	public byte[] getFirmaMedico() {
+	public String getFirmaMedico() {
 		return firmaMedico;
 	}
 
@@ -998,14 +982,14 @@ public class HistoriaOptometria {
 	 * @param firmaMedico
 	 *            the firmaMedico to set
 	 */
-	public void setFirmaMedico(byte[] firmaMedico) {
+	public void setFirmaMedico(String firmaMedico) {
 		this.firmaMedico = firmaMedico;
 	}
 
 	/**
 	 * @return the firmaPaciente
 	 */
-	public byte[] getFirmaPaciente() {
+	public String getFirmaPaciente() {
 		return firmaPaciente;
 	}
 
@@ -1013,7 +997,7 @@ public class HistoriaOptometria {
 	 * @param firmaPaciente
 	 *            the firmaPaciente to set
 	 */
-	public void setFirmaPaciente(byte[] firmaPaciente) {
+	public void setFirmaPaciente(String firmaPaciente) {
 		this.firmaPaciente = firmaPaciente;
 	}
 

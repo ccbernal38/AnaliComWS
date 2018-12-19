@@ -202,7 +202,7 @@ public class ExamenDao implements ExamenInterface {
 		
 		try {
 			Connection connection = conexion.getConexionMySQL();
-			String consulta = "DELETE FROM EXAMS";
+			String consulta = "DELETE FROM exams";
 			PreparedStatement ps = connection.prepareStatement(consulta);
 			ps.execute();			
 			conexion.cerrarConexion();
@@ -216,7 +216,7 @@ public class ExamenDao implements ExamenInterface {
 	public void insertCatalogoWEB(Examen examen) {
 		try {
 			Connection connection = conexion.getConexionMySQL();
-			String consulta = "insert into Exams (descripcion, dias_proceso, sinonimo, tipoMuestra, "
+			String consulta = "insert into exams(descripcion, dias_proceso, sinonimo, tipoMuestra, "
 					+ "instrucciones, tiempo_proceso, hora_toma, tecnica, "
 					+ "significado, significado_clinico, preparacion, sigla) values(?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = connection.prepareStatement(consulta);

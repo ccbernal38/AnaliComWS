@@ -5,4 +5,6 @@ import co.analicom.ws.hc.modelo.Antecedente;
 public interface AntecedentesDaoInterface {
 	
 	public boolean insertAntecedentes(Antecedente antecedente);
+	public boolean updateAntecedentes(Antecedente antecedente);
+
 }

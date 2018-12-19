@@ -13,17 +13,17 @@ import co.analicom.ws.hc.modelo.AntecedenteVisiometria;
 /**
  * @author Cristian Cruz
  */
-public class AntecedenteVisiometriaDao implements AntecedenteVisiometriaDaoInterface{
+public class AntecedenteVisiometriaDao implements AntecedenteVisiometriaDaoInterface {
 
 	Conexion conexion;
-	
+
 	public AntecedenteVisiometriaDao() {
 		conexion = new Conexion();
 	}
 
 	@Override
 	public boolean insertAntecedenteVisiometria(AntecedenteVisiometria antecedenteVisiometria) {
-		
+
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
@@ -33,7 +33,8 @@ public class AntecedenteVisiometriaDao implements AntecedenteVisiometriaDaoInter
 						+ "O_Rehabilitacion_visual_OBSERVACION, O_Trauma, O_Trauma_OBSERVACION, O_Usuarios_RX_OBSERVACION, "
 						+ "O_Usuarios_RX, P_Alergicos, P_Alergicos_OBSERVACION, P_Alteraciones_tiroides, P_Alteraciones_tiroides_OBSERVACION, "
 						+ "P_Diabetes, P_Diabetes_OBSERVACION, P_Hipertension, P_Hipertension_OBSERVACION, P_Otros, P_Otros_OBSERVACION, "
-						+ "P_Prbolemas_cardiacos, P_Prbolemas_cardiacos_OBSERVACION;) VALUES ()";
+						+ "P_Prbolemas_cardiacos, P_Prbolemas_cardiacos_OBSERVACION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?\n"
+						+ ")";
 				PreparedStatement statement = connection.prepareStatement(consulta);
 				statement.setInt(1, antecedenteVisiometria.getFk_DocumentoID_P());
 				statement.setString(2, antecedenteVisiometria.getO_Catarata());
@@ -67,9 +68,9 @@ public class AntecedenteVisiometriaDao implements AntecedenteVisiometriaDaoInter
 				statement.setString(30, antecedenteVisiometria.getP_Prbolemas_cardiacos());
 				statement.setString(31, antecedenteVisiometria.getP_Prbolemas_cardiacos_OBSERVACION());
 
-				if(!statement.execute()) {
+				if (!statement.execute()) {
 					System.out.println("Insertado!!");
-				}	
+				}
 				conexion.cerrarConexion();
 				return true;
 			}

@@ -12,8 +12,8 @@ public class AntecedenteOptometria {
 			O_Trauma_Observacion, P_Alergicos_observacion, O_Esquirlas, P_Alteraciones_tiroides,
 			O_Esquirlas_Observacion, P_Alteraciones_tiroides_observacion, O_Quimicos, P_Problemas_cardiacos,
 			O_Quimicos_observacion, P_Problemas_cardiacos_observacion, O_Galucoma, P_Otros, O_Galucoma_observacion,
-			P_Otros_observacion, O_Rehabilitacion_visual, P_Hipertensión, O_Rehabilitacion_visual_observacion,
-			P_Hipertensión_observacion, O_Catarata, O_Usuarios_RX, O_Catarata_observacion, O_Usuarios_RX_observacion,
+			P_Otros_observacion, O_Rehabilitacion_visual, P_Hipertension, O_Rehabilitacion_visual_observacion,
+			P_Hipertension_observacion, O_Catarata, O_Usuarios_RX, O_Catarata_observacion, O_Usuarios_RX_observacion,
 			O_Otros, O_Otros_observacion;
 
 	public AntecedenteOptometria(int fk_DocumentoID, String o_Quirurgicos, String p_Diabetes,
@@ -22,8 +22,8 @@ public class AntecedenteOptometria {
 			String p_Alteraciones_tiroides, String o_Esquirlas_Observacion, String p_Alteraciones_tiroides_observacion,
 			String o_Quimicos, String p_Problemas_cardiacos, String o_Quimicos_observacion,
 			String p_Problemas_cardiacos_observacion, String o_Galucoma, String p_Otros, String o_Galucoma_observacion,
-			String p_Otros_observacion, String o_Rehabilitacion_visual, String p_Hipertensión,
-			String o_Rehabilitacion_visual_observacion, String p_Hipertensión_observacion, String o_Catarata,
+			String p_Otros_observacion, String o_Rehabilitacion_visual, String p_Hipertension,
+			String o_Rehabilitacion_visual_observacion, String p_Hipertension_observacion, String o_Catarata,
 			String o_Usuarios_RX, String o_Catarata_observacion, String o_Usuarios_RX_observacion, String o_Otros,
 			String o_Otros_observacion) {
 		super();
@@ -49,9 +49,9 @@ public class AntecedenteOptometria {
 		O_Galucoma_observacion = o_Galucoma_observacion;
 		P_Otros_observacion = p_Otros_observacion;
 		O_Rehabilitacion_visual = o_Rehabilitacion_visual;
-		P_Hipertensión = p_Hipertensión;
+		P_Hipertension = p_Hipertension;
 		O_Rehabilitacion_visual_observacion = o_Rehabilitacion_visual_observacion;
-		P_Hipertensión_observacion = p_Hipertensión_observacion;
+		P_Hipertension_observacion = p_Hipertension_observacion;
 		O_Catarata = o_Catarata;
 		O_Usuarios_RX = o_Usuarios_RX;
 		O_Catarata_observacion = o_Catarata_observacion;
@@ -236,12 +236,12 @@ public class AntecedenteOptometria {
 		O_Rehabilitacion_visual = o_Rehabilitacion_visual;
 	}
 
-	public String getP_Hipertensión() {
-		return P_Hipertensión;
+	public String getP_Hipertension() {
+		return P_Hipertension;
 	}
 
-	public void setP_Hipertensión(String p_Hipertensión) {
-		P_Hipertensión = p_Hipertensión;
+	public void setP_Hipertension(String p_Hipertension) {
+		P_Hipertension = p_Hipertension;
 	}
 
 	public String getO_Rehabilitacion_visual_observacion() {
@@ -252,12 +252,12 @@ public class AntecedenteOptometria {
 		O_Rehabilitacion_visual_observacion = o_Rehabilitacion_visual_observacion;
 	}
 
-	public String getP_Hipertensión_observacion() {
-		return P_Hipertensión_observacion;
+	public String getP_Hipertension_observacion() {
+		return P_Hipertension_observacion;
 	}
 
-	public void setP_Hipertensión_observacion(String p_Hipertensión_observacion) {
-		P_Hipertensión_observacion = p_Hipertensión_observacion;
+	public void setP_Hipertension_observacion(String p_Hipertension_observacion) {
+		P_Hipertension_observacion = p_Hipertension_observacion;
 	}
 
 	public String getO_Catarata() {

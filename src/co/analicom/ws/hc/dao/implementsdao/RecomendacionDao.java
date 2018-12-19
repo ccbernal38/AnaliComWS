@@ -29,7 +29,7 @@ public class RecomendacionDao implements RecomendacioDaoInterface {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
 				String consulta = "INSERT INTO Recomendacion (HabitosEVS, HabitosEVS_ConducirVentanaCerrada, HabitosEVS_ControlNutricionalPeso,"
-						+ "HabitosEVS_DejarDeFumar, HabitosEVS_InicioActividadFisica,abitosEVS_ReducirConsumoAlcohol, IngresoPVE, IngresoSVE,"
+						+ "HabitosEVS_DejarDeFumar, HabitosEVS_InicioActividadFisica,habitosEVS_ReducirConsumoAlcohol, IngresoPVE, IngresoSVE,"
 						+ "IngresoSVE_Biologico, IngresoSVE_CardiovascularMetabolico, IngresoSVE_Ergonomico,IngresoSVE_Psicolaboral,"
 						+ "IngresoSVE_Ruido, IngresoSVE_Visual, Medicas, Medicas_AudiometriaConfirmatoria,Medicas_CitologiaCervicoVaginal, "
 						+ "Medicas_ContinuarManejoMedico, Medicas_ControlAnualOptometrico,Medicas_ControlAudilogicoAnual, "

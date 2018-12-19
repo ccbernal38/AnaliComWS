@@ -7,7 +7,7 @@ public class prueba {
 
 	public static void main(String[] args) {
 		try {
-			String fecha = "3/01/2018 7:37:13 a.m.";
+			String fecha = "14/11/2018 9:49:08 a.m.";
 			fecha = fecha.replace(".","");
 			java.util.Date dateFechaDeDiligenciamiento = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a").parse(fecha);
 			System.out.println(dateFechaDeDiligenciamiento);

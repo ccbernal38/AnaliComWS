@@ -6,6 +6,8 @@ package co.analicom.ws.hc.dao.implementsdao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import co.analicom.ws.database.Conexion;
 import co.analicom.ws.hc.dao.interfacedao.OtoscopiaDaoInterface;
@@ -14,22 +16,22 @@ import co.analicom.ws.hc.modelo.Otoscopia;
 /**
  * @author Cristian Cruz
  */
-public class OtoscopiaDao implements OtoscopiaDaoInterface{
-	
+public class OtoscopiaDao implements OtoscopiaDaoInterface {
+
 	Conexion conexion;
-	
+
 	public OtoscopiaDao() {
 		conexion = new Conexion();
 	}
-	
+
 	@Override
 	public boolean insertOtoscopia(Otoscopia otoscopia) {
-		
+
 		try {
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				
-				String consulta = "INSERT INTO Otoscopia (CAE_Normal, CAE_Otros, CAE_TaponParcial, CAE_TaponTotal, MT_Abultada, MT_Hiperemica, "
+
+				String consulta = "INSERT INTO HistoriaAudiometria_OTOSCOPIA(CAE_Normal, CAE_Otros, CAE_TaponParcial, CAE_TaponTotal, MT_Abultada, MT_Hiperemica, "
 						+ "MT_Normal, MT_NoVisualiza, MT_Opaca, MT_Otros, MT_Perforada, MT_PlacaCalcarea, PA_Agenesia, PA_Atresia, "
 						+ "PA_Cicatriz, PA_Normal, PA_Otros) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(consulta);
@@ -50,9 +52,9 @@ public class OtoscopiaDao implements OtoscopiaDaoInterface{
 				statement.setString(15, otoscopia.getPA_Cicatriz());
 				statement.setString(16, otoscopia.getPA_Normal());
 				statement.setString(17, otoscopia.getPA_Otros());
-				if(!statement.execute()) {
+				if (!statement.execute()) {
 					System.out.println("Insertado!!");
-				}	
+				}
 				conexion.cerrarConexion();
 				return true;
 			}
@@ -60,24 +62,27 @@ public class OtoscopiaDao implements OtoscopiaDaoInterface{
 			System.err.println("Error en la inserción " + e.getLocalizedMessage());
 			e.printStackTrace();
 			return false;
-			}	
+		}
 		return false;
 	}
-	
+
 	@Override
 	public int obtenerID() {
 		try {
+			List<Integer> list = new ArrayList<>();
 			Connection connection = conexion.getConexionHC();
 			if (connection != null) {
-				String consulta = "SELECT fk_IDT_DocumentoID FROM Otoscopia ORDER BY fechaDeCreacion DESC";
+				String consulta = "SELECT fk_IDT_DocumentoID FROM HistoriaAudiometria_OTOSCOPIA";
 				PreparedStatement statement = connection.prepareStatement(consulta);
 				ResultSet result = statement.executeQuery();
 				while (result.next()) {
-					return result.getInt(1);
+					list.add(result.getInt(1));
 				}
+				return list.get(list.size() - 1);
 			}
-			
+
 		} catch (Exception e) {
+			System.err.println(e);
 			return -1;
 		}
 		return -1;

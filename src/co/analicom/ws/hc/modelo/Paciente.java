@@ -14,7 +14,7 @@ public class Paciente {
 	private String IDT_telefonoDomicilio, IDT_TelefonoCelular, IDT_AvisoEmergenciaTelefono,
 			IDT_AvisoEmergenciaTelefonoCelular;
 
-	private byte[] foto, firma;
+	private String foto, firma;
 
 	private Date fechaDeDiligenciamiento, fechaDeModificacion;
 
@@ -55,7 +55,7 @@ public class Paciente {
 			String iDT_ARL, String iDT_AFP, String iDT_AvisoEmergenciaNombres, String iDT_AvisoEmergenciaApellidos,
 			String iDT_AvisoEmergenciaParentesco, String grupoSanguineo, String rH, String cargo, String antiguedad,
 			String iDT_telefonoDomicilio, String iDT_TelefonoCelular, String iDT_AvisoEmergenciaTelefono,
-			String iDT_AvisoEmergenciaTelefonoCelular, byte[] foto, byte[] firma, Date fechaDeDiligenciamiento,
+			String iDT_AvisoEmergenciaTelefonoCelular, String foto, String firma, Date fechaDeDiligenciamiento,
 			Date fechaDeModificacion) {
 		super();
 		this.documento = documento;
@@ -289,19 +289,19 @@ public class Paciente {
 		IDT_AvisoEmergenciaTelefonoCelular = iDT_AvisoEmergenciaTelefonoCelular;
 	}
 
-	public byte[] getFoto() {
+	public String getFoto() {
 		return foto;
 	}
 
-	public void setFoto(byte[] foto) {
+	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 
-	public byte[] getFirma() {
+	public String getFirma() {
 		return firma;
 	}
 
-	public void setFirma(byte[] firma) {
+	public void setFirma(String firma) {
 		this.firma = firma;
 	}
 
